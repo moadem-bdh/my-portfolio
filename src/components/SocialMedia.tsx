@@ -1,4 +1,4 @@
-import x from "../assets/photos/x.svg";
+import x from "../assets/photos/twitter.svg";
 import linkedin from "../assets/photos/linkedin.svg";
 import instagram from "../assets/photos/instagram.svg";
 import letter from "../assets/photos/letter.svg";
