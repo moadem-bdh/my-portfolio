@@ -12,9 +12,9 @@ export default function Outline({
   color: string;
 }) {
   const target = 98; // final value
-
   // Tailwind v4 breakpoints: sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px
-  const md = useMediaQuery({ query: "(min-width: 768px)" });
+  const desktop = useMediaQuery({ query: "(min-width: 768px)" });
+
   useEffect(() => {
     let frame: number;
     let start: number | null = null;
@@ -39,7 +39,7 @@ export default function Outline({
         variant="determinate"
         value={-1 * percentage}
         sx={{ color: color }}
-        size={md ? 84:42}
+        size={desktop ? 84 :42}
       />
     </Stack>
   );
