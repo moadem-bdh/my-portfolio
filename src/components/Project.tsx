@@ -1,8 +1,8 @@
 import ButtunArrow from "../assets/photos/ButtunArrow.svg";
 import test from "../assets/photos/testimg two.png"
-export default function Project1() {
+export default function Project() {
   return (
-    <div className=" flex-col-reverse md:flex-row flex w-full justify-between items-center h-max  gap-12 ">
+    <div className=" flex-col-reverse md:flex-row flex w-full justify-between items-center h-max gap-3 md:gap-12 ">
 
   <div className=" md:min-w-150  w-full md:max-w-260 flex flex-col md:px-7 px-4 md:pt-11 p-5 md:pb-12 gap-6 bg-[#1B1B1BB2] rounded-3xl">       {/*   this onw need to be changed  */}
         <div className="  w-full items-start flex flex-col gap-2 ">

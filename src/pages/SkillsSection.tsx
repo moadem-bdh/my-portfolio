@@ -387,7 +387,7 @@ export default function SkillsSection() {
   const [skill, setSkill] = useState<string>(skills[1].id);
 
   return (
-    <section className=" w-full md:min-h-240 px-4 md:p-20 py-20  pt-5 bg-bgDark flex gap-16 flex-col items-center ">
+    <section className=" w-full md:min-h-240 px-4 md:p-20 pb-14  pt-5 bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
 
       <h1 className=" md:text-[90px] text-[48px] font-ncs text-white ">Skills</h1>
       <div className=" md:border-0.5 md:flex-row flex-wrap border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full ">

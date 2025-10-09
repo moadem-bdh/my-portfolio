@@ -27,17 +27,17 @@ export default function ExperienceSection() {
 
         {/* =============================== */}
       </ExperienceSwiper>
-      <span className=" group flex gap-4 items-center justify-center mt-[-50px]  ">
+      <span className=" group flex gap-3 md:gap-4 items-center justify-center mt-[-50px]  ">
         <p className="  cursor-pointer font-ncs text-[18px] md:text-[30px] text-white ">
           Visit all experiences
         </p>
 
         <div
-          className={` group-hover:translate-x-2 cursor-pointer rounded-[100px] h-max w-max p-2.5 border-white border-2  transition-all ease-in-out duration-300 group-hover:bg-white hover:boeder-0`}
+          className={` group-hover:translate-x-2 cursor-pointer md:border-2 rounded-[100px] h-max w-max md:p-2.5 p-2 border-white border-1  transition-all ease-in-out duration-300 group-hover:bg-white hover:boeder-0`}
         >
           <img
             src={ButtunArrow}
-            className={` h-3 md:h-5 group-hover:rotate-45 group-hover:invert transition-all ease-in-out duration-300`}
+            className={` h-[10px] md:h-5 group-hover:rotate-45 group-hover:invert transition-all ease-in-out duration-300`}
             alt="Arrow Icon"
           />
         </div>
