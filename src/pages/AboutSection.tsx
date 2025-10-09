@@ -21,7 +21,7 @@ export default function AboutSection() {
        <img
             src={myImg}
             alt="My Photo"
-            className="rounded-full md:h-70 h-26 md:outline-4 outline-2 outline-[#838383] outline-offset-4  md:outline-offset-8 "
+            className="rounded-full md:h-70 h-38 md:outline-4 outline-2 outline-[#838383] outline-offset-4  md:outline-offset-8 "
           />
 
         </div>
