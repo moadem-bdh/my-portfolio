@@ -13,7 +13,7 @@ function App() {
  
 
   return (
-    <div  className=" flex flex-col ">
+    <div  className=" flex flex-col bg-bgDark ">
 <NavbBar/>
 <HeroSection/>
 <HighlightSection/>

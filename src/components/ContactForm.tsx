@@ -17,7 +17,6 @@ export default function ContactForm() {
           <input
             id="Full_name"
             placeholder="Enter your full name"
-            autoFocus
             className=" focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white "
             type="text"
           />
@@ -81,7 +80,7 @@ export default function ContactForm() {
           <textarea
             name=""
             placeholder="Write your message"
-            className=" focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white  "
+            className=" min-h-18 resize-none md:min-h-32 focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white  "
             id="Your_message"
           ></textarea>
         </div>
