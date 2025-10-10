@@ -5,7 +5,7 @@ import { useSwiper, useSwiperSlide } from "swiper/react";
 export default function Experience({ changeEffect }: { changeEffect: number }) {
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null); //===============> copilot does that
-  const duration: number = 1000; //the duration ofthe progress 1s => 100
+  const duration: number = 1000 ; //the duration ofthe progress 1s => 100
   const swiper = useSwiperSlide();
   const swiperHandle = useSwiper()
 
@@ -56,7 +56,7 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       onMouseLeave={handleResume}
       onTouchEnd={handleResume}
       onTouchStart={handlePause}
-      className="w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
+      className="select-none w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
     >
       <div className=" grid grid-cols-1 w-full ">   {/* grid grid-cols-4 w-full */}
         <img src={image} alt="" className="" />

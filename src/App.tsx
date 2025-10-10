@@ -7,13 +7,14 @@ import SkillsSection from './pages/SkillsSection'
 import ExperienceSection from './pages/ExperienceSection'
 import ProjectsSection from './pages/ProjectsSection'
 import ConatctMeSection from './pages/ContactMeSection'
+import FooterSection from './pages/FooterSection'
 
 
 function App() {
  
 
   return (
-    <div  className=" flex flex-col bg-bgDark ">
+    <div  className=" flex flex-col bg-bgDark relative ">
 <NavbBar/>
 <HeroSection/>
 <HighlightSection/>
@@ -22,8 +23,8 @@ function App() {
 <ExperienceSection/>
 <ProjectsSection/>
 <ConatctMeSection/>
+<FooterSection/>
 
-<div className=' w-full h-80 bg-bgDark '></div>
     </div>
       
       

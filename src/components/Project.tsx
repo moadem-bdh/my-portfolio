@@ -25,16 +25,16 @@ export default function Project() {
 
   
 
-      <span className=" group flex gap-4 items-center w-full justify-end mt-[22px] pr-2 ">
+      <span className=" group flex gap-2 md:gap-4 items-center w-full justify-end mt-[22px] pr-2 ">
           <p className=" cursor-pointer font-ncs text-sm md:text-[24px] text-white ">
 View all projects
           </p>
           <div
-            className={` group-hover:translate-x-2 cursor-pointer rounded-[100px] h-max w-max p-2.5 border-white border-1  transition-all ease-in-out duration-300 group-hover:bg-white hover:boeder-0`}
+            className={` group-hover:translate-x-2 cursor-pointer rounded-[100px] h-max w-max p-1.5 md:p-2.5 border-white border-1  transition-all ease-in-out duration-300 group-hover:bg-white hover:boeder-0`}
           >
             <img
               src={ButtunArrow}
-              className={` h-3 md:h-4 group-hover:rotate-45 group-hover:invert transition-all ease-in-out duration-300`}
+              className={` h-2.5 md:h-4 group-hover:rotate-45 group-hover:invert transition-all ease-in-out duration-300`}
               alt="Arrow Icon"
             />
           </div>
