@@ -6,7 +6,7 @@ export default function HeroSection() {
       <div className=" col-start-1 row-start-2 row-end-16 col-end-16 flex justify-between flex-col  ">
       <p className=" font-ncs md:text-[150px] text-[52px] md:w-[850px] w-[322px] mt-5 md:mt-0 text-white leading-[70px] md:leading-[180px] ">
           Graphic <br />
-          Designer
+          Devoloper
         </p>
 
         <hr className="md:w-[186px] mt-2 md:mt-0 w-[110PX] rounded border-2 border-white mb-4 " />
