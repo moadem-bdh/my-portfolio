@@ -18,9 +18,11 @@ export default function ExperienceSection() {
         <SwiperSlide>
           <Experience changeEffect={swiperChanged} />
         </SwiperSlide>
+
         <SwiperSlide>
           <Experience changeEffect={swiperChanged} />
         </SwiperSlide>
+        
         <SwiperSlide>
           <Experience changeEffect={swiperChanged} />
         </SwiperSlide>

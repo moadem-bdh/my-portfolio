@@ -27,7 +27,7 @@ export default function ExperienceSwiper({
       spaceBetween={100}
       slidesPerView={1}
       loop
-      autoplay={{   delay: 10000}}
+      autoplay={{delay: 10000}}
       className="w-full"
     >
       {children}

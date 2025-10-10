@@ -72,7 +72,7 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       </div>
       <div className=" flex flex-col w-full gap-3">
         <h1 className=" font-ncs text-[34px] md:text-6xl text-white ">CAA training</h1>
-        <p className=" text-white font-roboto text-sm md:text-xl   ">
+        <p className=" select-none text-white font-roboto text-sm md:text-xl   ">
           Lorem ipsum dolor sit amet consectetur. Fermentum viverra enim viverra
           hendrerit sollicitudin gravida. Eget ipsum ante cursus aliquet quis in
           aliquam dignissim. Tortor sapien turpis ullamcorper aliquam venenatis
