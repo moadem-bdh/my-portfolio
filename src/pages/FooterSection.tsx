@@ -7,7 +7,7 @@ export default function FooterSection (){
 
 return (
 
-    <footer className="  w-full bg-bgDark gap-16 pb-2 pt-50 flex flex-col items-center  ">   
+    <footer className="  w-full bg-bgDark gap-8 md:gap-16 pb-2 pt-50 flex flex-col items-center  ">   
      <hr className=" w-96/100 rounded  border-white  " />
      
   <div className=" flex flex-row w-full justify-between px-4 md:px-20  ">
