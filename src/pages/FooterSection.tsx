@@ -10,7 +10,7 @@ return (
 
     <footer className="  w-full bg-bgDark gap-8 md:gap-16 pb-2 pt-42 flex flex-col items-center  "> 
     <span className="px-4 md:px-20 w-full flex justify-end ">
-        <a href="#NavBar"><ButtonArrow divStyle=" border border-3 p-4 md:p-5 hover:bg-white " Arrowtyle=" hover:invert w-6 md:w-8 -rotate-45  "  />  </a> 
+        <a href="#Home"><ButtonArrow divStyle=" border border-3 p-4 md:p-5 hover:bg-white " Arrowtyle=" hover:invert w-6 md:w-8 -rotate-45  "  />  </a> 
     </span>
  
      <hr className=" w-96/100 rounded  border-white  " />
