@@ -2,7 +2,7 @@ import ButtonArrow from "../components/ButtonArrow";
 
 export default function HeroSection() {
   return (
-    <section id="HeroSection" className="w-full md:h-154  bg-bgDark grid grid-cols-20 grid-rows-20 m  pt-14 px-3 md:pl-10 md:pr-20">
+    <section  className="w-full md:h-154  bg-bgDark grid grid-cols-20 grid-rows-20 m  pt-14 px-3 md:pl-10 md:pr-20">
       <div className=" col-start-1 row-start-2 row-end-16 col-end-16 flex justify-between flex-col  ">
       <p className=" font-ncs md:text-[150px] text-[48px] md:w-[850px] w-[322px] mt-5 md:mt-0 text-white leading-[70px] md:leading-[180px] ">
           Graphic <br />

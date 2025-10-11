@@ -37,12 +37,12 @@ return (
 <h1 className=" text-white font-ncs md:text-[42px] md:text-white     ">Menu</h1>
 <ul className=" flex-wrap gap-x-3  gap-1 w-[340px] flex  ">
 
-   <a href="#NavBar"> <li className=" cursor-pointer text-xl text-greyPt font-roboto ">Home</li></a>
-    <a href="#AboutSection">  <li className="cursor-pointer text-xl text-greyPt font-roboto ">About</li></a>
-      <a href="#SkillsSection"> <li className="cursor-pointer text-xl text-greyPt font-roboto ">skills</li></a>
-   <a href="#ExperienceSection"> <li className="cursor-pointer text-xl text-greyPt font-roboto ">Experience</li></a>
-      <a href="#ProjectsSection"><li className="cursor-pointer text-xl text-greyPt font-roboto ">Project</li></a>
-     <a href="#ContactSection"><li className="cursor-pointer text-xl text-greyPt font-roboto ">Contact me</li></a> 
+   <a href="#Home"> <li className=" cursor-pointer text-xl text-greyPt font-roboto ">Home</li></a>
+    <a href="#About">  <li className="cursor-pointer text-xl text-greyPt font-roboto ">About</li></a>
+      <a href="#Skills"> <li className="cursor-pointer text-xl text-greyPt font-roboto ">skills</li></a>
+   <a href="#Experience"> <li className="cursor-pointer text-xl text-greyPt font-roboto ">Experience</li></a>
+      <a href="#Projects"><li className="cursor-pointer text-xl text-greyPt font-roboto ">Project</li></a>
+     <a href="#ContactMe"><li className="cursor-pointer text-xl text-greyPt font-roboto ">Contact me</li></a> 
 </ul>
 
    </div>

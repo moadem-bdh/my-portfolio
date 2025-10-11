@@ -406,7 +406,7 @@ export default function SkillsSection() {
   const [skill, setSkill] = useState<string>(skills[0].id);
 
   return (
-    <section id="SkillsSection" className=" w-full md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-5 bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
+    <section id="Skills" className=" w-full md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-5 bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
       <h1 className=" md:text-[90px] text-[48px] font-ncs text-white ">
         Skills
       </h1>

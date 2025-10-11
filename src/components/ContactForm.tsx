@@ -80,7 +80,7 @@ export default function ContactForm() {
           <textarea
             name=""
             placeholder="Write your message"
-            className=" min-h-18 resize-none md:min-h-32 focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white  "
+            className=" scrollbar-thumb-greyPt scrollbar-track-transparent  scrollbar-thin min-h-18 resize-none md:min-h-32 focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white  "
             id="Your_message"
           ></textarea>
         </div>

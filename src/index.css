@@ -107,7 +107,7 @@
 /* ============================================================================================= */
 
 @import "tailwindcss";
-
+@plugin 'tailwind-scrollbar';
 @theme {
   --font-roboto: Roboto, "sans-serif";
   --font-ncs: NCS, "sans-serif";
