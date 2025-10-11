@@ -10,7 +10,7 @@ return (
 
     <footer className="  w-full bg-bgDark gap-8 md:gap-16 pb-2 pt-42 flex flex-col items-center  "> 
     <span className="px-4 md:px-20 w-full flex justify-end ">
-         <ButtonArrow divStyle=" border border-3 p-4 md:p-5 hover:bg-white " Arrowtyle=" hover:invert w-6 md:w-8 -rotate-45  "  />  
+        <a href="#NavBar"><ButtonArrow divStyle=" border border-3 p-4 md:p-5 hover:bg-white " Arrowtyle=" hover:invert w-6 md:w-8 -rotate-45  "  />  </a> 
     </span>
  
      <hr className=" w-96/100 rounded  border-white  " />
@@ -37,12 +37,12 @@ return (
 <h1 className=" text-white font-ncs md:text-[42px] md:text-white     ">Menu</h1>
 <ul className=" flex-wrap gap-x-3  gap-1 w-[340px] flex  ">
 
-    <li className=" cursor-pointer text-xl text-greyPt font-roboto ">Home</li>
-    <li className="cursor-pointer text-xl text-greyPt font-roboto ">About</li>
-    <li className="cursor-pointer text-xl text-greyPt font-roboto ">skills</li>
-    <li className="cursor-pointer text-xl text-greyPt font-roboto ">Experience</li>
-    <li className="cursor-pointer text-xl text-greyPt font-roboto ">Project</li>
-    <li className="cursor-pointer text-xl text-greyPt font-roboto ">Contact me</li>
+   <a href="#NavBar"> <li className=" cursor-pointer text-xl text-greyPt font-roboto ">Home</li></a>
+    <a href="#AboutSection">  <li className="cursor-pointer text-xl text-greyPt font-roboto ">About</li></a>
+      <a href="#SkillsSection"> <li className="cursor-pointer text-xl text-greyPt font-roboto ">skills</li></a>
+   <a href="#ExperienceSection"> <li className="cursor-pointer text-xl text-greyPt font-roboto ">Experience</li></a>
+      <a href="#ProjectsSection"><li className="cursor-pointer text-xl text-greyPt font-roboto ">Project</li></a>
+     <a href="#ContactSection"><li className="cursor-pointer text-xl text-greyPt font-roboto ">Contact me</li></a> 
 </ul>
 
    </div>
@@ -60,9 +60,9 @@ return (
 
 
     <div className="flex gap-4">
-  <img src={instagramColored} alt="Instagram" />
-  <img src={LinkedInColored} alt="Instagram" />
-  <img src={TwittwrColored} alt="Instagram" />
+  <a  target="_blank" href="https://www.instagram.com/moadem_boudehane/"> <img src={instagramColored} alt="Instagram" /></a>
+  <a  target="_blank" href="https://www.linkedin.com/in/mohamed-adem-boudehane-67926233b/"><img src={LinkedInColored} alt="Instagram" /></a>
+  <a  target="_blank" href="https://x.com/moadem_bdh?s=21"><img src={TwittwrColored} alt="Instagram" /></a>
     </div>
     <p className=" text-greyPt font-roboto text-sm  ">BY BOUDEHANE Mohamed Adem 2026 ©</p>
    </div>

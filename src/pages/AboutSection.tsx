@@ -3,7 +3,7 @@ import Qots from "../assets/photos/qhotes.svg";
 
 export default function AboutSection() {
   return (
-    <section className=" md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgDark md:gap-0 gap-12 flex flex-col items-center justify-between py-10">
+    <section id="AboutSection" className=" md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgDark md:gap-0 gap-12 flex flex-col items-center justify-between pt-20 pb-10">
 
 
 

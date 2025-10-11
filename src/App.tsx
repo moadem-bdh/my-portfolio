@@ -14,7 +14,7 @@ function App() {
  
 
   return (
-    <div  className=" flex flex-col bg-bgDark relative ">
+    <div  className=" flex flex-col relative ">
 <NavbBar/>
 <HeroSection/>
 <HighlightSection/>

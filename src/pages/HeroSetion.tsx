@@ -2,7 +2,7 @@ import ButtonArrow from "../components/ButtonArrow";
 
 export default function HeroSection() {
   return (
-    <section className="w-full md:h-154  bg-bgDark grid grid-cols-20 grid-rows-20 mt-25  md:mt-[89px] pt-2 px-3 md:pl-10 md:pr-20">
+    <section id="HeroSection" className="w-full md:h-154  bg-bgDark grid grid-cols-20 grid-rows-20 m  pt-14 px-3 md:pl-10 md:pr-20">
       <div className=" col-start-1 row-start-2 row-end-16 col-end-16 flex justify-between flex-col  ">
       <p className=" font-ncs md:text-[150px] text-[48px] md:w-[850px] w-[322px] mt-5 md:mt-0 text-white leading-[70px] md:leading-[180px] ">
           Graphic <br />
@@ -23,10 +23,10 @@ export default function HeroSection() {
       </div>
 
       <div className="col-start-16 col-end-18 row-start-16 row-end-19 md:flex items-center hidden  justify-center ">
-        <ButtonArrow
+        <a href="#AboutSection" ><ButtonArrow
           divStyle="hover:rotate-[-180deg] border-[3.5px] p-[16px] "
           Arrowtyle=""
-        />
+        /></a>
       </div>
     </section>
   );

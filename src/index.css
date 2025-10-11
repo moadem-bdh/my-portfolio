@@ -126,3 +126,9 @@
   background: #076C69 !important;
   opacity: 1;
 }
+
+
+
+html {
+  scroll-behavior: smooth;
+}

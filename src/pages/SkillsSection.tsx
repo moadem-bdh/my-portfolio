@@ -36,12 +36,13 @@ export default function SkillsSection() {
   type skillsType = {
     title: string;
     id: string;
+    appear : boolean
   };
   const skills: skillsType[] = [
-    { title: "Design", id: "design"  },
-    { title: "Web devolopment", id: "dev" },
-    { title: "Multimedia", id: "multimedia" },
-    { title: "Soft skills", id: "softSkills" },
+    { title: "Design", id: "design" , appear :true  },
+    { title: "Web devolopment", id: "dev" , appear :true },
+    { title: "Multimedia", id: "multimedia"  , appear :true},
+    { title: "Soft skills", id: "softSkills" , appear :true },
   ];
 
   type SkillDetailsType = {
@@ -57,12 +58,19 @@ export default function SkillsSection() {
 
   type MyskillsType = {
     skillName: string;
+    appear: boolean;
     skillsDetails: SkillDetailsType[];
   };
+
+
+
+
+  //NOTE !! WHEN YOU WANT TO REMOVE ONE OF THE SKILLS MAKE IT FALSE AND MAKE THAT SKILL AT THE END OF THE ARRAY SO IT WORKS PWRFECTLY 
 
   const MySkills: MyskillsType[] = [
     {
       skillName: "design",
+      appear: true,
       skillsDetails: [
         {
           image: Photoshop,
@@ -145,6 +153,7 @@ export default function SkillsSection() {
     },
     {
       skillName: "dev",
+      appear: true,
       skillsDetails: [
         {
           image: react,
@@ -252,6 +261,7 @@ export default function SkillsSection() {
     },
     {
       skillName: "multimedia",
+      appear: true,
       skillsDetails: [
         {
           image: ae,
@@ -301,6 +311,7 @@ export default function SkillsSection() {
     },
     {
       skillName: "softSkills",
+      appear: true,
       skillsDetails: [
         {
           image: problemSolving,
@@ -395,16 +406,16 @@ export default function SkillsSection() {
   const [skill, setSkill] = useState<string>(skills[0].id);
 
   return (
-    <section className=" w-full md:min-h-240 px-4 md:p-20 pb-14  pt-5 bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
+    <section id="SkillsSection" className=" w-full md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-5 bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
       <h1 className=" md:text-[90px] text-[48px] font-ncs text-white ">
         Skills
       </h1>
       <div className=" md:border-0.5 md:flex-row flex-wrap border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full ">
-        {skills.map((s,index) => (
-          <Skill
-            onClick={()=>{
-              changeTheSlide(index)
-              setSkill(s.id)
+        {skills.map((s, index) => (
+         s.appear && <Skill
+            onClick={() => {
+              changeTheSlide(index);
+              setSkill(s.id);
             }}
             key={s.id}
             skill={s}
@@ -425,7 +436,7 @@ export default function SkillsSection() {
         }}
         
       >
-        {MySkills.map((skill) => (
+        {MySkills.map((skill) => skill.appear && (
           <SwiperSlide className="w-full" key={skill.skillName}>
             <div className=" w-full min-h-max pt-10 grid gap-2 md:gap-x-6 gap-y-8 md:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(112px,1fr))]   md:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
               {skill.skillsDetails.map((sk) => {

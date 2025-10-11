@@ -8,7 +8,7 @@ export default function ExperienceSection() {
   const [swiperChanged, setSwiperChanged] = useState<number>(0);
 
   return (
-    <section className="min-h-150 bg-bgDark flex flex-col items-center md:items-end gap-20 px-4 md:px-20">
+    <section id="ExperienceSection" className="min-h-150 bg-bgDark flex flex-col items-center md:pt-20 md:items-end gap-20 px-4 md:px-20">
       <span className="w-full  flex justify-center">
         <h1 className=" font-ncs text-[48px] md:text-[90px] text-white ">Experience</h1>{" "}
       </span>
@@ -22,7 +22,7 @@ export default function ExperienceSection() {
         <SwiperSlide>
           <Experience changeEffect={swiperChanged} />
         </SwiperSlide>
-        
+
         <SwiperSlide>
           <Experience changeEffect={swiperChanged} />
         </SwiperSlide>

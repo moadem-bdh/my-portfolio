@@ -6,7 +6,8 @@ import Modetoggle from "../components/ModeToggle";
 
 export default function NavbBar() {
   return (
-    <nav className="z-10 w-full flex fixed top-0 py-4 md:py-6 px-4 md:px-10 items-center bg-bgDark justify-between ">
+    <nav id="NavBar" className="w-full h-[68px] md:h-[89px]" >
+      <div className="z-10 w-full flex fixed top-0 py-4 md:py-6 px-4 md:px-10 items-center bg-bgDark justify-between ">
       <img src={logo} className=" md:h-max h-8 " alt="Logo" />
       <div className=" flex gap-4 md:gap-4 items-center ">
         <Modetoggle />
@@ -21,6 +22,7 @@ export default function NavbBar() {
           src={menuIcon}
           alt="Menu"
         />
+      </div>
       </div>
     </nav>
   );
