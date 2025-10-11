@@ -23,7 +23,7 @@ export default function HeroSection() {
       </div>
 
       <div className="col-start-16 col-end-18 row-start-16 row-end-19 md:flex items-center hidden  justify-center ">
-        <a href="#AboutSection" ><ButtonArrow
+        <a href="#About" ><ButtonArrow
           divStyle="hover:rotate-[-180deg] border-[3.5px] p-[16px] "
           Arrowtyle=""
         /></a>
