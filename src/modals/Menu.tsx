@@ -36,8 +36,8 @@ export default function Menu({   handleParentClick, setMenuAppear}:{ handleParen
   return (
     <menu onClick={(e)=>handleParentClick(e)} className="  fixed h-full inset-0 z-20 bg-[#060606db] flex justify-end ">
        
-      <div className="md:w-[950px] w-full scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgDark min-h-40 border-b-4 md:border-b-0 md:border-l-4 py-6  flex flex-col h-[470px] md:h-full overflow-y-auto border-[#076C69]">
-      <div className=" w-full flex mb-2 md:mb-8 px-4 md:px-10  md:justify-start justify-end"><button type="button" onClick={setMenuAppear} className="p-2.5 w-max md:border-white md:rounded-[100px] md:border-3 group cursor-pointer md:hover:bg-white transition-all ease-in-out duration-200"><img className="w-10 group-hover:invert hidden md:block" src={MenuArrow} alt="Arrow" /><img className=" md:hidden block " src={close} alt="close icon" /></button> </div>
+      <div className="md:w-[950px] gap-1 md:gap-0 w-full scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgDark min-h-40 border-b-4 md:border-b-0 md:border-l-4 py-6  flex flex-col h-[470px] md:h-full overflow-y-auto border-[#076C69]">
+      <div className=" w-full flex  mb-2  md:mb-8 px-4 md:px-10  md:justify-start justify-end"><button type="button" onClick={setMenuAppear} className="p-2.5 w-max md:border-white md:rounded-[100px] md:border-3 group cursor-pointer md:hover:bg-white transition-all ease-in-out duration-200"><img className="w-10 group-hover:invert hidden md:block" src={MenuArrow} alt="Arrow" /><img className=" md:hidden block " src={close} alt="close icon" /></button> </div>
         {menu.map((option) => (
             <a onClick={setMenuAppear} href={`#${option.achorLink}`} key={option.name}>
           <div className=" transition-all ease-in-out duration-300 cursor-pointer group hover:pl-6 flex w-full justify-between items-center px-4 md:px-10 ">
