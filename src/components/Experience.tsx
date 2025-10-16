@@ -66,7 +66,7 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
         <div
           className="bg-[#076C69] h-1.5 rounded-full dark:bg-[#076C69]"
           style={{
-            width: `${swiper.isActive ?  Math.min((progress * 100) / duration + 0.5, 100) : "0"}%`,
+            width: `${swiper.isActive ? (progress * 100 / duration): "0"}%`,
           }}
         ></div>
       </div>

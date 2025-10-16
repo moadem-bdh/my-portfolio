@@ -27,7 +27,7 @@ function handleParentClick(e: React.MouseEvent):void {
         <LanguageToggle />
       </div>
       <div  onClick={setMenuAppear} className="flex gap-4 items-center relative group">
-        <p className=" font-ncs opacity-0 z-0 -translate-x-10 text-white text-3xl absolute group-hover:opacity-100 group-hover:-translate-x-30 transition-all ease-linear ">
+        <p className=" font-ncs opacity-0 z-0 -translate-x-10 w-30 text-white text-3xl absolute group-hover:opacity-100 group-hover:-translate-x-30 transition-all ease-linear ">
           Menu
         </p>
                   <img
