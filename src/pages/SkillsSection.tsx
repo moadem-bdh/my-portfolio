@@ -441,6 +441,7 @@ export default function SkillsSection() {
             <div className=" w-full min-h-max pt-10 grid gap-2 md:gap-x-6 gap-y-8 md:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(112px,1fr))]   md:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
               {skill.skillsDetails.map((sk) => {
                 return (
+                  sk.appear &&
                   <div
                     key={sk.name}
                     className=" w-full h-max flex justify-center"
