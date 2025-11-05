@@ -1138,7 +1138,7 @@ return {
 
 function generateColor(): ColorRGB {
   // Base color: #0AA19C (teal-green)
-  const intensity = 0.1; // adjust 0–1 → lower = more transparent / dimmer
+  const intensity = 0.2; // adjust 0–1 → lower = more transparent / dimmer
 
   return {
     r: (0x0A / 255) * intensity, // red
