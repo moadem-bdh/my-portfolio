@@ -27,8 +27,8 @@ const TextFilling: React.FC<ScrollRevealProps> = ({
   blurStrength = 4,
   containerClassName = '',
   textClassName = '',
-  rotationEnd = 'bottom bottom-=10%',
-  wordAnimationEnd = 'bottom bottom-=10%'
+  rotationEnd = 'bottom bottom',
+  wordAnimationEnd = 'bottom bottom'
 }) => {
   const containerRef = useRef<HTMLHeadingElement>(null);
 

@@ -1,13 +1,25 @@
 import ButtonArrow from "../components/ButtonArrow";
+import RotatingText from "../components/RotatingText";
 
 export default function HeroSection() {
   return (
     <section  className="w-full md:h-154  bg-bgDark grid grid-cols-20 grid-rows-20 m  pt-14 px-3 md:pl-10 md:pr-20">
       <div className=" col-start-1 row-start-2 row-end-16 col-end-16 flex justify-between flex-col  ">
-      <p className=" font-ncs md:text-[150px] text-[48px] md:w-[850px] w-[322px] mt-5 md:mt-0 text-white leading-[70px] md:leading-[180px] ">
-          Graphic <br />
-          Devoloper
-        </p>
+
+        <RotatingText
+  texts={['Grphic \nDesigner ', 'UI/UX \nDesigner', 'Web \nDevoloper']}
+  mainClassName="font-ncs md:text-[150px] text-[48px] md:w-[850px] w-[322px] mt-5 md:mt-0 text-white leading-[70px] md:leading-[180px]"
+  staggerFrom={"last"}
+  initial={{ y: "100%" }}
+  animate={{ y: 0 }}
+  exit={{ y: "-120%" }}
+  staggerDuration={0.025}
+  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+  rotationInterval={4000}
+        />
+
+
 
         <hr className="md:w-[186px] mt-2 md:mt-0 w-[110PX] rounded border-2 border-white mb-4 " />
 

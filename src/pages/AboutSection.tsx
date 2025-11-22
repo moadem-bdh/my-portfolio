@@ -53,6 +53,7 @@ export default function AboutSection() {
             baseRotation={0}
             blurStrength={0}
             textClassName="font-ncs md:text-lg text-sm text-white "
+            wordAnimationEnd = 'bottom bottom-=10%'
           >
             I am Mohamed Adem Boudehane, a computer science student with a
             strong passion for technology and creativity. I enjoy working on web
