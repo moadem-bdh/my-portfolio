@@ -6,9 +6,9 @@ export default function AboutSection() {
   return (
     <section
       id="About"
-      className=" md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgDark md:gap-12 gap-12 flex flex-col items-center justify-between pt-20 pb-0 md:pb-10"
+      className=" md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgLight dark:bg-bgDark md:gap-12 gap-12 flex flex-col items-center justify-between pt-20 pb-0 md:pb-10"
     >
-      <h1 className=" font-ncs text-[48px] md:text-[90px] text-white ">
+      <h1 className=" font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white ">
         About me
       </h1>
       <div className="w-full flex flex-col h-max">
@@ -29,13 +29,13 @@ export default function AboutSection() {
    
           <h1 className="text-center  font-ncs md:text-start text-[28px] md:text-6xl md:leading-none leading-8 text-greenPt  ">
             BOUDEHANE <br/>
-            <span className="text-white ">Mohamed Adem</span>
+            <span className="text-bgDark dark:text-white ">Mohamed Adem</span>
           </h1>
-          <p className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPt leading-4.5 md:leading-5.5  ">
+          <p className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  ">
             Graffic & UI/UX Designer <br /> Full Stack Devoloper
           </p>
         </div>
-        <hr className="  border-2 border-greyPt rounded w-192 row-start-9 hidden md:block  " />
+        <hr className="  border-2 border-greyPtLight dark:border-greyPt rounded w-192 row-start-9 hidden md:block  " />
 
        
       </div>
@@ -45,14 +45,14 @@ export default function AboutSection() {
 
 
        <div className="   md:row-start-11 relative md:col-start-1 flex flex-col items-start md:col-span-full md:row-span-full mt-6 z-10 gap-5">
-          <img className="md:h-11 h-5     " src={Qots} alt="Qote" />
+          <img className="md:h-11 h-5 dark:invert-0 invert  " src={Qots} alt="Qote" />
 
           <TextFilling
             baseOpacity={0.2}
             enableBlur={false}
             baseRotation={0}
             blurStrength={0}
-            textClassName="font-ncs md:text-lg text-sm text-white "
+            textClassName="font-ncs md:text-lg text-sm text-bgDark dark:text-white "
             wordAnimationEnd = 'bottom bottom-=10%'
           >
             I am Mohamed Adem Boudehane, a computer science student with a
@@ -72,7 +72,7 @@ export default function AboutSection() {
           </TextFilling>
 
           <span className="w-full flex justify-end">
-            <img className="md:h-11 h-5  " src={Qots} alt="Qote" />
+            <img className="md:h-11 h-5 dark:invert-0 invert  " src={Qots} alt="Qote" />
           </span>
         </div>
         </div>

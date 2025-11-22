@@ -13,12 +13,12 @@ export default function ButtonArrow({
 }: ButtonArrowProps) {
   return (
     <div
-      className={`${divStyle} cursor-pointer rounded-[100px] h-max w-max group border-white transition-all ease-in-out duration-300 hover:bg-white hover:boeder-0`}
+      className={`${divStyle} cursor-pointer rounded-[100px] h-max w-max group border-bgDark dark:border-white transition-all ease-in-out duration-300 hover:bg-bgDark hover:dark:bg-white hover:boeder-0`}
       onClick={onClick}
     >
       <img
         src={ButtunArrow}
-        className={`${Arrowtyle} group-hover:invert transition-all ease-in-out duration-300`}
+        className={`${Arrowtyle} group-hover:dark:invert group-hover:invert-0 transition-all dark:invert-0 invert ease-in-out duration-300`}
         alt="Arrow Icon"
       />
     </div>

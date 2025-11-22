@@ -3,16 +3,18 @@ import moon from "../assets/photos/moon.svg";
 import { useState } from "react";
 
 export default function Modetoggle({
-  whatMode,
+  setDark 
 }: {
-  whatMode?: (mode: string) => void;
+  whatMode?: (mode: string) => void,
+  setDark:(a:boolean)=> void
 }) {
   const [isDark, setIsDark] = useState("dark");
 
   function toggle(): void {
     setIsDark(isDark === "light" ? "dark" : "light");
-    if (whatMode) whatMode(isDark);
+    setDark( isDark === "light" ? false : true )
   }
+
 
 const modes = {
   dark: {
@@ -23,7 +25,7 @@ const modes = {
   light: {
     bgColor: "bg-bgDark",
     buttonColor: "bg-white",
-    translateX: "translate-x-0",
+    translateX: "md:-translate-x-[1px] translate-x-[0.6px]",
   },
 }[isDark];
 

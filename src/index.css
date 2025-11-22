@@ -114,8 +114,12 @@
   --color-bgDark: #060606;
   --color-greyPt: #8B8B8B;
   --color-greenPt: #0AA19C;
+  --color-bgLight :#ffffff ;
+  --color-greyPtLight :#555555 ;
 }
 
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Custom Swiper v12 pagination dot colors */
 .swiper-pagination-bullet {

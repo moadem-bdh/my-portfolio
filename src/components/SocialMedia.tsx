@@ -45,23 +45,23 @@ export default function SocialMedia() {
         ))}
       </div>
 
-      <p className=" text-center  md:text-start font-ncs text-base text-white md:text-[28px]  ">Also on social media</p>
+      <p className=" text-center  md:text-start font-ncs text-base text-bgDark dark:text-white md:text-[28px]  ">Also on social media</p>
 
-      <div className=" flex gap-6 md:justify-start justify-center mt-[-20px] md:mt-[-24px] ">
+      <div className=" flex  gap-6 md:justify-start justify-center mt-[-20px] md:mt-[-24px] ">
         <a  target="_blank" href="https://www.instagram.com/moadem_boudehane/">
-          <img src={instagram} className=" md:w-max w-7 " alt="Instagram icon" />
+          <img src={instagram} className=" md:w-max w-7 invert dark:invert-0 " alt="Instagram icon" />
         </a>
         <a href="https://www.linkedin.com/in/mohamed-adem-boudehane-67926233b/" target="_blank">
-          <img src={linkedin} className=" md:w-max w-7 " alt="Linkedin icon" />
+          <img src={linkedin} className="  md:w-max w-7 invert dark:invert-0 " alt="Linkedin icon" />
         </a>
         <a href="https://x.com/moadem_bdh?s=21" target="_blank">
-          <img src={x} className=" md:w-max w-7 " alt="X icon" />
+          <img src={x} className=" md:w-max w-7 invert dark:invert-0" alt="X icon" />
         </a>
 
         
       </div>
       <span className=" md:mt-0 mt-4 w-full flex md:justify-start justify-center ">
-           <a href="/files/Mohamed-Adem-Boudehane-CV.pdf" download><button type="button" className=" px-3 py-2 md:px-4 mt-2 md:py-3 cursor-pointer hover:bg-[#2c2c2c] flex w-max gap-[6px] items-center text-sm md:text-xl border-white border-3 rounded-2xl md:rounded-[20px] font-ncs text-white "><img src={download} className=" md:h-max h-6 " alt="Download icon" /> Download my CV</button></a> 
+           <a href="/files/Mohamed-Adem-Boudehane-CV.pdf" download><button type="button" className=" px-3 py-2 md:px-4 mt-2 md:py-3 cursor-pointer hover:bg-[#b0b0b0] hover:dark:bg-[#2c2c2c] flex w-max gap-[6px] items-center text-sm md:text-xl border-bgDark dark:border-white border-3 rounded-2xl md:rounded-[20px] font-ncs text-bgDark dark:text-white "><img src={download} className=" md:h-max h-6  invert dark:invert-0" alt="Download icon" /> Download my CV</button></a> 
       </span>
       
     </div>

@@ -406,11 +406,11 @@ export default function SkillsSection() {
   const [skill, setSkill] = useState<string>(skills[0].id);
 
   return (
-    <section id="Skills" className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-16 bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
-      <h1 className=" md:text-[90px] text-[48px] font-ncs text-white ">
+    <section id="Skills" className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
+      <h1 className=" md:text-[90px] text-[48px] font-ncs text-bgDark dark:text-white ">
         Skills
       </h1>
-      <div className=" md:border-0.5 md:flex-row flex-wrap border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full ">
+      <div className=" md:border-0.5 md:flex-row flex-wrap border-bgDark dark:border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full ">
         {skills.map((s, index) => (
          s.appear && <Skill
             onClick={() => {
@@ -447,6 +447,7 @@ export default function SkillsSection() {
                     className=" w-full h-max flex justify-center"
                   >
                     <SkillOption
+                      field={skill.skillName}
                       bgColor={sk.bgColor}
                       image={sk.image}
                       title={sk.name}

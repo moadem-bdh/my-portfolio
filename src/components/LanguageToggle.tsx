@@ -11,17 +11,16 @@ export default function LanguageToggle() {
       className=" flex items-center relative  cursor-pointer"
       onClick={setIsOpen}
     >
-      <img src={lang} className=" md:h-max h-9 " alt="Language icon" />
+      <img src={lang} className=" md:h-max h-9 invert dark:invert-0 " alt="Language icon" />
       <img
         src={arrow}
         alt="arrow icon"
         className={` ${
           isOpen ? "rotate-0" : "rotate-180"
-        } transition-all ease-in-out duration-300`}
+        } transition-all invert dark:invert-0 ease-in-out duration-300`}
       />
       {isOpen && (
-        <div className=" flex p-[5px] flex-col justify-between items-center gap-[5px] w-[127px] rounded-[15px] bg-white absolute top-14 ">
-          {" "}
+        <div className=" flex p-[5px] flex-col justify-between items-center gap-[5px] w-[127px] rounded-[15px] bg-bgDark dark:bg-white absolute top-14 ">
           {languages.map((lang) => (
             <LanguageOption lang={lang} />
           ))}

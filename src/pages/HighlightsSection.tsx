@@ -37,8 +37,8 @@ const highlights: {
 
  return(
 
-<section className="w-full  bg-bgDark flex flex-col gap-4 md:gap-18 pt-4 md:pt-14 pb-4 md:pb-10 items-start px-4 md:px-20  "> 
-<p className=" font-ncs text-white text-3xl md:text-6xl">Highlights</p>
+<section className="w-full bg-bgLight  dark:bg-bgDark flex flex-col gap-4 md:gap-18 pt-4 md:pt-14 pb-4 md:pb-10 items-start px-4 md:px-20  "> 
+<p className=" font-ncs text-bgDark dark:text-white text-3xl md:text-6xl">Highlights</p>
 
 
 <div className=" flex md:flex-row flex-col w-full  pt-5 pb-0.5 justify-between gap-3  md:gap-8 xl:gap-10 ">

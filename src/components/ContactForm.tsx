@@ -5,11 +5,11 @@ export default function ContactForm() {
         Send a message
       </h1>
 
-      <form className=" md:w-[780px] w-full bg-[#1B1B1B] md:gap-6 gap-8 flex flex-col py-[28px] md:py-[32px]  px-[24px] md:px-[42px] rounded-[20px] ">
+      <form className=" md:w-[780px] w-full bg-[#d2d2d2] dark:bg-[#1B1B1B] md:gap-6 gap-8 flex flex-col py-[28px] md:py-[32px]  px-[24px] md:px-[42px] rounded-[20px] ">
         <div className=" flex flex-col w-full gap-2">
           <label
             htmlFor="Full_name"
-            className=" font-roboto text-white text-xl "
+            className=" font-roboto text-bgDark dark:text-white text-xl "
           >
             Full name{" "}
             <span className="font-roboto text-xl text-[#5F1313] ">*</span>
@@ -17,7 +17,7 @@ export default function ContactForm() {
           <input
             id="Full_name"
             placeholder="Enter your full name"
-            className=" focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white "
+            className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1  border-bgDark dark:border-white "
             type="text"
           />
         </div>
@@ -26,15 +26,15 @@ export default function ContactForm() {
           <div className=" flex flex-col  w-full md:w-48/100 gap-2">
             <label
               htmlFor="Email"
-              className=" font-roboto text-white text-xl  "
+              className=" font-roboto text-bgDark dark:text-white text-xl  "
             >
-              Email
+              Email{" "}
               <span className="font-roboto text-xl text-[#5F1313] ">*</span>
             </label>
             <input
               id="Email"
               placeholder="contact@gmail.com"
-              className=" focus:outline-0 font-roboto py-2 px-0 text-white text-xl  border-b-1 border-white  "
+              className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl  border-b-1  border-bgDark dark:border-white "
               type="text"
             />
           </div>
@@ -42,7 +42,7 @@ export default function ContactForm() {
           <div className=" flex flex-col  w-full md:w-48/100  gap-2">
             <label
               htmlFor="Phone_number"
-              className=" font-roboto text-white text-xl "
+              className=" font-roboto text-bgDark dark:text-white text-xl "
             >
               Phone number{" "}
               <span className="font-roboto text-xl text-[#5F1313] ">*</span>
@@ -50,21 +50,21 @@ export default function ContactForm() {
             <input
               id="Phone_number"
               placeholder="0555555555"
-              className=" focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white  "
+              className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1  border-bgDark dark:border-white"
               type="text"
             />
           </div>
         </div>
 
         <div className=" flex flex-col w-full gap-1">
-          <label htmlFor="Subject" className=" font-roboto text-white text-xl ">
+          <label htmlFor="Subject" className=" font-roboto text-bgDark dark:text-white text-xl ">
             Subject{" "}
             <span className="font-roboto text-xl text-[#5F1313] ">*</span>
           </label>
           <input
             id="Subject"
             placeholder="Enter the subject"
-            className=" focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white  "
+            className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1  border-bgDark dark:border-white"
             type="text"
           />
         </div>
@@ -72,7 +72,7 @@ export default function ContactForm() {
         <div className=" flex flex-col w-full gap-1">
           <label
             htmlFor="Your_message"
-            className=" font-roboto text-white text-xl "
+            className=" font-roboto text-bgDark dark:text-white text-xl "
           >
             Your message{" "}
             <span className="font-roboto text-xl text-[#5F1313] ">*</span>
@@ -80,18 +80,18 @@ export default function ContactForm() {
           <textarea
             name=""
             placeholder="Write your message"
-            className=" scrollbar-thumb-greyPt scrollbar-track-transparent  scrollbar-thin min-h-18 resize-none md:min-h-32 focus:outline-0 font-roboto py-2 px-0 text-white text-xl border-b-1 border-white  "
+            className=" scrollbar-thumb-greyPt scrollbar-track-transparent  scrollbar-thin min-h-18 resize-none md:min-h-32 focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1 border-bgDark dark:border-white  "
             id="Your_message"
           ></textarea>
         </div>
 
         <div className="mt-6 md:flex-row flex-col gap-5 flex w-full items-center justify-between ">
-          <p className=" font-ncs text-[34px] md:text-[46px] text-white  ">
+          <p className=" font-ncs text-[34px] md:text-[46px] text-bgDark dark:text-white  ">
             Let's connect
           </p>
           <button
             type="button"
-            className="  font-ncs text-[18px] md:text-2xl text-bgDark cursor-pointer hover:bg-[#ffffffe1] md:p-4  p-3  md:pb-3  border-0 focus:outline-0 bg-white rounded-[20px] "
+            className="  font-ncs text-[18px] md:text-2xl dark:text-bgDark text-bgLight cursor-pointer hover:bg-[#000000be] hover:dark:bg-[#ffffffe1] md:p-4  p-3  md:pb-3  border-0 focus:outline-0 bg-bgDark dark:bg-white rounded-[20px] "
           >
             Submit
           </button>
