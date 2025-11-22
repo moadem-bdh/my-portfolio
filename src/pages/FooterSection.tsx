@@ -39,7 +39,7 @@ return (
 
    <a href="#Home"> <li className=" cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">Home</li></a>
     <a href="#About">  <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">About</li></a>
-      <a href="#Skills"> <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPtfont-roboto ">skills</li></a>
+      <a href="#Skills"> <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">skills</li></a>
    <a href="#Experience"> <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">Experience</li></a>
       <a href="#Projects"><li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">Project</li></a>
      <a href="#ContactMe"><li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">Contact me</li></a> 
