@@ -1,4 +1,3 @@
-import CursorAnimation from "../components/CursorAnimation";
 import useToggle from "../costumHooks/useToggle";
 import AboutSection from "./AboutSection";
 import ConatctMeSection from "./ContactMeSection";
