@@ -1,3 +1,4 @@
+import CursorAnimation from "../components/CursorAnimation";
 import useToggle from "../costumHooks/useToggle";
 import AboutSection from "./AboutSection";
 import ConatctMeSection from "./ContactMeSection";
@@ -15,8 +16,7 @@ export default function FullApp() {
 const [isDark , setIsDark ]  = useToggle(true)
 
   return (
-    <div className= {`${ isDark ? "dark": "" } flex flex-col  relative`}>
-
+    <div className= {`${ isDark ? "dark": "" } flex flex-col relative`}>
       <NavbBar setDark={setIsDark} />
       <HeroSection />
       <HighlightSection />

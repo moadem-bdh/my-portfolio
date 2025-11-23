@@ -41,7 +41,7 @@ export default function Menu({   handleParentClick, setMenuAppear}:{ handleParen
         {menu.map((option) => (
             <a onClick={setMenuAppear} href={`#${option.achorLink}`} key={option.name}>
           <div className=" transition-all ease-in-out duration-300 cursor-pointer group hover:pl-6 flex w-full justify-between items-center px-4 md:px-10 ">
-            <h1 className="group-hover:[-webkit-text-stroke-width:0px] text-bgLight dark:text-bgDark  group-hover:text-bgDark   group-hover:dark:text-white font-ncs text-[36px] md:text-[64px] [-webkit-text-stroke-width:2px] md:[-webkit-text-stroke-width:2.5px] [-webkit-text-stroke-color:black] dark:[-webkit-text-stroke-color:white]  ">
+            <h1 className="md:group-hover:[-webkit-text-stroke-width:0px] text-bgDark dark:text-bgLight md:text-bgLight md:dark:text-bgDark  md:group-hover:text-bgDark   md:group-hover:dark:text-white font-ncs text-[36px] md:text-[64px] md:[-webkit-text-stroke-width:2.5px] [-webkit-text-stroke-color:black] dark:[-webkit-text-stroke-color:white]  ">
               {option.name}
             </h1>
             <div
