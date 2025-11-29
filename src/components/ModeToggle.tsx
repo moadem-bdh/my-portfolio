@@ -29,14 +29,14 @@ export default function Modetoggle({
   }[isDark];
 
   return (
-    <div
+    <div onClick={toggle}
       className={`md:w-15  w-[52px] py-[2px] md:py-0.5 border-black border-[0.5px] dark:border-white px-[2px] md:px-[3.2px] justify-between flex rounded-[40px] cursor-pointer ${modes?.bgColor} relative items-center`}
     >
       <img src={sun} className=" md:h-max h-[21px] " alt="Sun icon" />
       <img src={moon} alt="moon icon" />
       <div
         className={`md:w-[26px] w-[22px] h-[22px] md:h-[26px] rounded-3xl absolute ${modes?.buttonColor} ${modes?.translateX} transition-all duration-300 ease-in-out`}
-        onClick={toggle}
+        
       ></div>
     </div>
   );
