@@ -1,28 +1,23 @@
 import { useEffect, useState, useRef } from "react";
-import image from "../assets/photos/picturs_experience_test.png";
+import image from "/assets/picturs_experience_test.png";
 import { useSwiper, useSwiperSlide } from "swiper/react";
 
 export default function Experience({ changeEffect }: { changeEffect: number }) {
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null); //===============> copilot does that
-  const duration: number = 1000 ; //the duration ofthe progress 1s => 100
+  const duration: number = 1000; //the duration ofthe progress 1s => 100
   const swiper = useSwiperSlide();
-  const swiperHandle = useSwiper()
-
-
+  const swiperHandle = useSwiper();
 
   function handlePause() {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    swiperHandle.autoplay.pause()
-
+    swiperHandle.autoplay.pause();
   }
 
   function handleResume() {
     autoProgress(duration);
-    swiperHandle.autoplay.resume()
+    swiperHandle.autoplay.resume();
   }
-
-  
 
   const autoProgress: (value: number) => void = (value) => {
     if (intervalRef.current) {
@@ -39,7 +34,7 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       });
     }, 10);
   };
- 
+
   useEffect(() => {
     setProgress(0);
     autoProgress(duration);
@@ -49,7 +44,7 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       }
     };
   }, [changeEffect]);
-  
+
   return (
     <div
       onMouseEnter={handlePause}
@@ -58,7 +53,9 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       onTouchStart={handlePause}
       className="select-none w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
     >
-      <div className=" grid grid-cols-1 w-full ">   {/* grid grid-cols-4 w-full */}
+      <div className=" grid grid-cols-1 w-full ">
+        {" "}
+        {/* grid grid-cols-4 w-full */}
         <img src={image} alt="" className="" />
       </div>
 
@@ -66,12 +63,14 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
         <div
           className="bg-[#076C69] h-1.5 rounded-full dark:bg-[#076C69]"
           style={{
-            width: `${swiper.isActive ? (progress * 100 / duration): "0"}%`,
+            width: `${swiper.isActive ? (progress * 100) / duration : "0"}%`,
           }}
         ></div>
       </div>
       <div className=" flex flex-col w-full gap-3">
-        <h1 className=" font-ncs text-[34px] md:text-6xl text-bgDark dark:text-white ">CAA training</h1>
+        <h1 className=" font-ncs text-[34px] md:text-6xl text-bgDark dark:text-white ">
+          CAA training
+        </h1>
         <p className=" select-none text-bgDark dark:text-white font-roboto text-sm md:text-xl   ">
           Lorem ipsum dolor sit amet consectetur. Fermentum viverra enim viverra
           hendrerit sollicitudin gravida. Eget ipsum ante cursus aliquet quis in

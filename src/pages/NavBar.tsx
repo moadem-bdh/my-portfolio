@@ -1,12 +1,16 @@
-import logo from "../assets/photos/logoDesktop.svg";
-import menuIcon from "../assets/photos/menu_icon_desktop.svg";
+import logo from "/assets/logoDesktop.svg";
+import menuIcon from "/assets/menu_icon_desktop.svg";
 import LanguageToggle from "../components/LanguageToggle";
 
 import Modetoggle from "../components/ModeToggle";
 import useToggle from "../costumHooks/useToggle";
 import Menu from "../modals/Menu";
 
-export default function NavbBar( {setDark}:{setDark:(a:boolean)=> void} ) {
+export default function NavbBar({
+  setDark,
+}: {
+  setDark: (a: boolean) => void;
+}) {
   const [menuAppear, setMenuAppear] = useToggle(false);
 
   function handleParentClick(e: React.MouseEvent): void {

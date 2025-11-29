@@ -1,4 +1,4 @@
-import ButtunArrow from "../assets/photos/ButtunArrow.svg";
+import ButtunArrow from "/assets/ButtunArrow.svg";
 
 interface ButtonArrowProps {
   divStyle?: string;

@@ -116,6 +116,12 @@
   --color-greenPt: #0AA19C;
   --color-bgLight :#ffffff ;
   --color-greyPtLight :#555555 ;
+
+
+
+
+
+
 }
 
 
@@ -136,3 +142,5 @@
 html {
   scroll-behavior: smooth;
 }
+
+

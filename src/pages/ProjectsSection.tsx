@@ -1,11 +1,16 @@
-import ButtunArrow from "../assets/photos/ButtunArrow.svg";
+import ButtunArrow from "/assets/ButtunArrow.svg";
 import Project from "../components/Project";
 
 export default function ProjectsSection() {
   return (
-    <section id="Projects" className=" w-full px-4 md:px-20 bg-bg dark:bg-bgDark flex flex-col items:center md:items-end pb-8 pt-16 md:pt-22 md:pb-22 gap-14 md:gap-20 ">
+    <section
+      id="Projects"
+      className=" w-full px-4 md:px-20 bg-bg dark:bg-bgDark flex flex-col items:center md:items-end pb-8 pt-16 md:pt-22 md:pb-22 gap-14 md:gap-20 "
+    >
       <span className="w-full flex justify-center items-center ">
-        <h1 className=" font-ncs text-bgDark dark:text-white md:text-[90px] text-[48px] ">Projects</h1>
+        <h1 className=" font-ncs text-bgDark dark:text-white md:text-[90px] text-[48px] ">
+          Projects
+        </h1>
       </span>
 
       <Project />

@@ -1,5 +1,5 @@
-import myImg from "../assets/photos/myPhott.jpg";
-import Qots from "../assets/photos/qhotes.svg";
+import myImg from "/assets/myPhott.jpg";
+import Qots from "/assets/qhotes.svg";
 import TextFilling from "../components/TextFilling";
 
 export default function AboutSection() {
@@ -12,40 +12,33 @@ export default function AboutSection() {
         About me
       </h1>
       <div className="w-full flex flex-col h-max">
+        <div className=" w-full md:gap-0 flex flex-col gap-6 min-h-80 md:grid md:grid-cols-20 md:grid-rows-10">
+          <div className=" md:col-start-15 md:col-end-21 md:row-start-1 md:row-end-11 flex items-center justify-center">
+            <img
+              src={myImg}
+              alt="My Photo"
+              className="rounded-full md:h-70 h-38 md:outline-4 outline-2 outline-[#838383] outline-offset-4  md:outline-offset-8 "
+            />
+          </div>
 
+          <div className=" gap-2 md:col-start-1 md:col-end-15 md:row-start-3 md:row-end-9 flex flex-col md:items-start items-center justify-center">
+            <h1 className="text-center  font-ncs md:text-start text-[28px] md:text-6xl md:leading-none leading-8 text-greenPt  ">
+              BOUDEHANE <br />
+              <span className="text-bgDark dark:text-white ">Mohamed Adem</span>
+            </h1>
+            <p className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  ">
+              Graffic & UI/UX Designer <br /> Full Stack Devoloper
+            </p>
+          </div>
+          <hr className="  border-2 border-greyPtLight dark:border-greyPt rounded w-192 row-start-9 hidden md:block  " />
+        </div>
 
-      
-      <div className=" w-full md:gap-0 flex flex-col gap-6 min-h-80 md:grid md:grid-cols-20 md:grid-rows-10">
-        <div className=" md:col-start-15 md:col-end-21 md:row-start-1 md:row-end-11 flex items-center justify-center">
+        <div className="   md:row-start-11 relative md:col-start-1 flex flex-col items-start md:col-span-full md:row-span-full mt-6 z-10 gap-5">
           <img
-            src={myImg}
-            alt="My Photo"
-            className="rounded-full md:h-70 h-38 md:outline-4 outline-2 outline-[#838383] outline-offset-4  md:outline-offset-8 "
+            className="md:h-11 h-5 dark:invert-0 invert  "
+            src={Qots}
+            alt="Qote"
           />
-        </div>
-
-        <div className=" gap-2 md:col-start-1 md:col-end-15 md:row-start-3 md:row-end-9 flex flex-col md:items-start items-center justify-center">
-
-   
-          <h1 className="text-center  font-ncs md:text-start text-[28px] md:text-6xl md:leading-none leading-8 text-greenPt  ">
-            BOUDEHANE <br/>
-            <span className="text-bgDark dark:text-white ">Mohamed Adem</span>
-          </h1>
-          <p className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  ">
-            Graffic & UI/UX Designer <br /> Full Stack Devoloper
-          </p>
-        </div>
-        <hr className="  border-2 border-greyPtLight dark:border-greyPt rounded w-192 row-start-9 hidden md:block  " />
-
-       
-      </div>
-
-
-
-
-
-       <div className="   md:row-start-11 relative md:col-start-1 flex flex-col items-start md:col-span-full md:row-span-full mt-6 z-10 gap-5">
-          <img className="md:h-11 h-5 dark:invert-0 invert  " src={Qots} alt="Qote" />
 
           <TextFilling
             baseOpacity={0.2}
@@ -53,7 +46,7 @@ export default function AboutSection() {
             baseRotation={0}
             blurStrength={0}
             textClassName="font-ncs md:text-lg text-sm text-bgDark dark:text-white "
-            wordAnimationEnd = 'bottom bottom-=10%'
+            wordAnimationEnd="bottom bottom-=15%"
           >
             I am Mohamed Adem Boudehane, a computer science student with a
             strong passion for technology and creativity. I enjoy working on web
@@ -72,10 +65,14 @@ export default function AboutSection() {
           </TextFilling>
 
           <span className="w-full flex justify-end">
-            <img className="md:h-11 h-5 dark:invert-0 invert  " src={Qots} alt="Qote" />
+            <img
+              className="md:h-11 h-5 dark:invert-0 invert  "
+              src={Qots}
+              alt="Qote"
+            />
           </span>
         </div>
-        </div>
+      </div>
     </section>
   );
 }

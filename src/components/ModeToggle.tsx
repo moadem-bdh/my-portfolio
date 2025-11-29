@@ -1,34 +1,32 @@
-import sun from "../assets/photos/sun.svg";
-import moon from "../assets/photos/moon.svg";
+import sun from "/assets/sun.svg";
+import moon from "/assets/moon.svg";
 import { useState } from "react";
 
 export default function Modetoggle({
-  setDark 
+  setDark,
 }: {
-  whatMode?: (mode: string) => void,
-  setDark:(a:boolean)=> void
+  whatMode?: (mode: string) => void;
+  setDark: (a: boolean) => void;
 }) {
   const [isDark, setIsDark] = useState("dark");
 
   function toggle(): void {
     setIsDark(isDark === "light" ? "dark" : "light");
-    setDark( isDark === "light" ? false : true )
+    setDark(isDark === "light" ? false : true);
   }
 
-
-const modes = {
-  dark: {
-    bgColor: "bg-white",
-    buttonColor: "bg-bgDark",
-    translateX: "translate-x-[25px] md:translate-x-[27px]",
-  },
-  light: {
-    bgColor: "bg-bgDark",
-    buttonColor: "bg-white",
-    translateX: "md:-translate-x-[1px] translate-x-[0.6px]",
-  },
-}[isDark];
-
+  const modes = {
+    dark: {
+      bgColor: "bg-white",
+      buttonColor: "bg-bgDark",
+      translateX: "translate-x-[25px] md:translate-x-[27px]",
+    },
+    light: {
+      bgColor: "bg-bgDark",
+      buttonColor: "bg-white",
+      translateX: "md:-translate-x-[1px] translate-x-[0.6px]",
+    },
+  }[isDark];
 
   return (
     <div

@@ -1,12 +1,12 @@
-import x from "../assets/photos/twitter.svg";
-import linkedin from "../assets/photos/linkedin.svg";
-import instagram from "../assets/photos/instagram.svg";
-import letter from "../assets/photos/letter.svg";
+import x from "/assets/twitter.svg";
+import linkedin from "/assets/linkedin.svg";
+import instagram from "/assets/instagram.svg";
+import letter from "/assets/letter.svg";
 import OneSocialMedia from "./OneScialMedia";
-import phone from "../assets/photos/phone.svg";
-import location from "../assets/photos/location.svg";
-import github from "../assets/photos/ghithub.svg";
-import download from "../assets/photos/download.svg";
+import phone from "/assets/phone.svg";
+import location from "/assets/location.svg";
+import github from "/assets/ghithub.svg";
+import download from "/assets/download.svg";
 
 export default function SocialMedia() {
   const socialMedia = [
@@ -45,25 +45,51 @@ export default function SocialMedia() {
         ))}
       </div>
 
-      <p className=" text-center  md:text-start font-ncs text-base text-bgDark dark:text-white md:text-[28px]  ">Also on social media</p>
+      <p className=" text-center  md:text-start font-ncs text-base text-bgDark dark:text-white md:text-[28px]  ">
+        Also on social media
+      </p>
 
       <div className=" flex  gap-6 md:justify-start justify-center mt-[-20px] md:mt-[-24px] ">
-        <a  target="_blank" href="https://www.instagram.com/moadem_boudehane/">
-          <img src={instagram} className=" md:w-max w-7 invert dark:invert-0 " alt="Instagram icon" />
+        <a target="_blank" href="https://www.instagram.com/moadem_boudehane/">
+          <img
+            src={instagram}
+            className=" md:w-max w-7 invert dark:invert-0 "
+            alt="Instagram icon"
+          />
         </a>
-        <a href="https://www.linkedin.com/in/mohamed-adem-boudehane-67926233b/" target="_blank">
-          <img src={linkedin} className="  md:w-max w-7 invert dark:invert-0 " alt="Linkedin icon" />
+        <a
+          href="https://www.linkedin.com/in/mohamed-adem-boudehane-67926233b/"
+          target="_blank"
+        >
+          <img
+            src={linkedin}
+            className="  md:w-max w-7 invert dark:invert-0 "
+            alt="Linkedin icon"
+          />
         </a>
         <a href="https://x.com/moadem_bdh?s=21" target="_blank">
-          <img src={x} className=" md:w-max w-7 invert dark:invert-0" alt="X icon" />
+          <img
+            src={x}
+            className=" md:w-max w-7 invert dark:invert-0"
+            alt="X icon"
+          />
         </a>
-
-        
       </div>
       <span className=" md:mt-0 mt-4 w-full flex md:justify-start justify-center ">
-           <a href="/files/Mohamed-Adem-Boudehane-CV.pdf" download><button type="button" className=" px-3 py-2 md:px-4 mt-2 md:py-3 cursor-pointer hover:bg-[#b0b0b0] hover:dark:bg-[#2c2c2c] flex w-max gap-[6px] items-center text-sm md:text-xl border-bgDark dark:border-white border-3 rounded-2xl md:rounded-[20px] font-ncs text-bgDark dark:text-white "><img src={download} className=" md:h-max h-6  invert dark:invert-0" alt="Download icon" /> Download my CV</button></a> 
+        <a href="/files/Mohamed-Adem-Boudehane-CV.pdf" download>
+          <button
+            type="button"
+            className=" px-3 py-2 md:px-4 mt-2 md:py-3 cursor-pointer hover:bg-[#b0b0b0] hover:dark:bg-[#2c2c2c] flex w-max gap-[6px] items-center text-sm md:text-xl border-bgDark dark:border-white border-3 rounded-2xl md:rounded-[20px] font-ncs text-bgDark dark:text-white "
+          >
+            <img
+              src={download}
+              className=" md:h-max h-6  invert dark:invert-0"
+              alt="Download icon"
+            />{" "}
+            Download my CV
+          </button>
+        </a>
       </span>
-      
     </div>
   );
 }

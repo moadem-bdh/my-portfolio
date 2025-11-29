@@ -1,32 +1,32 @@
 import Skill from "../components/Skill";
 import SkillOption from "../components/SkillOption";
-import Photoshop from "../assets/photos/Photoshop.svg";
-import InDesign from "../assets/photos/id.svg";
-import Lightroom from "../assets/photos/lr.svg";
-import Illustrator from "../assets/photos/ai.svg";
-import XD from "../assets/photos/xd.svg";
-import Figma from "../assets/photos/figma.svg";
-import Blender from "../assets/photos/blender.svg";
-import react from "../assets/photos/react.svg";
-import mongoDB from "../assets/photos/mongoDB.svg";
-import nodeJs from "../assets/photos/nodeJs.svg";
-import mySql from "../assets/photos/mySql.svg";
-import nextJs from "../assets/photos/nextJs.svg";
-import php from "../assets/photos/php.svg";
-import js from "../assets/photos/js.svg";
-import c from "../assets/photos/C.svg";
-import python from "../assets/photos/python.svg";
-import ts from "../assets/photos/ts.svg";
-import ae from "../assets/photos/ae.svg";
-import pr from "../assets/photos/pr.svg";
-import capcut from "../assets/photos/capcut.svg";
-import creativeThinking from "../assets/photos/creativeThinking.svg";
-import DecisionMaking from "../assets/photos/DecisionMaking.svg";
-import ladership from "../assets/photos/ladership.svg";
-import networking from "../assets/photos/networking.svg";
-import problemSolving from "../assets/photos/problemSolving.svg";
-import teamWork from "../assets/photos/teamWork.svg";
-import timePlaning from "../assets/photos/timePlaning.svg";
+import Photoshop from "/assets/Photoshop.svg";
+import InDesign from "/assets/id.svg";
+import Lightroom from "/assets/lr.svg";
+import Illustrator from "/assets/ai.svg";
+import XD from "/assets/xd.svg";
+import Figma from "/assets/figma.svg";
+import Blender from "/assets/blender.svg";
+import react from "/assets/react.svg";
+import mongoDB from "/assets/mongoDB.svg";
+import nodeJs from "/assets/nodeJs.svg";
+import mySql from "/assets/mySql.svg";
+import nextJs from "/assets/nextJs.svg";
+import php from "/assets/php.svg";
+import js from "/assets/js.svg";
+import c from "/assets/C.svg";
+import python from "/assets/python.svg";
+import ts from "/assets/ts.svg";
+import ae from "/assets/ae.svg";
+import pr from "/assets/pr.svg";
+import capcut from "/assets/capcut.svg";
+import creativeThinking from "/assets/creativeThinking.svg";
+import DecisionMaking from "/assets/DecisionMaking.svg";
+import ladership from "/assets/ladership.svg";
+import networking from "/assets/networking.svg";
+import problemSolving from "/assets/problemSolving.svg";
+import teamWork from "/assets/teamWork.svg";
+import timePlaning from "/assets/timePlaning.svg";
 import { useState } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -36,13 +36,13 @@ export default function SkillsSection() {
   type skillsType = {
     title: string;
     id: string;
-    appear : boolean
+    appear: boolean;
   };
   const skills: skillsType[] = [
-    { title: "Design", id: "design" , appear :true  },
-    { title: "Web devolopment", id: "dev" , appear :true },
-    { title: "Multimedia", id: "multimedia"  , appear :true},
-    { title: "Soft skills", id: "softSkills" , appear :true },
+    { title: "Design", id: "design", appear: true },
+    { title: "Web devolopment", id: "dev", appear: true },
+    { title: "Multimedia", id: "multimedia", appear: true },
+    { title: "Soft skills", id: "softSkills", appear: true },
   ];
 
   type SkillDetailsType = {
@@ -62,10 +62,7 @@ export default function SkillsSection() {
     skillsDetails: SkillDetailsType[];
   };
 
-
-
-
-  //NOTE !! WHEN YOU WANT TO REMOVE ONE OF THE SKILLS MAKE IT FALSE AND MAKE THAT SKILL AT THE END OF THE ARRAY SO IT WORKS PWRFECTLY 
+  //NOTE !! WHEN YOU WANT TO REMOVE ONE OF THE SKILLS MAKE IT FALSE AND MAKE THAT SKILL AT THE END OF THE ARRAY SO IT WORKS PWRFECTLY
 
   const MySkills: MyskillsType[] = [
     {
@@ -394,38 +391,41 @@ export default function SkillsSection() {
     },
   ];
 
-
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
-
-  const changeTheSlide : (index :number)=> void = (index) =>{
-  swiper?.slideTo(index)
-
-  }
+  const changeTheSlide: (index: number) => void = (index) => {
+    swiper?.slideTo(index);
+  };
 
   const [skill, setSkill] = useState<string>(skills[0].id);
 
   return (
-    <section id="Skills" className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center ">
+    <section
+      id="Skills"
+      className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center "
+    >
       <h1 className=" md:text-[90px] text-[48px] font-ncs text-bgDark dark:text-white ">
         Skills
       </h1>
-      <div className=" md:border-0.5 md:flex-row flex-wrap border-bgDark dark:border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full ">
-        {skills.map((s, index) => (
-         s.appear && <Skill
-            onClick={() => {
-              changeTheSlide(index);
-              setSkill(s.id);
-            }}
-            key={s.id}
-            skill={s}
-            currentSkill={skill}
-          />
-        ))}
+      <div className=" md:flex-row flex-wrap border-bgDark dark:border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full ">
+        {skills.map(
+          (s, index) =>
+            s.appear && (
+              <Skill
+                onClick={() => {
+                  changeTheSlide(index);
+                  setSkill(s.id);
+                }}
+                key={s.id}
+                skill={s}
+                currentSkill={skill}
+              />
+            )
+        )}
       </div>
 
       <Swiper
-      onSwiper={(swiperInstance) => setSwiper(swiperInstance)}
+        onSwiper={(swiperInstance) => setSwiper(swiperInstance)}
         className="w-full "
         spaceBetween={0}
         loop
@@ -434,33 +434,36 @@ export default function SkillsSection() {
           const activeSlideIndex = swiper.realIndex;
           setSkill(MySkills[activeSlideIndex].skillName);
         }}
-        
       >
-        {MySkills.map((skill) => skill.appear && (
-          <SwiperSlide className="w-full" key={skill.skillName}>
-            <div className=" w-full min-h-max pt-10 grid gap-2 md:gap-x-6 gap-y-8 md:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(112px,1fr))]   md:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
-              {skill.skillsDetails.map((sk) => {
-                return (
-                  sk.appear &&
-                  <div
-                    key={sk.name}
-                    className=" w-full h-max flex justify-center"
-                  >
-                    <SkillOption
-                      field={skill.skillName}
-                      bgColor={sk.bgColor}
-                      image={sk.image}
-                      title={sk.name}
-                      percentage={sk.percentage}
-                      outlineColor={sk.outlineColor}
-                      textColor={sk.numberColor}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </SwiperSlide>
-        ))}
+        {MySkills.map(
+          (skill) =>
+            skill.appear && (
+              <SwiperSlide className="w-full" key={skill.skillName}>
+                <div className=" w-full min-h-max pt-10 grid gap-2 md:gap-x-6 gap-y-8 md:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(112px,1fr))]   md:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+                  {skill.skillsDetails.map((sk) => {
+                    return (
+                      sk.appear && (
+                        <div
+                          key={sk.name}
+                          className=" w-full h-max flex justify-center"
+                        >
+                          <SkillOption
+                            field={skill.skillName}
+                            bgColor={sk.bgColor}
+                            image={sk.image}
+                            title={sk.name}
+                            percentage={sk.percentage}
+                            outlineColor={sk.outlineColor}
+                            textColor={sk.numberColor}
+                          />
+                        </div>
+                      )
+                    );
+                  })}
+                </div>
+              </SwiperSlide>
+            )
+        )}
       </Swiper>
     </section>
   );

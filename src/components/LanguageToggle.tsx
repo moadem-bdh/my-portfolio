@@ -1,5 +1,5 @@
-import lang from "../assets/photos/language.svg";
-import arrow from "../assets/photos/arrow.svg";
+import lang from "/assets/language.svg";
+import arrow from "/assets/arrow.svg";
 import LanguageOption from "./LanguagrOption";
 import useToggle from "../costumHooks/useToggle";
 export default function LanguageToggle() {
@@ -11,7 +11,11 @@ export default function LanguageToggle() {
       className=" flex items-center relative  cursor-pointer"
       onClick={setIsOpen}
     >
-      <img src={lang} className=" md:h-max h-9 invert dark:invert-0 " alt="Language icon" />
+      <img
+        src={lang}
+        className=" md:h-max h-9 invert dark:invert-0 "
+        alt="Language icon"
+      />
       <img
         src={arrow}
         alt="arrow icon"
