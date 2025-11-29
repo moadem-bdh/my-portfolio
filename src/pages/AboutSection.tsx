@@ -1,6 +1,7 @@
 import myImg from "/assets/myPhott.jpg";
 import Qots from "/assets/qhotes.svg";
 import TextFilling from "../components/TextFilling";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
@@ -8,27 +9,102 @@ export default function AboutSection() {
       id="About"
       className=" md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgLight dark:bg-bgDark md:gap-12 gap-12 flex flex-col items-center justify-between pt-20 pb-0 md:pb-10"
     >
-      <h1 className=" font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white ">
+      <motion.h1
+              initial={{
+              opacity: 0,
+          
+              translateY:"50px"
+            }}
+            whileInView={{
+  
+             translateY:"0px",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -100px 0px" }}
+            style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
+      
+      
+      className=" font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white ">
         About me
-      </h1>
+      </motion.h1>
       <div className="w-full flex flex-col h-max">
         <div className=" w-full md:gap-0 flex flex-col gap-6 min-h-80 md:grid md:grid-cols-20 md:grid-rows-10">
-          <div className=" md:col-start-15 md:col-end-21 md:row-start-1 md:row-end-11 flex items-center justify-center">
+          <motion.div
+            initial={{
+              x: 150,
+              opacity: 0,
+              rotate: "3deg",
+            }}
+            whileInView={{
+              x: 0,
+              rotate: "0deg",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -150px 0px" }}
+            style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
+            className=" md:col-start-15 md:col-end-21 md:row-start-1 md:row-end-11 flex items-center justify-center"
+          >
             <img
               src={myImg}
               alt="My Photo"
               className="rounded-full md:h-70 h-38 md:outline-4 outline-2 outline-[#838383] outline-offset-4  md:outline-offset-8 "
             />
-          </div>
+          </motion.div>
 
           <div className=" gap-2 md:col-start-1 md:col-end-15 md:row-start-3 md:row-end-9 flex flex-col md:items-start items-center justify-center">
-            <h1 className="text-center  font-ncs md:text-start text-[28px] md:text-6xl md:leading-none leading-8 text-greenPt  ">
+            <motion.h1
+              initial={{
+                x: -150,
+                opacity: 0,
+                rotate: "-3deg",
+              }}
+              whileInView={{
+                x: 0,
+                rotate: "0deg",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false, margin: "400px 0px -150px 0px" }}
+              style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
+              className="text-center  font-ncs md:text-start text-[28px] md:text-6xl md:leading-none leading-8 text-greenPt  "
+            >
               BOUDEHANE <br />
               <span className="text-bgDark dark:text-white ">Mohamed Adem</span>
-            </h1>
-            <p className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  ">
+            </motion.h1>
+            <motion.p
+            
+            initial={{
+                x: 150,
+                opacity: 0,
+                rotate: "3deg",
+              }}
+              whileInView={{
+                x: 0,
+                rotate: "0deg",
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              viewport={{ once: false, margin: "400px 0px -70px 0px" }}
+              style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
+            
+            
+            className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  ">
               Graffic & UI/UX Designer <br /> Full Stack Devoloper
-            </p>
+            </motion.p>
           </div>
           <hr className="  border-2 border-greyPtLight dark:border-greyPt rounded w-192 row-start-9 hidden md:block  " />
         </div>

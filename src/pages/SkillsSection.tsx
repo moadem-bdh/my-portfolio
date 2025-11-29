@@ -31,7 +31,7 @@ import { useState } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-
+import { motion } from "framer-motion";
 export default function SkillsSection() {
   type skillsType = {
     title: string;
@@ -404,9 +404,28 @@ export default function SkillsSection() {
       id="Skills"
       className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center "
     >
-      <h1 className=" md:text-[90px] text-[48px] font-ncs text-bgDark dark:text-white ">
+      <motion.h1
+              initial={{
+              opacity: 0,
+          
+              translateY:"50px"
+            }}
+            whileInView={{
+  
+             translateY:"0px",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -100px 0px" }}
+            style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
+      
+      
+      className=" font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white ">
         Skills
-      </h1>
+      </motion.h1>
       <div className=" md:flex-row flex-wrap border-bgDark dark:border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full ">
         {skills.map(
           (s, index) =>
