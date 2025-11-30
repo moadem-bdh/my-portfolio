@@ -25,7 +25,11 @@ export default function ExperienceSection() {
         >
           Experience
         </ScrollFloat>
+ 
+
+
       </span>
+       
       <ExperienceSwiper setSwiperChanged={setSwiperChanged}>
         {/* =============================== */}
 

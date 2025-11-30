@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef,type ReactNode,type RefObject } from 'react';
+import React, { useEffect, useMemo, useRef, type ReactNode, type RefObject } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -42,28 +42,26 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     const el = containerRef.current;
     if (!el) return;
 
-    const scroller = scrollContainerRef && scrollContainerRef.current ? scrollContainerRef.current : window;
-
+    const scroller = scrollContainerRef?.current || window;
     const charElements = el.querySelectorAll('.inline-block');
 
-    gsap.fromTo(
+    const anim = gsap.fromTo(
       charElements,
       {
         willChange: 'opacity, transform',
         opacity: 0,
         yPercent: 120,
-        scaleY: 2.3,
-        scaleX: 0.7,
-        transformOrigin: '50% 0%'
+        transformOrigin: '50% 0%',
       },
       {
         duration: animationDuration,
-        ease: ease,
+        ease,
         opacity: 1,
         yPercent: 0,
-        scaleY: 1,
-        scaleX: 1,
-        stagger: stagger,
+        stagger,
+        // ⭐ THIS LINE FIXES THE TEXT SIZE PROBLEM ON MOBILE
+        clearProps: 'transform',
+
         scrollTrigger: {
           trigger: el,
           scroller,
@@ -73,11 +71,18 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         }
       }
     );
+
+    return () => {
+      anim.scrollTrigger?.kill();
+      anim.kill();
+    };
   }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger]);
 
   return (
     <h2 ref={containerRef} className={`my-5 overflow-hidden ${containerClassName}`}>
-      <span className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}>{splitText}</span>
+      <span className={`inline-block leading-[1.5] ${textClassName}`}>
+        {splitText}
+      </span>
     </h2>
   );
 };
