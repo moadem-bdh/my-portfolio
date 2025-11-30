@@ -15,7 +15,7 @@ export default function ConatctMeSection() {
           scrollStart="center bottom+=50%"
           scrollEnd="bottom bottom-=55%"
           stagger={0.03}
-          textClassName="font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white"
+          textClassName="font-ncs text-[46px] md:text-[90px] text-bgDark dark:text-white"
         >
           Let's work together
         </ScrollFloat>
