@@ -14,7 +14,7 @@ export default function ProjectsSection() {
           animationDuration={1}
           ease="back.inOut(2)"
           scrollStart="center bottom+=50%"
-          scrollEnd="bottom bottom-=40%"
+          scrollEnd="bottom bottom-=55%"
           stagger={0.03}
           textClassName="font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white"
         >
