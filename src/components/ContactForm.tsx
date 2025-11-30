@@ -1,6 +1,28 @@
+import {motion } from "framer-motion" ;
+
+
+
+
+
 export default function ContactForm() {
   return (
-    <div className=" flex md:flex-row flex-col  gap-4 items-center md:w-max md:max-w-max w-full max-w-110">
+    <motion.div
+    initial={{
+              x: 150,
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -150px 0px" }}
+    
+    
+    className=" flex md:flex-row flex-col  gap-4 items-center md:w-max md:max-w-max w-full max-w-110">
       <h1 className="font-ncs text-[#076C69] text-[32px] md:text-5xl md:[writing-mode:vertical-lr] rotate-0 md:rotate-180 ">
         Send a message
       </h1>
@@ -97,6 +119,6 @@ export default function ContactForm() {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 }

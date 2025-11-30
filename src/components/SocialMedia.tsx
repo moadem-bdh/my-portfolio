@@ -7,6 +7,7 @@ import phone from "/assets/phone.svg";
 import location from "/assets/location.svg";
 import github from "/assets/ghithub.svg";
 import download from "/assets/download.svg";
+import {motion} from "framer-motion" ;
 
 export default function SocialMedia() {
   const socialMedia = [
@@ -33,7 +34,25 @@ export default function SocialMedia() {
   ];
 
   return (
-    <div className="  flex flex-col w-full gap-8">
+    <motion.div
+           initial={{
+              x: -150,
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -150px 0px" }}
+
+    
+    
+    
+    className="  flex flex-col w-full gap-8">
       <div className=" gap-4 md:gap-5 flex flex-col ">
         {socialMedia.map((s) => (
           <OneSocialMedia
@@ -90,6 +109,6 @@ export default function SocialMedia() {
           </button>
         </a>
       </span>
-    </div>
+    </motion.div>
   );
 }

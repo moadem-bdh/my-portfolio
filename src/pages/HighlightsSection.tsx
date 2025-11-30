@@ -2,7 +2,7 @@
 import { useMediaQuery } from "react-responsive";
 import Highlight from "../components/Highlight"
 import HighlightPhone from "../components/HighlightPhone";
-
+import {motion} from "framer-motion"
 
 export default function HighlightSection (){
 
@@ -38,15 +38,46 @@ const highlights: {
  return(
 
 <section className="w-full bg-bgLight  dark:bg-bgDark flex flex-col gap-4 md:gap-18 pt-4 md:pt-14 pb-4 md:pb-10 items-start px-4 md:px-20  "> 
-<p className=" font-ncs text-bgDark dark:text-white text-3xl md:text-6xl">Highlights</p>
+<motion.p
+
+    initial={{
+              x: -150,
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -150px 0px" }}
+className=" font-ncs text-bgDark dark:text-white text-3xl md:text-6xl">Highlights</motion.p>
 
 
-<div className=" flex md:flex-row flex-col w-full  pt-5 pb-0.5 justify-between gap-3  md:gap-8 xl:gap-10 ">
+<motion.div
+ initial={{
+          opacity: 0,
+          translateY: "50px",
+        }}
+        whileInView={{
+          translateY: "0px",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+        viewport={{ once: false, margin: "400px 0px -100px 0px" }}
+        style={{ transformOrigin: "50% 200px" }}
+
+className=" flex md:flex-row flex-col w-full  pt-5 pb-0.5 justify-between gap-3  md:gap-8 xl:gap-10 ">
 {
     highlights.map((h)=> desktop ? <Highlight key={h.number} number={h.number} title={h.title} description={h.description}/> :< HighlightPhone key={h.number} number={h.number} title={h.title} description={h.description} /> )
 }
 
-</div>
+</motion.div>
 
 </section>
 

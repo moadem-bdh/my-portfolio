@@ -12,12 +12,32 @@ export default function NavbBar({
   setDark: (a: boolean) => void;
 }) {
   const [menuAppear, setMenuAppear] = useToggle(false);
+ const [beforeAppear , setBeforeAppear]=useToggle(false)
+
+  function handleMenuAppear(){
+setBeforeAppear();
+if(beforeAppear){
+
+  setTimeout(() => {
+  setMenuAppear();
+}, 1000); 
+}else
+{
+   setMenuAppear();
+}
+
+
+
+
+  }
+
 
   function handleParentClick(e: React.MouseEvent): void {
     if (e.target === e.currentTarget) {
-      setMenuAppear();
+      handleMenuAppear();
     }
   }
+
 
   return (
     <>
@@ -33,7 +53,7 @@ export default function NavbBar({
             <LanguageToggle />
           </div>
           <div
-            onClick={setMenuAppear}
+            onClick={handleMenuAppear}
             className="flex gap-4 items-center relative group"
           >
             <p className=" font-ncs opacity-0 z-0 -translate-x-10 w-30 text-bgDark dark:text-white text-3xl absolute group-hover:opacity-100 group-hover:-translate-x-30 transition-all ease-linear ">
@@ -52,7 +72,8 @@ export default function NavbBar({
       {menuAppear && (
         <Menu
           handleParentClick={handleParentClick}
-          setMenuAppear={setMenuAppear}
+          handleMenuAppear={handleMenuAppear}
+          beforeAppear ={beforeAppear}
         />
       )}
     </>

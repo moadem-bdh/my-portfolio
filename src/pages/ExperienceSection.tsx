@@ -4,8 +4,7 @@ import { SwiperSlide } from "swiper/react";
 import ButtunArrow from "/assets/ButtunArrow.svg";
 import { useState } from "react";
 import { motion } from "framer-motion";
-
-
+import ScrollFloat from "../components/scrollFloat";
 
 export default function ExperienceSection() {
   const [swiperChanged, setSwiperChanged] = useState<number>(0);
@@ -16,31 +15,16 @@ export default function ExperienceSection() {
       className="min-h-150 bg-bgL4 dark:bg-bgDark flex flex-col items-center md:pt-20 md:items-end gap-20 px-4 md:px-20"
     >
       <span className="w-full  flex justify-center">
-      <motion.h1
-              initial={{
-              opacity: 0,
-          
-              translateY:"50px"
-            }}
-            whileInView={{
-  
-             translateY:"0px",
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-            }}
-            viewport={{ once: false, margin: "400px 0px -100px 0px" }}
-            style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
-      
-      
-       className=" font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white ">
-        Experience
-      </motion.h1>
-
-
-
+        <ScrollFloat
+          animationDuration={1}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+          textClassName="font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white"
+        >
+          Experience
+        </ScrollFloat>
       </span>
       <ExperienceSwiper setSwiperChanged={setSwiperChanged}>
         {/* =============================== */}
@@ -59,7 +43,24 @@ export default function ExperienceSection() {
 
         {/* =============================== */}
       </ExperienceSwiper>
-      <span className=" group flex gap-3 md:gap-4 items-center justify-center mt-[-50px]  ">
+      <motion.span
+        initial={{
+          x: 150,
+          opacity: 0,
+        }}
+        whileInView={{
+          x: 0,
+
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+        }}
+        viewport={{ once: false, margin: "400px 0px -70px 0px" }}
+        style={{ transformOrigin: "50% 100px" }}
+        className=" group flex gap-3 md:gap-4 items-center justify-center mt-[-50px]  "
+      >
         <p className="  cursor-pointer font-ncs text-[18px] md:text-[30px] text-bgDark dark:text-white ">
           Visit all experiences
         </p>
@@ -73,7 +74,7 @@ export default function ExperienceSection() {
             alt="Arrow Icon"
           />
         </div>
-      </span>
+      </motion.span>
     </section>
   );
 }

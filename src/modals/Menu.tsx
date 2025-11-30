@@ -1,12 +1,17 @@
 import buttonArrow from "/assets/ButtunArrow.svg";
 import MenuArrow from "/assets/MenuArrow.svg";
 import close from "/assets/close.svg";
+import { useMediaQuery } from "react-responsive";
+import { motion } from "framer-motion";
+
 export default function Menu({
   handleParentClick,
-  setMenuAppear,
+  handleMenuAppear,
+  beforeAppear,
 }: {
   handleParentClick: (e: React.MouseEvent) => void;
-  setMenuAppear: () => void;
+  handleMenuAppear: () => void;
+  beforeAppear: boolean;
 }) {
   type menuType = {
     name: string;
@@ -39,16 +44,33 @@ export default function Menu({
     },
   ];
 
+  const desktop = useMediaQuery({ query: "(min-width: 768px)" });
   return (
     <menu
       onClick={(e) => handleParentClick(e)}
-      className="  fixed h-full inset-0 z-20 bg-[#060606db] flex justify-end "
+      className={`fixed h-full inset-0 z-20 ${
+        beforeAppear ? "bg-[#060606db]" : ""
+      } transition-colors duration-1000 ease-linear flex justify-end`}
     >
-      <div className="md:w-[950px] gap-1 md:gap-0 w-full scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 md:border-l-4 py-6  flex flex-col h-[470px] md:h-full overflow-y-auto border-[#076C69]">
+      <motion.div
+        initial={{
+          x: beforeAppear ? (desktop ? 1000 : 0) : desktop ? 0 : 1000,
+          y: beforeAppear ? (desktop ? 0 : -600) : desktop ? 0 : 0,
+        }}
+        animate={{
+          x: beforeAppear ? (desktop ? 0 : 0) : desktop ? 1000 : 0,
+          y: beforeAppear ? (desktop ? 0 : 0) : desktop ? 0 : -600,
+        }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+        className="md:w-[950px] gap-1 md:gap-0 w-full scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 md:border-l-4 py-6  flex flex-col h-[470px] md:h-full overflow-y-auto border-[#076C69]"
+      >
         <div className=" w-full flex  mb-2  md:mb-8 px-4 md:px-10  md:justify-start justify-end">
           <button
             type="button"
-            onClick={setMenuAppear}
+            onClick={handleMenuAppear}
             className="p-2.5 w-max md:border-bgDark md:dark:border-white md:rounded-[100px] md:border-3 group cursor-pointer md:hover:bg-bgDark md:dark:hover:bg-white transition-all ease-in-out duration-200"
           >
             <img
@@ -65,7 +87,7 @@ export default function Menu({
         </div>
         {menu.map((option) => (
           <a
-            onClick={setMenuAppear}
+            onClick={handleMenuAppear}
             href={`#${option.achorLink}`}
             key={option.name}
           >
@@ -85,7 +107,7 @@ export default function Menu({
             </div>
           </a>
         ))}
-      </div>
+      </motion.div>
     </menu>
   );
 }

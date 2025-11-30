@@ -1,10 +1,29 @@
 import ButtunArrow from "/assets/ButtunArrow.svg";
 import test from "/assets/testimg two.png";
-
+import {motion } from "framer-motion"
 export default function Project() {
   return (
     <div className=" flex-col-reverse md:flex-row flex w-full justify-between items-center h-max gap-3 md:gap-12 ">
-      <div className=" md:min-w-150  w-full items-end md:max-w-260 flex flex-col md:px-7 px-4 md:pt-11 p-5 md:pb-12 gap-6 bg-[#d2d2d2] dark:bg-[#1B1B1BB2] rounded-3xl">
+      <motion.div 
+      
+       initial={{
+              x: -150,
+              opacity: 0,
+              rotate: "-3deg",
+            }}
+            whileInView={{
+              x: 0,
+              rotate: "0deg",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -150px 0px" }}
+            style={{ transformOrigin: "50% 100px" }} 
+      
+      className=" md:min-w-150  w-full items-end md:max-w-260 flex flex-col md:px-7 px-4 md:pt-11 p-5 md:pb-12 gap-6 bg-[#d2d2d2] dark:bg-[#1B1B1BB2] rounded-3xl">
         {/*   this onw need to be changed  */}
         <div className="  w-full items-start flex flex-col gap-2 ">
           <h1 className=" font-ncs text-bgDark dark:text-white text-[26px] md:text-6xl  ">
@@ -38,9 +57,32 @@ export default function Project() {
             />
           </div>
         </span>
-      </div>
+      </motion.div>
+       
+ 
+      
+    
+<motion.img src={test} className="   md:h-120 " alt=""  initial={{
+              x: 150,
+              opacity: 0,
+              rotate: "3deg",
+            }}
+            whileInView={{
+              x: 0,
+              rotate: "0deg",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -150px 0px" }}
+            style={{ transformOrigin: "50% 100px" }} 
+  />
 
-      <img src={test} className="  md:h-120 " alt="" />
+
+      
+      
     </div>
   );
 }

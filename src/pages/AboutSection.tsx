@@ -2,6 +2,7 @@ import myImg from "/assets/myPhott.jpg";
 import Qots from "/assets/qhotes.svg";
 import TextFilling from "../components/TextFilling";
 import { motion } from "framer-motion";
+import ScrollFloat from "../components/scrollFloat";
 
 export default function AboutSection() {
   return (
@@ -9,28 +10,17 @@ export default function AboutSection() {
       id="About"
       className=" md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgLight dark:bg-bgDark md:gap-12 gap-12 flex flex-col items-center justify-between pt-20 pb-0 md:pb-10"
     >
-      <motion.h1
-              initial={{
-              opacity: 0,
-          
-              translateY:"50px"
-            }}
-            whileInView={{
-  
-             translateY:"0px",
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-            }}
-            viewport={{ once: false, margin: "400px 0px -100px 0px" }}
-            style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
-      
-      
-      className=" font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white ">
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+        textClassName="font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white"
+      >
         About me
-      </motion.h1>
+      </ScrollFloat>
+
       <div className="w-full flex flex-col h-max">
         <div className=" w-full md:gap-0 flex flex-col gap-6 min-h-80 md:grid md:grid-cols-20 md:grid-rows-10">
           <motion.div
@@ -83,8 +73,7 @@ export default function AboutSection() {
               <span className="text-bgDark dark:text-white ">Mohamed Adem</span>
             </motion.h1>
             <motion.p
-            
-            initial={{
+              initial={{
                 x: 150,
                 opacity: 0,
                 rotate: "3deg",
@@ -100,9 +89,8 @@ export default function AboutSection() {
               }}
               viewport={{ once: false, margin: "400px 0px -70px 0px" }}
               style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
-            
-            
-            className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  ">
+              className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  "
+            >
               Graffic & UI/UX Designer <br /> Full Stack Devoloper
             </motion.p>
           </div>

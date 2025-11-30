@@ -1,13 +1,24 @@
 import ContactForm from "../components/ContactForm";
+import ScrollFloat from "../components/scrollFloat";
 import SocialMedia from "../components/SocialMedia";
 
 export default function ConatctMeSection() {
   return (
-    <section id="ContactMe" className=" flex flex-col  items-center bg-bgLight dark:bg-bgDark py-18 gap-16 md:gap-20 px-4 md:px-20 ">
+    <section
+      id="ContactMe"
+      className=" flex flex-col  items-center bg-bgLight dark:bg-bgDark py-18 gap-16 md:gap-20 px-4 md:px-20 "
+    >
       <span className="w-full flex justify-center items-center ">
-        <h1 className=" font-ncs dark:text-white text-bgDark text-[48px] md:text-start text-center md:text-[90px] ">
+        <ScrollFloat
+          animationDuration={1}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+          textClassName="font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white"
+        >
           Let's work together
-        </h1>
+        </ScrollFloat>
       </span>
       <div className=" w-full md:flex-row flex-col flex gap-18 justify-between items-center ">
         <SocialMedia />
