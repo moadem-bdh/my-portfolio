@@ -404,7 +404,7 @@ export default function SkillsSection() {
   return (
     <section
       id="Skills"
-      className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-14  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center "
+      className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center "
     >
       <ScrollFloat
         animationDuration={1}

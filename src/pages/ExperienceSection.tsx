@@ -12,7 +12,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="Experience"
-      className="min-h-150 bg-bgL4 dark:bg-bgDark flex flex-col items-center md:pt-20 md:items-end gap-20 px-4 md:px-20"
+      className="min-h-150 bg-bgL4 dark:bg-bgDark flex flex-col pt-14  items-center md:pt-20 md:items-end gap-20 px-4 md:px-20"
     >
       <span className="w-full  flex justify-center">
         <ScrollFloat
