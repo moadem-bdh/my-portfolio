@@ -37,7 +37,7 @@ const highlights: {
 
  return(
 
-<section className="w-full bg-bgLight  dark:bg-bgDark flex flex-col gap-4 md:gap-18 pt-4 md:pt-14 pb-4 md:pb-10 items-start px-4 md:px-20  "> 
+<section className="overflow-hidden  w-full bg-bgLight  dark:bg-bgDark flex flex-col gap-4 md:gap-18 pt-4 md:pt-14 pb-4 md:pb-10 items-start px-4 md:px-20  "> 
 <motion.p
 
     initial={{

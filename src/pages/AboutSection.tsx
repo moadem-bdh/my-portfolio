@@ -8,7 +8,7 @@ export default function AboutSection() {
   return (
     <section
       id="About"
-      className=" md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgLight dark:bg-bgDark md:gap-12 gap-12 flex flex-col items-center justify-between pt-20 pb-0 md:pb-10"
+      className=" overflow-hidden  md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgLight dark:bg-bgDark md:gap-12 gap-12 flex flex-col items-center justify-between pt-20 pb-0 md:pb-10"
     >
       <ScrollFloat
         animationDuration={1}
@@ -16,7 +16,7 @@ export default function AboutSection() {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=55%"
         stagger={0.03}
-        textClassName="font-ncs text-[46px] md:text-[90px] text-bgDark dark:text-white"
+        textClassName="font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white"
       >
         About me
       </ScrollFloat>

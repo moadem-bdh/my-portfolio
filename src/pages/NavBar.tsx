@@ -5,6 +5,7 @@ import LanguageToggle from "../components/LanguageToggle";
 import Modetoggle from "../components/ModeToggle";
 import useToggle from "../costumHooks/useToggle";
 import Menu from "../modals/Menu";
+import { AnimatePresence } from "framer-motion";
 
 export default function NavbBar({
   setDark,
@@ -12,23 +13,10 @@ export default function NavbBar({
   setDark: (a: boolean) => void;
 }) {
   const [menuAppear, setMenuAppear] = useToggle(false);
- const [beforeAppear , setBeforeAppear]=useToggle(false)
-
   function handleMenuAppear(){
-setBeforeAppear();
-if(beforeAppear){
 
-  setTimeout(() => {
+
   setMenuAppear();
-}, 1000); 
-}else
-{
-   setMenuAppear();
-}
-
-
-
-
   }
 
 
@@ -42,7 +30,7 @@ if(beforeAppear){
   return (
     <>
       <nav id="Home" className="w-full h-[68px] md:h-[89px]  ">
-        <div className="z-10 w-full flex fixed top-0 py-4 md:py-6 px-4 md:px-10  items-center bg-bgLight  dark:bg-bgDark justify-between ">
+        <div className=" overflow-hidden  z-30 w-full flex fixed top-0 py-4 md:py-6 px-4 md:px-10  items-center bg-bgLight  dark:bg-bgDark justify-between ">
           <img
             src={logo}
             className=" md:h-max h-8 dark:invert-0 invert dark:none-0"
@@ -69,13 +57,17 @@ if(beforeAppear){
           </div>
         </div>
       </nav>
+      <AnimatePresence>
+
       {menuAppear && (
         <Menu
           handleParentClick={handleParentClick}
           handleMenuAppear={handleMenuAppear}
-          beforeAppear ={beforeAppear}
         />
       )}
+        
+      </AnimatePresence>
+
     </>
   );
 }

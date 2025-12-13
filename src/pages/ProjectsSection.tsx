@@ -7,7 +7,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="Projects"
-      className=" w-full px-4 md:px-20 bg-bg dark:bg-bgDark flex flex-col items:center md:items-end pb-8 pt-16 md:pt-22 md:pb-22 gap-14 md:gap-20 "
+      className=" overflow-hidden  w-full px-4 md:px-20 bg-bg dark:bg-bgDark flex flex-col items:center md:items-end pb-8 pt-16 md:pt-22 md:pb-22 gap-14 md:gap-20 "
     >
       <span className="w-full flex justify-center items-center ">
         <ScrollFloat
@@ -16,7 +16,7 @@ export default function ProjectsSection() {
           scrollStart="center bottom+=50%"
           scrollEnd="bottom bottom-=55%"
           stagger={0.03}
-          textClassName="font-ncs text-[46px] md:text-[90px] text-bgDark dark:text-white"
+          textClassName="font-ncs text-[42px] md:text-[90px] text-bgDark dark:text-white"
         >
           Projects
         </ScrollFloat>

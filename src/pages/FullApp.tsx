@@ -13,15 +13,11 @@ export default function FullApp() {
   const [isDark, setIsDark] = useToggle(true);
 
   return (
-    <div
-      className={`${
-        isDark ? "dark" : ""
-      } flex flex-col relative overflow-hidden`}
-    >
+    <div className={`${isDark ? "dark" : ""} flex  flex-col relative w-full`}>
       <NavbBar setDark={setIsDark} />
       <HeroSection />
       <HighlightSection />
-      <AboutSection />
+      <AboutSection /> 
       <SkillsSection />
       <ExperienceSection />
       <ProjectsSection />

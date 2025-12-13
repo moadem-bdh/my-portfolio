@@ -4,7 +4,6 @@ import { SwiperSlide } from "swiper/react";
 import ButtunArrow from "/assets/ButtunArrow.svg";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ScrollFloat from "../components/scrollFloat";
 
 export default function ExperienceSection() {
   const [swiperChanged, setSwiperChanged] = useState<number>(0);
@@ -12,24 +11,33 @@ export default function ExperienceSection() {
   return (
     <section
       id="Experience"
-      className="min-h-150 bg-bgL4 dark:bg-bgDark flex flex-col pt-14  items-center md:pt-20 md:items-end gap-20 px-4 md:px-20"
+      className=" overflow-hidden  relative min-h-150 z-0 bg-bgL4 dark:bg-bgDark flex flex-col pt-14  items-center md:pt-20 md:items-end gap-20 px-4 md:px-20"
     >
       <span className="w-full  flex justify-center">
-        <ScrollFloat
-          animationDuration={1}
-          ease="back.inOut(2)"
-          scrollStart="center bottom+=50%"
-          scrollEnd="bottom bottom-=55%"
-          stagger={0.03}
-          textClassName="font-ncs text-[46px] md:text-[90px] text-bgDark dark:text-white"
+        <motion.h1
+  
+              initial={{
+              opacity: 0,
+          
+              translateY:"50px"
+            }}
+            whileInView={{
+  
+             translateY:"0px",
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false, margin: "400px 0px -100px 0px" }}
+            style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
+          className="font-ncs text-[42px] md:text-[90px] text-bgDark dark:text-white"
         >
           Experience
-        </ScrollFloat>
- 
-
-
+        </motion.h1>
       </span>
-       
+
       <ExperienceSwiper setSwiperChanged={setSwiperChanged}>
         {/* =============================== */}
 

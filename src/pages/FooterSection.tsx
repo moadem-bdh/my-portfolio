@@ -11,7 +11,7 @@ export default function FooterSection() {
           <ButtonArrow
             divStyle=" border border-3 p-4 md:p-5 hover:bg-bgDark hover:dark:bg-white "
             Arrowtyle=" hover:dark:invert dark:invert-0 invert hover:invert-0 w-6 md:w-8 -rotate-45  "
-          />{" "}
+          />
         </a>
       </span>
 
@@ -43,25 +43,21 @@ export default function FooterSection() {
           </h1>
           <ul className=" flex-wrap gap-x-3  gap-1 w-[340px] flex  ">
             <a href="#Home">
-              {" "}
               <li className=" cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
                 Home
               </li>
             </a>
             <a href="#About">
-              {" "}
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
                 About
               </li>
             </a>
             <a href="#Skills">
-              {" "}
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
                 skills
               </li>
             </a>
             <a href="#Experience">
-              {" "}
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
                 Experience
               </li>
@@ -83,7 +79,6 @@ export default function FooterSection() {
       <div className=" w-full items-center flex flex-col gap-4 px-4 md:px-20 ">
         <div className="flex gap-4">
           <a target="_blank" href="https://www.instagram.com/moadem_boudehane/">
-            {" "}
             <img src={instagramColored} alt="Instagram" />
           </a>
           <a

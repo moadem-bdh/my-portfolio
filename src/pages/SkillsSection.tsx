@@ -404,7 +404,7 @@ export default function SkillsSection() {
   return (
     <section
       id="Skills"
-      className=" w-full  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center "
+      className="relative w-full z-10  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center "
     >
       <ScrollFloat
         animationDuration={1}
@@ -412,7 +412,7 @@ export default function SkillsSection() {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=55%"
         stagger={0.03}
-        textClassName="font-ncs text-[46px] md:text-[90px] text-bgDark dark:text-white"
+        textClassName="font-ncs text-[42px] md:text-[90px] text-bgDark dark:text-white"
       >
         Skills
       </ScrollFloat>
@@ -461,14 +461,14 @@ export default function SkillsSection() {
         {MySkills.map(
           (skill) =>
             skill.appear && (
-              <SwiperSlide className="w-full" key={skill.skillName}>
-                <div className=" w-full min-h-max pt-10 grid gap-2 md:gap-x-6 gap-y-8 md:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(112px,1fr))]   md:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+              <SwiperSlide className="  w-full" key={skill.skillName}>
+                <div className=" overflow-hidden py-10 w-full min-h-max pt-10 grid gap-2 md:gap-x-6 gap-y-8 md:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(112px,1fr))]   md:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
                   {skill.skillsDetails.map((sk) => {
                     return (
                       sk.appear && (
                         <div
                           key={sk.name}
-                          className=" w-full h-max flex justify-center"
+                          className=" w-full  h-max flex justify-center"
                         >
                           <SkillOption
                             field={skill.skillName}
