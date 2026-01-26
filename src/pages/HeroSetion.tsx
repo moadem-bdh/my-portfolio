@@ -25,10 +25,9 @@ export default function HeroSection() {
         <hr className="md:w-[186px] mt-2 md:mt-0 w-[110PX] rounded border-2 border-bgDark dark:border-white mb-4 " />
 
         <p className="md:w-[850px] mt-2 md:mt-0 w-[322px] text-xs font-ncs  md:text-[32px] text-greyPtLight dark:text-greyPt ">
-          "Design with purpose, not just decoration." 
+          "Design with purpose, not just decoration." <br /> Simple, Impactful,
+          True.
         </p>
-        <p className="md:w-[850px] mt-2 md:mt-0 w-[322px] text-xs font-ncs  md:text-[32px] text-greyPtLight dark:text-greyPt ">Simple, Impactful,
-          True.</p>
       </div>
       <div className=" row-start-2 col-start-18 justify-end flex lea items-start col-end-21 row-span-full ">
         <p className=" font-ncs text-greenPt md:mt-0 mt-2 md:text-[100px]  text-[34px] [writing-mode:vertical-rl] leading-[40px] md:leading-[100px] ">

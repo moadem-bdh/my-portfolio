@@ -30,7 +30,7 @@ export default function NavbBar({
   return (
     <>
       <nav id="Home" className="w-full h-[68px] md:h-[89px]  ">
-        <div className=" overflow-hidden  z-30 w-full flex fixed top-0 py-4 md:py-6 px-4 md:px-10  items-center bg-bgLight  dark:bg-bgDark justify-between ">
+        <div className=" z-30 w-full flex fixed top-0 py-4 md:py-6 px-4 md:px-10  items-center bg-bgLight  dark:bg-bgDark justify-between ">
           <img
             src={logo}
             className=" md:h-max h-8 dark:invert-0 invert dark:none-0"

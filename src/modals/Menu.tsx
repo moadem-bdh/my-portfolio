@@ -79,7 +79,7 @@ export default function Menu({
           duration: 0.7,
           ease: "easeInOut",
         }}
-        className="md:w-[950px] -translate-y-150 md:translate-y-0 md:translate-x-250 gap-1 md:gap-0 w-full scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 md:border-l-4 py-6  flex flex-col h-[470px] md:h-full overflow-y-auto border-[#076C69]"
+        className="md:w-[950px] -translate-y-150 md:translate-y-0 md:translate-x-250 gap-1 md:gap-0 w-full scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 md:border-l-4 py-6  flex flex-col h-[470px] max-h-full md:h-full overflow-y-auto border-[#076C69]"
       >
         <div className=" w-full flex  mb-2  md:mb-8 px-4 md:px-10  md:justify-start justify-end">
           <button

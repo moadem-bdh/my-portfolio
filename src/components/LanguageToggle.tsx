@@ -8,7 +8,7 @@ export default function LanguageToggle() {
 
   return (
     <div
-      className=" flex items-center relative  cursor-pointer"
+      className=" flex items-center relative cursor-pointer"
       onClick={setIsOpen}
     >
       <img
@@ -24,7 +24,7 @@ export default function LanguageToggle() {
         } transition-all invert dark:invert-0 ease-in-out duration-300`}
       />
       {isOpen && (
-        <div className=" flex p-[5px] flex-col justify-between items-center gap-[5px] w-[127px] rounded-[15px] bg-bgDark dark:bg-white absolute top-14 ">
+        <div className="flex p-[5px] flex-col justify-between items-center gap-[5px] w-[127px] rounded-[15px] bg-bgDark dark:bg-white absolute top-14 ">
           {languages.map((lang) => (
             <LanguageOption lang={lang} />
           ))}

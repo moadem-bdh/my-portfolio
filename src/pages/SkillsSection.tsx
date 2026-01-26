@@ -396,7 +396,7 @@ export default function SkillsSection() {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   const changeTheSlide: (index: number) => void = (index) => {
-    swiper?.slideTo(index);
+    swiper?.slideTo(index);   //THERE IS A PROBLEM HERE THAT NEED TO BE FIXED SOOOON 
   };
 
   const [skill, setSkill] = useState<string>(skills[0].id);
