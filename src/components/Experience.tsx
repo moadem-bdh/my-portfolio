@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import image from "/assets/picturs_experience_test.png";
 import { useSwiper, useSwiperSlide } from "swiper/react";
+import ExperienceLayouts from "./photos_layouts/experienceLayouts";
 
 export default function Experience({ changeEffect }: { changeEffect: number }) {
   const [progress, setProgress] = useState(0);
@@ -53,10 +53,8 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       onTouchStart={handlePause}
       className="select-none w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
     >
-      <div className=" grid grid-cols-1 w-full ">
-        {" "}
-        {/* grid grid-cols-4 w-full */}
-        <img src={image} alt="" className="" />
+      <div className=" w-full">
+        <ExperienceLayouts/>
       </div>
 
       <div className=" w-full md:w-70/100 bg-[#076C6980] rounded-full h-1.5 mb-4 dark:bg-[#076C6980] mt-4">

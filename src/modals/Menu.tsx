@@ -76,8 +76,8 @@ export default function Menu({
           y: 0,
         }}
         transition={{
-          duration: 0.7,
-          ease: "easeInOut",
+          duration: desktop ?  0.7 : 0.45,
+          ease: desktop ? "easeInOut" : "easeInOut",
         }}
         className="md:w-[950px] -translate-y-150 md:translate-y-0 md:translate-x-250 gap-1 md:gap-0 w-full scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 md:border-l-4 py-6  flex flex-col h-[470px] max-h-full md:h-full overflow-y-auto border-[#076C69]"
       >
