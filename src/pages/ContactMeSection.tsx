@@ -6,7 +6,7 @@ export default function ConatctMeSection() {
   return (
     <section
       id="ContactMe"
-      className=" overflow-hidden  flex flex-col  items-center bg-bgLight dark:bg-bgDark py-18 gap-16 md:gap-20 px-4 md:px-20 "
+      className=" overflow-hidden  flex flex-col  items-center bg-bgLight dark:bg-bgDark py-18 gap-16 lg:gap-20 px-4 md:px-10 lg:px-14 xl:px-20 "
     >
       <span className="w-full flex justify-center items-center ">
         <motion.h1
@@ -25,12 +25,12 @@ export default function ConatctMeSection() {
           }}
           viewport={{ once: false, margin: "400px 0px -100px 0px" }}
           style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
-          className="font-ncs text-center text-[42px] md:text-[90px] text-bgDark dark:text-white"
+          className="font-ncs text-center text-[42px] lg:text-[72px] xl:text-[90px] text-bgDark dark:text-white"
         >
           Let's work together
         </motion.h1>
       </span>
-      <div className=" w-full md:flex-row flex-col flex gap-18 justify-between items-center ">
+      <div className=" w-full flex-col flex gap-18 justify-between items-center xl:flex-row ">
         <SocialMedia />
         <ContactForm />
       </div>

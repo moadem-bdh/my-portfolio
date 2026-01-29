@@ -13,7 +13,7 @@ export default function LanguageToggle() {
     >
       <img
         src={lang}
-        className=" md:h-max h-9 invert dark:invert-0 "
+        className=" md:h-9 lg:h-max h-9 invert dark:invert-0 "
         alt="Language icon"
       />
       <img

@@ -29,11 +29,17 @@ import timePlaning from "/assets/timePlaning.svg";
 
 //TYPES OF THE DATA (DATA STRUCTURE)
 
+//TYPE LANGUAGE SUPPORT
+type LanguageContent = {
+  en: string;
+  fr: string;
+};
+
 //TYPE EXPERIENCE
 type experienceType = {
   id: number;
-  experiencetName: string;
-  experienceDescription: string;
+  experiencetName: LanguageContent;
+  experienceDescription: LanguageContent;
   images: string[];
 };
 
@@ -41,8 +47,8 @@ type experienceType = {
 
 type SkillDetailsType = {
   image: string;
-  name: string;
-  description: string;
+  name: LanguageContent;
+  description: LanguageContent;
   appear: boolean;
   outlineColor: string;
   bgColor: string;
@@ -51,7 +57,7 @@ type SkillDetailsType = {
 };
 
 type MyskillsType = {
-  skillName: string;
+  skillName: LanguageContent;
   appear: boolean;
   skillsDetails: SkillDetailsType[];
 };
@@ -59,28 +65,46 @@ type MyskillsType = {
 //TYPE PROJECT
 type projectType = {
   id: number;
-  projectName: string;
-  projectType: string;
-  projectDescription: string;
+  projectName: LanguageContent;
+  projectType: LanguageContent;
+  projectDescription: LanguageContent;
   projectLink: string;
   images: string[];
 };
 
 //Type About Me
 type aboutMeType = {
-  FirstName: string;
-  FamilyName: string;
-  About: string;
-  ocupation: string[];
+  FirstName: LanguageContent;
+  FamilyName: LanguageContent;
+  About: LanguageContent;
+  ocupation: LanguageContent[];
   iamge: string;
 };
 
 //About Me SECTION
 export const AboutMe: aboutMeType = {
-  FirstName: "Mohamed Adem",
-  FamilyName: "BOUDEHANE",
-  About: "...",
-  ocupation: ["Graphic & UI/UX Designer", "Full Stack Devoloper"],
+  FirstName: {
+    en: "Mohamed Adem",
+    fr: "Mohamed Adem",
+  },
+  FamilyName: {
+    en: "BOUDEHANE",
+    fr: "BOUDEHANE",
+  },
+  About: {
+    en: "...",
+    fr: "...",
+  },
+  ocupation: [
+    {
+      en: "Graphic & UI/UX Designer",
+      fr: "Designer Graphique & UI/UX",
+    },
+    {
+      en: "Full Stack Developer",
+      fr: "Développeur Full Stack",
+    },
+  ],
   iamge: "...",
 };
 
@@ -89,14 +113,22 @@ export const AboutMe: aboutMeType = {
 
 export const MySkills: MyskillsType[] = [
   {
-    skillName: "design",
+    skillName: {
+      en: "design",
+      fr: "design",
+    },
     appear: true,
     skillsDetails: [
       {
         image: Photoshop,
-        name: "Adobe Photoshop",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Adobe Photoshop",
+          fr: "Adobe Photoshop",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#31A8FFB2",
         bgColor: "bg-[#31A8FF4D]",
@@ -105,9 +137,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: InDesign,
-        name: "Adobe InDesign",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Adobe InDesign",
+          fr: "Adobe InDesign",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#FF5C85B2",
         bgColor: "bg-[#FF5C854D]",
@@ -116,9 +153,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: Lightroom,
-        name: "Adobe Lightroom",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Adobe Lightroom",
+          fr: "Adobe Lightroom",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#31A8FFB2",
         bgColor: "bg-[#31A8FF4D]",
@@ -127,9 +169,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: Illustrator,
-        name: "Adobe Illustrator",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Adobe Illustrator",
+          fr: "Adobe Illustrator",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#FFAA29B2",
         bgColor: "bg-[#FFAA294D]",
@@ -138,9 +185,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: XD,
-        name: "Adobe XD",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Adobe XD",
+          fr: "Adobe XD",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#FF61F6B2",
         bgColor: "bg-[#FF8AF84D]",
@@ -149,9 +201,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: Figma,
-        name: "Figma",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Figma",
+          fr: "Figma",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#FF7262B2",
         bgColor: "bg-[#FF72624D]",
@@ -160,9 +217,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: Blender,
-        name: "Blender",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Blender",
+          fr: "Blender",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#FFF4EE",
         bgColor: "bg-[#E853004D]",
@@ -172,14 +234,22 @@ export const MySkills: MyskillsType[] = [
     ],
   },
   {
-    skillName: "dev",
+    skillName: {
+      en: "dev",
+      fr: "dev",
+    },
     appear: true,
     skillsDetails: [
       {
         image: react,
-        name: "React JS",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "React JS",
+          fr: "React JS",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#89E3FCB2",
         bgColor: "bg-[#89E3FC4D]",
@@ -188,9 +258,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: mongoDB,
-        name: "Mongo DB",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Mongo DB",
+          fr: "Mongo DB",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#50B73E",
         bgColor: "bg-[#50B73E4D]",
@@ -199,8 +274,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: nodeJs,
-        name: "Node JS",
-        description: "",
+        name: {
+          en: "Node JS",
+          fr: "Node JS",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#BDE191",
         bgColor: "bg-[#BDE1914D]",
@@ -209,8 +290,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: mySql,
-        name: "My SQL",
-        description: "",
+        name: {
+          en: "My SQL",
+          fr: "My SQL",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#007EB3B2",
         bgColor: "bg-[#007EB34D]",
@@ -219,8 +306,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: nextJs,
-        name: "Next JS",
-        description: "",
+        name: {
+          en: "Next JS",
+          fr: "Next JS",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#8B8B8BB2",
         bgColor: "bg-[#8B8B8B4D]",
@@ -229,8 +322,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: php,
-        name: "PHP",
-        description: "",
+        name: {
+          en: "PHP",
+          fr: "PHP",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#C6C7DFB2",
         bgColor: "bg-[#C6C7DF4D]",
@@ -239,8 +338,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: js,
-        name: "JavaScript",
-        description: "",
+        name: {
+          en: "JavaScript",
+          fr: "JavaScript",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#B09C0FB2",
         bgColor: "bg-[#B09C0F4D]",
@@ -249,8 +354,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: c,
-        name: "C",
-        description: "",
+        name: {
+          en: "C",
+          fr: "C",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#96CDFFB2",
         bgColor: "bg-[#0059AB4D]",
@@ -259,8 +370,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: python,
-        name: "Python",
-        description: "",
+        name: {
+          en: "Python",
+          fr: "Python",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#387EB8B2",
         bgColor: "bg-[#387EB84D]",
@@ -269,8 +386,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: ts,
-        name: "TypeScript",
-        description: "",
+        name: {
+          en: "TypeScript",
+          fr: "TypeScript",
+        },
+        description: {
+          en: "",
+          fr: "",
+        },
         appear: true,
         outlineColor: "#004F85B2",
         bgColor: "bg-[#004F854D]",
@@ -280,14 +403,22 @@ export const MySkills: MyskillsType[] = [
     ],
   },
   {
-    skillName: "multimedia",
+    skillName: {
+      en: "multimedia",
+      fr: "multimedia",
+    },
     appear: true,
     skillsDetails: [
       {
         image: ae,
-        name: "Adobe After Effects",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Adobe After Effects",
+          fr: "Adobe After Effects",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#C2C2FFB2",
         bgColor: "bg-[#C2C2FF4D]",
@@ -296,9 +427,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: pr,
-        name: "Adobe Premier",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Adobe Premiere",
+          fr: "Adobe Premiere",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#C2C2FFB2",
         bgColor: "bg-[#C2C2FF4D]",
@@ -307,9 +443,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: capcut,
-        name: "Cup Cut",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "CapCut",
+          fr: "CapCut",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB2",
         bgColor: "bg-[#8B8B8B4D]",
@@ -318,9 +459,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: Blender,
-        name: "Blender",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        name: {
+          en: "Blender",
+          fr: "Blender",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci.",
+        },
         appear: true,
         outlineColor: "#FFF4EE",
         bgColor: "bg-[#E853004D]",
@@ -330,14 +476,22 @@ export const MySkills: MyskillsType[] = [
     ],
   },
   {
-    skillName: "softSkills",
+    skillName: {
+      en: "softSkills",
+      fr: "Compétences personnelles",
+    },
     appear: true,
     skillsDetails: [
       {
         image: problemSolving,
-        name: "Problem solving",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Problem solving",
+          fr: "Résolution de problèmes",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB8",
         bgColor: "#8B8B8B4D",
@@ -346,9 +500,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: creativeThinking,
-        name: "Creative thinking",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Creative thinking",
+          fr: "Pensée créative",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB8",
         bgColor: "#8B8B8B4D",
@@ -357,9 +516,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: DecisionMaking,
-        name: "Decision making",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Decision making",
+          fr: "Prise de décision",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB8",
         bgColor: "#8B8B8B4D",
@@ -368,9 +532,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: teamWork,
-        name: "Team working",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Team working",
+          fr: "Travail en équipe",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB8",
         bgColor: "#8B8B8B4D",
@@ -379,9 +548,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: timePlaning,
-        name: "Time planning",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Time planning",
+          fr: "Planification du temps",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB8",
         bgColor: "#8B8B8B4D",
@@ -390,9 +564,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: ladership,
-        name: "Leadership",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Leadership",
+          fr: "Leadership",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB8",
         bgColor: "#8B8B8B4D",
@@ -401,9 +580,14 @@ export const MySkills: MyskillsType[] = [
       },
       {
         image: networking,
-        name: "Networking",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        name: {
+          en: "Networking",
+          fr: "Réseautage",
+        },
+        description: {
+          en: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+          fr: "Lorem ipsum dolor sit amet consectetur. Tempor tristique aliquam et orci. Leo auctor dolor at leo urna vel.",
+        },
         appear: true,
         outlineColor: "#8B8B8BB8",
         bgColor: "#8B8B8B4D",
@@ -418,36 +602,62 @@ export const MySkills: MyskillsType[] = [
 export const experiences: experienceType[] = [
   {
     id: 1,
-    experiencetName: "PASCAL Training",
-    experienceDescription: "....",
+    experiencetName: {
+      en: "PASCAL Training",
+      fr: "Formation PASCAL",
+    },
+    experienceDescription: {
+      en: "....",
+      fr: "....",
+    },
     images: ["..", ".."],
   },
-
   {
     id: 2,
-    experiencetName: "CAA Training",
-    experienceDescription: "....",
+    experiencetName: {
+      en: "CAA Training",
+      fr: "Formation CAA",
+    },
+    experienceDescription: {
+      en: "....",
+      fr: "....",
+    },
     images: ["..", ".."],
   },
-
   {
-    id: 1,
-    experiencetName: "ESMS Mentoring",
-    experienceDescription: "....",
+    id: 3,
+    experiencetName: {
+      en: "ESMS Mentoring",
+      fr: "Mentorat ESMS",
+    },
+    experienceDescription: {
+      en: "....",
+      fr: "....",
+    },
     images: ["..", ".."],
   },
-
   {
-    id: 1,
-    experiencetName: "DataHack Organizing",
-    experienceDescription: "....",
+    id: 4,
+    experiencetName: {
+      en: "DataHack Organizing",
+      fr: "Organisation DataHack",
+    },
+    experienceDescription: {
+      en: "....",
+      fr: "....",
+    },
     images: ["..", ".."],
   },
-
   {
-    id: 1,
-    experiencetName: "EntrepriseXplore Managing",
-    experienceDescription: "....",
+    id: 5,
+    experiencetName: {
+      en: "EntrepriseXplore Managing",
+      fr: "Gestion EntrepriseXplore",
+    },
+    experienceDescription: {
+      en: "....",
+      fr: "....",
+    },
     images: ["..", ".."],
   },
 ];
@@ -456,28 +666,53 @@ export const experiences: experienceType[] = [
 export const projects: projectType[] = [
   {
     id: 1,
-    projectName: ". Portfolio Website",
-    projectType: "Devolopment & UI/UX project ",
-    projectDescription: "...",
-    projectLink: "...",
-    images: ["..."],
+    projectName: {
+      en: "Portfolio Website",
+      fr: "Site Web Portfolio",
+    },
+    projectType: {
+      en: "Development & UI/UX project",
+      fr: "Projet Développement & UI/UX",
+    },
+    projectDescription: {
+      en: "...",
+      fr: "...",
+    },
+    projectLink: "https://",
+    images: [],
   },
-
   {
     id: 2,
-    projectName: ". Vamos Website",
-    projectType: "Devolopment & UI/UX project ",
-    projectDescription: "...",
-    projectLink: "...",
-    images: ["..."],
+    projectName: {
+      en: "E-Commerce Platform",
+      fr: "Plateforme E-Commerce",
+    },
+    projectType: {
+      en: "Full Stack Development",
+      fr: "Développement Full Stack",
+    },
+    projectDescription: {
+      en: "...",
+      fr: "...",
+    },
+    projectLink: "https://",
+    images: [],
   },
-
   {
     id: 3,
-    projectName: ".  ",
-    projectType: "Devolopment & UI/UX project ",
-    projectDescription: "...",
-    projectLink: "...",
-    images: ["..."],
+    projectName: {
+      en: "Mobile App",
+      fr: "Application Mobile",
+    },
+    projectType: {
+      en: "Mobile Development",
+      fr: "Développement Mobile",
+    },
+    projectDescription: {
+      en: "...",
+      fr: "...",
+    },
+    projectLink: "https://",
+    images: [],
   },
 ];

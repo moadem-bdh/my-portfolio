@@ -19,24 +19,24 @@ export default function Modetoggle({
     dark: {
       bgColor: "bg-white",
       buttonColor: "bg-bgDark",
-      translateX: "translate-x-[25px] md:translate-x-[27px]",
+      translateX: "translate-x-[25px] lg:translate-x-[27px]",
     },
     light: {
       bgColor: "bg-bgDark",
       buttonColor: "bg-white",
-      translateX: "md:-translate-x-[1px] translate-x-[0.6px]",
+      translateX: "translate-x-[0.6px] lg:-translate-x-[1px]",
     },
   }[isDark];
 
   return (
-    <div onClick={toggle}
-      className={`md:w-15  w-[52px] py-[2px] md:py-0.5 border-black border-[0.5px] dark:border-white px-[2px] md:px-[3.2px] justify-between flex rounded-[40px] cursor-pointer ${modes?.bgColor} relative items-center`}
+    <div
+      onClick={toggle}
+      className={`w-[52px] lg:w-15 py-[2px] lg:py-0.5 border-black border-[0.5px] dark:border-white px-[2px] lg:px-[3.2px] justify-between flex rounded-[40px] cursor-pointer ${modes?.bgColor} relative items-center`}
     >
-      <img src={sun} className=" md:h-max h-[21px] " alt="Sun icon" />
+      <img src={sun} className=" h-[21px] lg:h-max " alt="Sun icon" />
       <img src={moon} alt="moon icon" />
       <div
-        className={`md:w-[26px] w-[22px] h-[22px] md:h-[26px] rounded-3xl absolute ${modes?.buttonColor} ${modes?.translateX} transition-all duration-300 ease-in-out`}
-        
+        className={`w-[22px] lg:w-[26px] h-[22px] lg:h-[26px] rounded-3xl absolute ${modes?.buttonColor} ${modes?.translateX} transition-all duration-300 ease-in-out`}
       ></div>
     </div>
   );

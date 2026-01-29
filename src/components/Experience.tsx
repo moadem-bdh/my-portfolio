@@ -54,10 +54,10 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       className="select-none w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
     >
       <div className=" w-full">
-        <ExperienceLayouts/>
+        <ExperienceLayouts />
       </div>
 
-      <div className=" w-full md:w-70/100 bg-[#076C6980] rounded-full h-1.5 mb-4 dark:bg-[#076C6980] mt-4">
+      <div className=" w-full md:w-70/100 lg:w-70/100 bg-[#076C6980] rounded-full h-1.5 mb-4 dark:bg-[#076C6980] mt-4">
         <div
           className="bg-[#076C69] h-1.5 rounded-full dark:bg-[#076C69]"
           style={{
@@ -66,10 +66,10 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
         ></div>
       </div>
       <div className=" flex flex-col w-full gap-3">
-        <h1 className=" font-ncs text-[34px] md:text-6xl text-bgDark dark:text-white ">
+        <h1 className=" font-ncs text-[34px] md:text-5xl lg:text-6xl text-bgDark dark:text-white ">
           CAA training
         </h1>
-        <p className=" select-none text-bgDark dark:text-white font-roboto text-sm md:text-xl   ">
+        <p className=" select-none text-bgDark dark:text-white font-roboto text-sm md:text-lg lg:text-xl   ">
           Lorem ipsum dolor sit amet consectetur. Fermentum viverra enim viverra
           hendrerit sollicitudin gravida. Eget ipsum ante cursus aliquet quis in
           aliquam dignissim. Tortor sapien turpis ullamcorper aliquam venenatis

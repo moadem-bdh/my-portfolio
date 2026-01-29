@@ -46,8 +46,9 @@ export default function ProjectLayouts({
     },
   };
 
-  // pick desktop layouts by default       add here | the condition 
-  const chosen: Record<number, string[]> =  layouts.desktop as Record<  //treat choden as that 
+  // pick desktop layouts by default       add here | the condition
+  const chosen: Record<number, string[]> = layouts.desktop as Record<
+    //treat choden as that
     number,
     string[]
   >;
@@ -66,7 +67,7 @@ export default function ProjectLayouts({
   return (
     // THERE WILL BE A MAP FUNCTION HERE AND NOT AND NO THESE SHITS
 
-    <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-full  max-h-66 h-full py-2 gap-1">
+    <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-84 lg:max-h-full  max-h-66 h-full py-2 gap-1">
       <img
         src={photos[0]}
         alt="Project photo"

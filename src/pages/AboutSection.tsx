@@ -8,7 +8,7 @@ export default function AboutSection() {
   return (
     <section
       id="About"
-      className=" overflow-hidden  md:px-20 px-4 z-0 w-full md:min-h-200 bg-bgLight dark:bg-bgDark md:gap-12 gap-12 flex flex-col items-center justify-between pt-20 pb-0 md:pb-10"
+      className=" overflow-hidden  px-4 lg:px-20 z-0 w-full lg:min-h-200 bg-bgLight dark:bg-bgDark gap-12 flex flex-col items-center justify-between pt-20 pb-0 lg:pb-10"
     >
       <ScrollFloat
         animationDuration={1}
@@ -16,13 +16,13 @@ export default function AboutSection() {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=55%"
         stagger={0.03}
-        textClassName="font-ncs text-[48px] md:text-[90px] text-bgDark dark:text-white"
+        textClassName="font-ncs text-[48px] md:text-[72px] lg:text-[90px] text-bgDark dark:text-white"
       >
         About me
       </ScrollFloat>
 
       <div className="w-full flex flex-col h-max">
-        <div className=" w-full md:gap-0 flex flex-col gap-6 min-h-80 md:grid md:grid-cols-20 md:grid-rows-10">
+        <div className=" w-full lg:gap-0 flex flex-col gap-6 min-h-80 lg:grid lg:grid-cols-20 lg:grid-rows-10">
           <motion.div
             initial={{
               x: 150,
@@ -40,16 +40,16 @@ export default function AboutSection() {
             }}
             viewport={{ once: false, margin: "400px 0px -150px 0px" }}
             style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
-            className=" md:col-start-15 md:col-end-21 md:row-start-1 md:row-end-11 flex items-center justify-center"
+            className=" lg:col-start-15 lg:col-end-21 lg:row-start-1 lg:row-end-11 flex items-center justify-center"
           >
             <img
               src={myImg}
               alt="My Photo"
-              className="rounded-full md:h-70 h-38 md:outline-4 outline-2 outline-[#838383] outline-offset-4  md:outline-offset-8 "
+              className="rounded-full h-38 lg:h-60 xl:h-70 outline-2 lg:outline-4 outline-[#838383] outline-offset-4  lg:outline-offset-8 "
             />
           </motion.div>
 
-          <div className=" gap-2 md:col-start-1 md:col-end-15 md:row-start-3 md:row-end-9 flex flex-col md:items-start items-center justify-center">
+          <div className=" gap-2 lg:col-start-1 lg:col-end-15 lg:row-start-3 lg:row-end-9 flex flex-col lg:items-start items-center justify-center">
             <motion.h1
               initial={{
                 x: -150,
@@ -67,7 +67,7 @@ export default function AboutSection() {
               }}
               viewport={{ once: false, margin: "400px 0px -150px 0px" }}
               style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
-              className="text-center  font-ncs md:text-start text-[28px] md:text-6xl md:leading-none leading-8 text-greenPt  "
+              className="text-center  font-ncs lg:text-start text-[28px] lg:text-5xl xl:text-6xl lg:leading-none leading-8 text-greenPt  "
             >
               BOUDEHANE <br />
               <span className="text-bgDark dark:text-white ">Mohamed Adem</span>
@@ -89,17 +89,17 @@ export default function AboutSection() {
               }}
               viewport={{ once: false, margin: "400px 0px -70px 0px" }}
               style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
-              className="font-roboto md:text-xl text-sm md:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 md:leading-5.5  "
+              className="font-roboto text-sm lg:text-xl lg:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 lg:leading-5.5  "
             >
               Graffic & UI/UX Designer <br /> Full Stack Devoloper
             </motion.p>
           </div>
-          <hr className="  border-2 border-greyPtLight dark:border-greyPt rounded w-192 row-start-9 hidden md:block  " />
+          <hr className="  border-2 border-greyPtLight dark:border-greyPt rounded lg:w-130 xl:w-192 w-192 row-start-9 hidden lg:block  " />
         </div>
 
-        <div className="   md:row-start-11 relative md:col-start-1 flex flex-col items-start md:col-span-full md:row-span-full mt-6 z-10 gap-5">
+        <div className="   lg:row-start-11 relative lg:col-start-1 flex flex-col items-start lg:col-span-full lg:row-span-full mt-6 z-10 gap-5">
           <img
-            className="md:h-11 h-5 dark:invert-0 invert  "
+            className="h-5 lg:h-11 dark:invert-0 invert  "
             src={Qots}
             alt="Qote"
           />
@@ -109,7 +109,7 @@ export default function AboutSection() {
             enableBlur={false}
             baseRotation={0}
             blurStrength={0}
-            textClassName="font-ncs md:text-lg text-sm text-bgDark dark:text-white "
+            textClassName="font-ncs text-sm lg:text-lg text-bgDark dark:text-white "
             wordAnimationEnd="bottom bottom-=15%"
           >
             I am Mohamed Adem Boudehane, a computer science student with a
@@ -130,7 +130,7 @@ export default function AboutSection() {
 
           <span className="w-full flex justify-end">
             <img
-              className="md:h-11 h-5 dark:invert-0 invert  "
+              className="h-5 lg:h-11 dark:invert-0 invert  "
               src={Qots}
               alt="Qote"
             />

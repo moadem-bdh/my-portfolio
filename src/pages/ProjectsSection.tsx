@@ -7,7 +7,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="Projects"
-      className=" overflow-hidden  w-full px-4 md:px-20 bg-bg dark:bg-bgDark flex flex-col items:center md:items-end pb-8 pt-16 md:pt-22 md:pb-22 gap-14 md:gap-20 "
+      className=" overflow-hidden  w-full px-4 lg:px-14 xl:px-20 bg-bg dark:bg-bgDark flex flex-col items:center lg:items-end pb-8 pt-16 lg:pt-20 xl:pt-22 lg:pb-16 xl:pb-22 gap-14 lg:gap-18 xl:gap-20 "
     >
       <span className="w-full flex justify-center items-center ">
         <ScrollFloat
@@ -16,7 +16,7 @@ export default function ProjectsSection() {
           scrollStart="center bottom+=50%"
           scrollEnd="bottom bottom-=55%"
           stagger={0.03}
-          textClassName="font-ncs text-[42px] md:text-[90px] text-bgDark dark:text-white"
+          textClassName="font-ncs text-[42px] md:text-[72px] lg:text-[80px] xl:text-[90px] text-bgDark dark:text-white"
         >
           Projects
         </ScrollFloat>
@@ -41,18 +41,18 @@ export default function ProjectsSection() {
         }}
         viewport={{ once: false, margin: "400px 0px -70px 0px" }}
         style={{ transformOrigin: "50% 100px" }}
-        className=" group flex gap-3 md:gap-4 items-center justify-center mt-0 md:mt-[-40px]  "
+        className=" group flex gap-3 md:gap-3.5 lg:gap-3 xl:gap-4 items-center justify-center mt-0 md:mt-[-30px] lg:mt-[-20px] xl:mt-[-40px]  "
       >
-        <p className="  cursor-pointer font-ncs text-[18px] md:text-[30px] text-bgDark dark:text-white ">
+        <p className="  cursor-pointer font-ncs text-[18px] md:text-[26px] lg:text-[28px] xl:text-[30px] text-bgDark dark:text-white ">
           Visit all projects
         </p>
 
         <div
-          className={` group-hover:translate-x-2 cursor-pointer md:border-2 rounded-[100px] h-max w-max p-2 md:p-2.5 border-bgDark dark:border-white border-1  transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}
+          className={` group-hover:translate-x-2 cursor-pointer md:border-2 lg:border-2 rounded-[100px] h-max w-max p-2 md:p-2.5 lg:p-2 xl:p-2.5 border-bgDark dark:border-white border-1  transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}
         >
           <img
             src={ButtunArrow}
-            className={` h-[10px] md:h-5 group-hover:rotate-45 invert dark:invert-0 group-hover:dark:invert group-hover:invert-0 transition-all ease-in-out duration-300`}
+            className={` h-[10px] md:h-4 lg:h-4 xl:h-5 group-hover:rotate-45 invert dark:invert-0 group-hover:dark:invert group-hover:invert-0 transition-all ease-in-out duration-300`}
             alt="Arrow Icon"
           />
         </div>

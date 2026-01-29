@@ -21,7 +21,6 @@ export default function SkillsSection() {
     { title: "Multimedia", id: "multimedia", appear: true },
     { title: "Soft skills", id: "softSkills", appear: true },
   ];
-  
 
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
@@ -34,7 +33,7 @@ export default function SkillsSection() {
   return (
     <section
       id="Skills"
-      className="relative w-full z-10  md:min-h-240 px-4 md:px-20 md:pt-20 md:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-16 flex-col items-center "
+      className="relative w-full z-10  lg:min-h-220 xl:min-h-240 px-4 md:px-10 lg:px-14 xl:px-20 lg:pt-20 lg:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-10 lg:gap-16 flex-col items-center "
     >
       <ScrollFloat
         animationDuration={1}
@@ -42,7 +41,7 @@ export default function SkillsSection() {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=55%"
         stagger={0.03}
-        textClassName="font-ncs text-[42px] md:text-[90px] text-bgDark dark:text-white"
+        textClassName="font-ncs text-[42px] md:text-[72px] lg:text-[80px] xl:text-[90px] text-bgDark dark:text-white"
       >
         Skills
       </ScrollFloat>
@@ -59,7 +58,7 @@ export default function SkillsSection() {
         }}
         viewport={{ once: false, margin: "400px 0px -100px 0px" }}
         style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
-        className=" md:flex-row flex-wrap border-bgDark dark:border-white items-center justify-center md:p-[4px] gap-2 md:gap-4 flex md:border-2 md:rounded-full "
+        className=" lg:flex-row flex-wrap border-bgDark dark:border-white items-center justify-center lg:p-[4px] gap-2 lg:gap-3 flex lg:rounded-full xl:border-2 "
       >
         {skills.map(
           (s, index) =>
@@ -73,7 +72,7 @@ export default function SkillsSection() {
                 skill={s}
                 currentSkill={skill}
               />
-            )
+            ),
         )}
       </motion.div>
 
@@ -85,26 +84,26 @@ export default function SkillsSection() {
         slidesPerView={1}
         onSlideChange={(swiper) => {
           const activeSlideIndex = swiper.realIndex;
-          setSkill(MySkills[activeSlideIndex].skillName);
+          setSkill(MySkills[activeSlideIndex].skillName.en);
         }}
       >
         {MySkills.map(
           (skill) =>
             skill.appear && (
-              <SwiperSlide className="  w-full" key={skill.skillName}>
-                <div className=" overflow-hidden py-10 w-full min-h-max pt-10 grid gap-2 md:gap-x-6 gap-y-8 md:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(112px,1fr))]   md:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+              <SwiperSlide className="  w-full" key={skill.skillName.en}>
+                <div className=" overflow-hidden py-10 w-full min-h-max pt-10 grid gap-2 md:gap-3 lg:gap-x-6 gap-y-8 md:gap-y-9 lg:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(118px,1fr))] md:[grid-template-columns:repeat(auto-fit,minmax(140px,1fr))] lg:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
                   {skill.skillsDetails.map((sk) => {
                     return (
                       sk.appear && (
                         <div
-                          key={sk.name}
+                          key={sk.name.en}
                           className=" w-full  h-max flex justify-center"
                         >
                           <SkillOption
-                            field={skill.skillName}
+                            field={skill.skillName.en}
                             bgColor={sk.bgColor}
                             image={sk.image}
-                            title={sk.name}
+                            title={sk.name.en}
                             percentage={sk.percentage}
                             outlineColor={sk.outlineColor}
                             textColor={sk.numberColor}
@@ -115,7 +114,7 @@ export default function SkillsSection() {
                   })}
                 </div>
               </SwiperSlide>
-            )
+            ),
         )}
       </Swiper>
     </section>

@@ -1,4 +1,3 @@
-
 import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useEffect } from "react";
@@ -13,7 +12,8 @@ export default function Outline({
 }) {
   const target = 98; // final value
   // Tailwind v4 breakpoints: sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px
-  const desktop = useMediaQuery({ query: "(min-width: 768px)" });
+  const tablet = useMediaQuery({ query: "(min-width: 768px)" });
+  const desktop = useMediaQuery({ query: "(min-width: 1024px)" });
 
   useEffect(() => {
     let frame: number;
@@ -39,7 +39,7 @@ export default function Outline({
         variant="determinate"
         value={-1 * percentage}
         sx={{ color: color }}
-        size={desktop ? 84 :42}
+        size={desktop ? 84 : tablet ? 68 : 42}
       />
     </Stack>
   );

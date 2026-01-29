@@ -5,39 +5,39 @@ import ButtonArrow from "../components/ButtonArrow";
 
 export default function FooterSection() {
   return (
-    <footer className="  w-full bg-bgLight dark:bg-bgDark gap-8 md:gap-16 pb-2 pt-42 flex flex-col items-center  ">
-      <span className="px-4 md:px-20 w-full flex justify-end ">
+    <footer className="  w-full bg-bgLight dark:bg-bgDark gap-8 md:gap-10 lg:gap-16 pb-2 pt-42 flex flex-col items-center  ">
+      <span className="px-4 md:px-10 lg:px-14 xl:px-20 w-full flex justify-end ">
         <a href="#Home">
           <ButtonArrow
-            divStyle=" border border-3 p-4 md:p-5 hover:bg-bgDark hover:dark:bg-white "
-            Arrowtyle=" hover:dark:invert dark:invert-0 invert hover:invert-0 w-6 md:w-8 -rotate-45  "
+            divStyle=" border border-3 p-4 md:p-4 lg:p-5 hover:bg-bgDark hover:dark:bg-white "
+            Arrowtyle=" hover:dark:invert dark:invert-0 invert hover:invert-0 w-6 lg:w-8 -rotate-45  "
           />
         </a>
       </span>
 
       <hr className=" w-96/100 rounded border-bgDark dark:border-white  " />
 
-      <div className=" flex flex-row w-full justify-between px-4 md:px-20  ">
-        <h1 className="font-ncs leading-[40px] md:leading-[60px] text-[#076C69] text-2xl md:text-5xl ">
+      <div className=" flex flex-row gap-3 md:flex-row lg:flex-row w-full justify-between px-4 md:px-10 lg:px-14 xl:px-20  ">
+        <h1 className="font-ncs leading-[40px] lg:leading-[60px] text-[#076C69] text-2xl lg:text-5xl ">
           This is just <br />
           the beginning
         </h1>
 
         <div className=" flex flex-col items-start gap-2 ">
-          <h1 className=" text-xl font-ncs md:text-[42px] text-bgDark dark:text-white  ">
+          <h1 className=" text-xl lg:text-[42px] font-ncs text-bgDark dark:text-white  ">
             Contact
           </h1>
           <ul className=" pl-1 flex flex-col ">
-            <li className=" text-sx md:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
+            <li className=" text-sx lg:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
               0782351931
             </li>
-            <li className=" text-sx md:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
+            <li className=" text-sx lg:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
               moadem@gmail.com
             </li>
           </ul>
         </div>
 
-        <div className=" md:block hidden ">
+        <div className=" hidden xl:block ">
           <h1 className=" text-bgDark dark:text-white font-ncs md:text-[42px]  ">
             Menu
           </h1>
@@ -76,7 +76,7 @@ export default function FooterSection() {
         </div>
       </div>
 
-      <div className=" w-full items-center flex flex-col gap-4 px-4 md:px-20 ">
+      <div className=" w-full items-center flex flex-col gap-4 px-4 md:px-10 lg:px-14 xl:px-20 ">
         <div className="flex gap-4">
           <a target="_blank" href="https://www.instagram.com/moadem_boudehane/">
             <img src={instagramColored} alt="Instagram" />
