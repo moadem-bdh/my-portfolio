@@ -1,10 +1,29 @@
 import ButtunArrow from "/assets/ButtunArrow.svg";
 import ProjectLayouts from "./photos_layouts/projectLayouts";
 import { motion } from "framer-motion";
+import { useLanguage } from "../Contexts/LanguageContext";
 
-export default function Project() {
+export default function Project({
+  number,
+  title,
+  subTitle,
+  description,
+}: {
+  number: number;
+  title: string;
+  subTitle: string;
+  description: string;
+}) {
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const viewAllText = {
+    en: "View all projects",
+    fr: "Voir tous les projets",
+  };
+
   return (
-    <div className=" flex-col-reverse lg:flex-row flex w-full justify-between items-center h-max gap-3 md:gap-4 lg:gap-8 ">
+    <div className=" flex-col-reverse lg:flex-row flex w-full justify-between items-center h-max gap-3 md:gap-4 lg:gap-3 xl:gap-4 ">
       <motion.div
         initial={{
           x: -150,
@@ -24,28 +43,20 @@ export default function Project() {
         style={{ transformOrigin: "50% 100px" }}
         className=" w-full lg:w-1/2 items-end flex flex-col lg:px-6 xl:px-8 px-4 lg:pt-10 xl:pt-12 p-5 lg:pb-10 xl:pb-12 gap-6 bg-[#d2d2d2] dark:bg-[#1B1B1BB2] rounded-3xl"
       >
-        {/*   this onw need to be changed  */}
         <div className="  w-full items-start flex flex-col gap-2 ">
           <h1 className=" font-ncs text-bgDark dark:text-white text-[26px] lg:text-5xl xl:text-6xl  ">
-            1. Data hack
+            {`${number + 1}. ` + title}
           </h1>
-          <h6 className=" lg:ml-12 xl:ml-14 ml-6.5 mt-[-8px] font-ncs text-greyPtLight dark:text-greyPt text-[9px] lg:text-lg xl:text-xl   ">
-            Design project
+          <h6 className="  mt-[-8px] font-ncs text-greyPtLight dark:text-greyPt text-[9px] lg:text-lg xl:text-xl   ">
+            {subTitle}
           </h6>
         </div>
         <p className=" font-roboto text-sm lg:text-base xl:text-lg text-bgDark dark:text-white ">
-          Lorem ipsum dolor sit amet consectetur. Sit vitae vitae ut fringilla.
-          Aliquam faucibus euismod praesent ut placerat est tempus. Egestas
-          pharetra quis etiam faucibus neque enim consequat. Bibendum purus
-          netus ac quis ullamcorper .Egestas pharetra quis etiam faucibus neque
-          enim consequat. Bibendum purus netus ac quis ullamcorper .Egestas
-          pharetra quis etiam faucibus neque enim consequat. Bibendum purus
-          netus ac quis ullamcorper .Egestas pharetra quis etiam faucibus neque
-          enim consequat.
+          {description}.
         </p>
         <span className=" group flex gap-2 lg:gap-3 xl:gap-4 items-center w-max  justify-end mt-[22px] pr-2 ">
           <p className=" cursor-pointer font-ncs text-sm lg:text-lg xl:text-[24px] text-bgDark dark:text-white ">
-            View all projects
+            {viewAllText[langKey]}
           </p>
           <div
             className={` group-hover:translate-x-2 cursor-pointer rounded-[100px] h-max w-max p-1.5 lg:p-2 xl:p-2.5 border-bgDark dark:border-white border-1  transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}

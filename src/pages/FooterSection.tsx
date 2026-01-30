@@ -2,8 +2,35 @@ import instagramColored from "/assets/instagramColored.svg";
 import LinkedInColored from "/assets/linkedinColored.svg";
 import TwittwrColored from "/assets/twitterColored.svg";
 import ButtonArrow from "../components/ButtonArrow";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function FooterSection() {
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const content = {
+    beginning: {
+      en: "This is just \nthe beginning",
+      fr: "Ce n'est que \nle début",
+    },
+    contact: {
+      en: "Contact",
+      fr: "Contact",
+    },
+    menu: {
+      en: "Menu",
+      fr: "Menu",
+    },
+    menuItems: {
+      home: { en: "Home", fr: "Accueil" },
+      about: { en: "About", fr: "À propos" },
+      skills: { en: "skills", fr: "compétences" },
+      experience: { en: "Experience", fr: "Expérience" },
+      project: { en: "Project", fr: "Projet" },
+      contactMe: { en: "Contact me", fr: "Me contacter" },
+    },
+  };
+
   return (
     <footer className="  w-full bg-bgLight dark:bg-bgDark gap-8 md:gap-10 lg:gap-16 pb-2 pt-42 flex flex-col items-center  ">
       <span className="px-4 md:px-10 lg:px-14 xl:px-20 w-full flex justify-end ">
@@ -19,13 +46,13 @@ export default function FooterSection() {
 
       <div className=" flex flex-row gap-3 md:flex-row lg:flex-row w-full justify-between px-4 md:px-10 lg:px-14 xl:px-20  ">
         <h1 className="font-ncs leading-[40px] lg:leading-[60px] text-[#076C69] text-2xl lg:text-5xl ">
-          This is just <br />
-          the beginning
+          {content.beginning[langKey].split("\n")[0]} <br />
+          {content.beginning[langKey].split("\n")[1]}
         </h1>
 
         <div className=" flex flex-col items-start gap-2 ">
           <h1 className=" text-xl lg:text-[42px] font-ncs text-bgDark dark:text-white  ">
-            Contact
+            {content.contact[langKey]}
           </h1>
           <ul className=" pl-1 flex flex-col ">
             <li className=" text-sx lg:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
@@ -39,37 +66,37 @@ export default function FooterSection() {
 
         <div className=" hidden xl:block ">
           <h1 className=" text-bgDark dark:text-white font-ncs md:text-[42px]  ">
-            Menu
+            {content.menu[langKey]}
           </h1>
           <ul className=" flex-wrap gap-x-3  gap-1 w-[340px] flex  ">
             <a href="#Home">
               <li className=" cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                Home
+                {content.menuItems.home[langKey]}
               </li>
             </a>
             <a href="#About">
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                About
+                {content.menuItems.about[langKey]}
               </li>
             </a>
             <a href="#Skills">
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                skills
+                {content.menuItems.skills[langKey]}
               </li>
             </a>
             <a href="#Experience">
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                Experience
+                {content.menuItems.experience[langKey]}
               </li>
             </a>
             <a href="#Projects">
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                Project
+                {content.menuItems.project[langKey]}
               </li>
             </a>
             <a href="#ContactMe">
               <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                Contact me
+                {content.menuItems.contactMe[langKey]}
               </li>
             </a>
           </ul>

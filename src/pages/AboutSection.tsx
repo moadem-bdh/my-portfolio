@@ -3,8 +3,13 @@ import Qots from "/assets/qhotes.svg";
 import TextFilling from "../components/TextFilling";
 import { motion } from "framer-motion";
 import ScrollFloat from "../components/scrollFloat";
+import { AboutMe } from "../data/data";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function AboutSection() {
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
   return (
     <section
       id="About"
@@ -18,7 +23,7 @@ export default function AboutSection() {
         stagger={0.03}
         textClassName="font-ncs text-[48px] md:text-[72px] lg:text-[90px] text-bgDark dark:text-white"
       >
-        About me
+        {langKey === "fr" ? "À propos" : "About me"}
       </ScrollFloat>
 
       <div className="w-full flex flex-col h-max">
@@ -69,8 +74,10 @@ export default function AboutSection() {
               style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
               className="text-center  font-ncs lg:text-start text-[28px] lg:text-5xl xl:text-6xl lg:leading-none leading-8 text-greenPt  "
             >
-              BOUDEHANE <br />
-              <span className="text-bgDark dark:text-white ">Mohamed Adem</span>
+              {AboutMe.FamilyName[langKey]} <br />
+              <span className="text-bgDark dark:text-white ">
+                {AboutMe.FirstName[langKey]}
+              </span>
             </motion.h1>
             <motion.p
               initial={{
@@ -91,7 +98,8 @@ export default function AboutSection() {
               style={{ transformOrigin: "50% 100px" }} // center OUTSIDE left side
               className="font-roboto text-sm lg:text-xl lg:text-start text-center text-greyPtLight dark:text-greyPt leading-4.5 lg:leading-5.5  "
             >
-              Graffic & UI/UX Designer <br /> Full Stack Devoloper
+              {AboutMe.ocupation[0][langKey]} <br />{" "}
+              {AboutMe.ocupation[1][langKey]}
             </motion.p>
           </div>
           <hr className="  border-2 border-greyPtLight dark:border-greyPt rounded lg:w-130 xl:w-192 w-192 row-start-9 hidden lg:block  " />
@@ -112,20 +120,7 @@ export default function AboutSection() {
             textClassName="font-ncs text-sm lg:text-lg text-bgDark dark:text-white "
             wordAnimationEnd="bottom bottom-=15%"
           >
-            I am Mohamed Adem Boudehane, a computer science student with a
-            strong passion for technology and creativity. I enjoy working on web
-            development, programming, and digital design, while also exploring
-            areas like filmmaking and marketing. I am curious, motivated, and
-            always looking to learn new skills that help me grow both personally
-            and professionally. My goal is to combine technical knowledge with
-            creative thinking to build projects that make a real impact.I am
-            Mohamed Adem Boudehane, a computer science student with a strong
-            passion for technology and creativity. I enjoy working on web
-            development, programming, and digital design, while also exploring
-            areas like filmmaking and marketing. I am curious, motivated, and
-            always looking to learn new skills that help me grow both personally
-            and professionally. My goal is to combine technical knowledge with
-            creative thinking to build projects that make a real impact.
+            {AboutMe.About[langKey]}
           </TextFilling>
 
           <span className="w-full flex justify-end">

@@ -2,8 +2,23 @@ import ButtunArrow from "/assets/ButtunArrow.svg";
 import Project from "../components/Project";
 import { motion } from "framer-motion";
 import ScrollFloat from "../components/scrollFloat";
+import { projects } from "../data/data";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function ProjectsSection() {
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const heading = {
+    en: "Projects",
+    fr: "Projets",
+  };
+
+  const visitAllText = {
+    en: "Visit all projects",
+    fr: "Voir tous les projets",
+  };
+
   return (
     <section
       id="Projects"
@@ -18,12 +33,18 @@ export default function ProjectsSection() {
           stagger={0.03}
           textClassName="font-ncs text-[42px] md:text-[72px] lg:text-[80px] xl:text-[90px] text-bgDark dark:text-white"
         >
-          Projects
+          {heading[langKey]}
         </ScrollFloat>
       </span>
-
-      <Project />
-      <Project />
+      {projects.map((pr, index) => (
+        <Project
+          number={index}
+          key={pr.id}
+          title={pr.projectName[langKey]}
+          subTitle={pr.projectType[langKey]}
+          description={pr.projectDescription[langKey]}
+        />
+      ))}
 
       <motion.span
         initial={{
@@ -44,7 +65,7 @@ export default function ProjectsSection() {
         className=" group flex gap-3 md:gap-3.5 lg:gap-3 xl:gap-4 items-center justify-center mt-0 md:mt-[-30px] lg:mt-[-20px] xl:mt-[-40px]  "
       >
         <p className="  cursor-pointer font-ncs text-[18px] md:text-[26px] lg:text-[28px] xl:text-[30px] text-bgDark dark:text-white ">
-          Visit all projects
+          {visitAllText[langKey]}
         </p>
 
         <div

@@ -1,11 +1,11 @@
 import logo from "/assets/logoDesktop.svg";
 import menuIcon from "/assets/menu_icon_desktop.svg";
 import LanguageToggle from "../components/LanguageToggle";
-
 import Modetoggle from "../components/ModeToggle";
 import useToggle from "../costumHooks/useToggle";
 import Menu from "../modals/Menu";
 import { AnimatePresence } from "framer-motion";
+
 
 export default function NavbBar({
   setDark,
@@ -22,6 +22,8 @@ export default function NavbBar({
       handleMenuAppear();
     }
   }
+
+
 
   return (
     <>

@@ -4,9 +4,23 @@ import { SwiperSlide } from "swiper/react";
 import ButtunArrow from "/assets/ButtunArrow.svg";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { experiences } from "../data/data";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function ExperienceSection() {
   const [swiperChanged, setSwiperChanged] = useState<number>(0);
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const heading = {
+    en: "Experience",
+    fr: "Expérience",
+  };
+
+  const visitAllText = {
+    en: "Visit all experiences",
+    fr: "Voir toutes les expériences",
+  };
 
   return (
     <section
@@ -32,26 +46,20 @@ export default function ExperienceSection() {
           style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
           className="font-ncs text-[42px] lg:text-[90px] text-bgDark dark:text-white"
         >
-          Experience
+          {heading[langKey]}
         </motion.h1>
       </span>
 
       <ExperienceSwiper setSwiperChanged={setSwiperChanged}>
-        {/* =============================== */}
-
-        <SwiperSlide>
-          <Experience changeEffect={swiperChanged} />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Experience changeEffect={swiperChanged} />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Experience changeEffect={swiperChanged} />
-        </SwiperSlide>
-
-        {/* =============================== */}
+        {experiences.map((exp) => (
+          <SwiperSlide key={exp.id}>
+            <Experience
+              changeEffect={swiperChanged}
+              title={exp.experiencetName[langKey]}
+              decreption={exp.experienceDescription[langKey]}
+            />
+          </SwiperSlide>
+        ))}
       </ExperienceSwiper>
       <motion.span
         initial={{
@@ -72,7 +80,7 @@ export default function ExperienceSection() {
         className=" group flex gap-3 lg:gap-4 items-center justify-center mt-[-50px]  "
       >
         <p className="  cursor-pointer font-ncs text-[18px] lg:text-[30px] text-bgDark dark:text-white ">
-          Visit all experiences
+          {visitAllText[langKey]}
         </p>
 
         <div

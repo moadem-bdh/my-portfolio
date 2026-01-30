@@ -8,26 +8,43 @@ import location from "/assets/location.svg";
 import github from "/assets/ghithub.svg";
 import download from "/assets/download.svg";
 import { motion } from "framer-motion";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function SocialMedia() {
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const content = {
+    mailMe: { en: "Mail me", fr: "Envoyez un email" },
+    contactMe: { en: "Contact me", fr: "Contactez-moi" },
+    location: { en: "Location", fr: "Localisation" },
+    locationSubtitle: { en: "Algiers, Algeria", fr: "Alger, Algérie" },
+    github: { en: "Github", fr: "Github" },
+    socialMedia: {
+      en: "Also on social media",
+      fr: "Aussi sur les réseaux sociaux",
+    },
+    downloadCV: { en: "Download my CV", fr: "Télécharger mon CV" },
+  };
+
   const socialMedia = [
     {
-      title: "Mail me",
+      title: content.mailMe[langKey],
       subTitle: "moadembdh@gmail.com",
       image: letter,
     },
     {
-      title: "Contact me",
+      title: content.contactMe[langKey],
       subTitle: "0782351931",
       image: phone,
     },
     {
-      title: "Location",
-      subTitle: "Algiers, Algeria",
+      title: content.location[langKey],
+      subTitle: content.locationSubtitle[langKey],
       image: location,
     },
     {
-      title: "Github",
+      title: content.github[langKey],
       subTitle: "moadem-bdh",
       image: github,
     },
@@ -62,7 +79,7 @@ export default function SocialMedia() {
       </div>
 
       <p className=" text-center  md:text-center lg:text-center xl:text-start font-ncs text-base text-bgDark dark:text-white md:text-[24px] lg:text-[28px]  ">
-        Also on social media
+        {content.socialMedia[langKey]}
       </p>
 
       <div className=" flex  gap-6 md:justify-center lg:justify-center xl:justify-start justify-center mt-[-20px] md:mt-[-12px] lg:mt-[-24px] ">
@@ -102,7 +119,7 @@ export default function SocialMedia() {
               className=" md:h-7 lg:h-max h-6  invert dark:invert-0"
               alt="Download icon"
             />{" "}
-            Download my CV
+            {content.downloadCV[langKey]}
           </button>
         </a>
       </span>

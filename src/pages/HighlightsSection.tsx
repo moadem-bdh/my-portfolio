@@ -2,33 +2,55 @@ import { useMediaQuery } from "react-responsive";
 import Highlight from "../components/Highlight";
 import HighlightPhone from "../components/HighlightPhone";
 import { motion } from "framer-motion";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function HighlightSection() {
-  // Tailwind v4 breakpoints: sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px
   const desktop = useMediaQuery({ query: "(min-width: 768px)" });
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const heading = {
+    en: "Highlights",
+    fr: "Points forts",
+  };
 
   const highlights: {
     number: string;
-    title: string;
-    description: string;
+    title: { en: string; fr: string };
+    description: { en: string; fr: string };
   }[] = [
     {
-      number: "80%",
-      title: "Clients satisfied worldwide",
-      description:
-        "We deliver consistent quality that builds long-term trust, ensuring clients return for reliable solutions.",
+      number: "3+",
+      title: {
+        en: "Web Projects Completed",
+        fr: "Projets Web Complétés",
+      },
+      description: {
+        en: "Built and delivered multiple full-stack and frontend projects from scratch, showcasing strong skills in UI/UX design and modern web development.",
+        fr: "Construit et livré plusieurs projets full-stack et frontend de A à Z, démontrant de solides compétences en design UI/UX et développement web moderne.",
+      },
     },
     {
-      number: "+60",
-      title: "graphical charts created",
-      description:
-        "More than sixty charts created to simplify complex data, making analysis clear, fast, and effective for teams.",
+      number: "5+",
+      title: {
+        en: "Tech Skills Mastered",
+        fr: "Compétences Tech Maîtrisées",
+      },
+      description: {
+        en: "Proficient in ReactJS, TypeScript, Tailwind CSS, Figma, and animation libraries, applying modern tools to build clean, interactive interfaces.",
+        fr: "Compétent en ReactJS, TypeScript, Tailwind CSS, Figma et bibliothèques d'animation, appliquant des outils modernes pour créer des interfaces propres et interactives.",
+      },
     },
     {
-      number: "200~",
-      title: "Posts made for audiences",
-      description:
-        "Over two hundred posts published to share insights and ideas, crafted to engage readers across platforms.",
+      number: "100%",
+      title: {
+        en: "Fully Responsive Web Sites",
+        fr: "Sites Web Entièrement Responsives",
+      },
+      description: {
+        en: "Designed every project to adapt seamlessly across desktop, tablet, and mobile devices, ensuring an optimal experience for all users.",
+        fr: "Conçu chaque projet pour s'adapter parfaitement sur ordinateur, tablette et mobile, garantissant une expérience optimale pour tous les utilisateurs.",
+      },
     },
   ];
 
@@ -50,7 +72,7 @@ export default function HighlightSection() {
         viewport={{ once: false, margin: "400px 0px -150px 0px" }}
         className=" font-ncs text-bgDark dark:text-white text-3xl md:text-5xl lg:text-6xl"
       >
-        Highlights
+        {heading[langKey]}
       </motion.p>
 
       <motion.div
@@ -75,15 +97,15 @@ export default function HighlightSection() {
             <Highlight
               key={h.number}
               number={h.number}
-              title={h.title}
-              description={h.description}
+              title={h.title[langKey]}
+              description={h.description[langKey]}
             />
           ) : (
             <HighlightPhone
               key={h.number}
               number={h.number}
-              title={h.title}
-              description={h.description}
+              title={h.title[langKey]}
+              description={h.description[langKey]}
             />
           ),
         )}

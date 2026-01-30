@@ -3,6 +3,7 @@ import MenuArrow from "/assets/MenuArrow.svg";
 import close from "/assets/close.svg";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function Menu({
   handleParentClick,
@@ -11,33 +12,36 @@ export default function Menu({
   handleParentClick: (e: React.MouseEvent) => void;
   handleMenuAppear: () => void;
 }) {
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
   type menuType = {
-    name: string;
+    name: { en: string; fr: string };
     achorLink: string;
   };
   const menu: menuType[] = [
     {
-      name: "Home",
+      name: { en: "Home", fr: "Accueil" },
       achorLink: "Home",
     },
     {
-      name: "About Me",
+      name: { en: "About Me", fr: "À propos" },
       achorLink: "About",
     },
     {
-      name: "Skills",
+      name: { en: "Skills", fr: "Compétences" },
       achorLink: "Skills",
     },
     {
-      name: "Experience",
+      name: { en: "Experience", fr: "Expérience" },
       achorLink: "Experience",
     },
     {
-      name: "Projects",
+      name: { en: "Projects", fr: "Projets" },
       achorLink: "Projects",
     },
     {
-      name: "Contact me",
+      name: { en: "Contact me", fr: "Me contacter" },
       achorLink: "ContactMe",
     },
   ];
@@ -103,11 +107,11 @@ export default function Menu({
           <a
             onClick={handleMenuAppear}
             href={`#${option.achorLink}`}
-            key={option.name}
+            key={option.name.en}
           >
             <div className=" transition-all ease-in-out duration-300 cursor-pointer group hover:pl-6 flex w-full justify-between items-center px-4 md:px-8 lg:px-10 ">
               <h1 className="md:group-hover:[-webkit-text-stroke-width:0px] lg:group-hover:[-webkit-text-stroke-width:0px] text-bgDark dark:text-bgLight md:text-bgLight lg:text-bgLight md:dark:text-bgDark lg:dark:text-bgDark  md:group-hover:text-bgDark lg:group-hover:text-bgDark   md:group-hover:dark:text-white lg:group-hover:dark:text-white font-ncs text-[36px] md:text-[54px] lg:text-[64px] md:[-webkit-text-stroke-width:2px] lg:[-webkit-text-stroke-width:2.5px] [-webkit-text-stroke-color:black] dark:[-webkit-text-stroke-color:white]  ">
-                {option.name}
+                {option.name[langKey]}
               </h1>
               <div
                 className={` cursor-pointer md:border-2 lg:border-2 rounded-[100px] h-max w-max p-2 md:p-2.5 lg:p-2.5 border-bgDark  dark:border-white border-1 group-hover:rotate-45 transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}

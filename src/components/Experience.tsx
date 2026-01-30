@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useSwiper, useSwiperSlide } from "swiper/react";
 import ExperienceLayouts from "./photos_layouts/experienceLayouts";
 
-export default function Experience({ changeEffect }: { changeEffect: number }) {
+export default function Experience({ changeEffect , title , decreption }: { changeEffect: number , title?:string , decreption?:string }) {
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null); //===============> copilot does that
   const duration: number = 1000; //the duration ofthe progress 1s => 100
@@ -67,20 +67,10 @@ export default function Experience({ changeEffect }: { changeEffect: number }) {
       </div>
       <div className=" flex flex-col w-full gap-3">
         <h1 className=" font-ncs text-[34px] md:text-5xl lg:text-6xl text-bgDark dark:text-white ">
-          CAA training
+          {title}
         </h1>
         <p className=" select-none text-bgDark dark:text-white font-roboto text-sm md:text-lg lg:text-xl   ">
-          Lorem ipsum dolor sit amet consectetur. Fermentum viverra enim viverra
-          hendrerit sollicitudin gravida. Eget ipsum ante cursus aliquet quis in
-          aliquam dignissim. Tortor sapien turpis ullamcorper aliquam venenatis
-          non egestas in. Leo tincidunt tincidunt est adipiscing elementum quam
-          proin diam. Volutpat quis vestibulum viverra massa semper malesuada.
-          Erat volutpat amet libero arcu. Sem habitant consequat nisi tempor
-          malesuada viverra et neque. Donec donec a egestas euismod hac vitae
-          sed. Mi at tellus scelerisque nisl et. Adipiscing ultrices amet diam
-          quis donec ultricies feugiat. Maecenas amet fusce gravida enim cursus
-          amet mi. Nulla in nunc turpis et. Non dolor mattis mauris amet tellus
-          quis a diam. Pharetra cras eu pulvinar habitant nec et.
+{decreption}
         </p>
       </div>
     </div>

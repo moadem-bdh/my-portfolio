@@ -3,9 +3,57 @@ import { useForm } from "../costumHooks/useForm";
 import emailjs from "@emailjs/browser";
 import { useState, type FormEvent } from "react";
 import submittedIcon from "../../public/assets/submited.svg";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function ContactForm() {
-  const { formValues, changeFormValues ,resetForm} = useForm({
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const content = {
+    sendMessage: { en: "Send a message", fr: "Envoyer un message" },
+    fullName: { en: "Full name", fr: "Nom complet" },
+    fullNamePlaceholder: {
+      en: "Enter your full name",
+      fr: "Entrez votre nom complet",
+    },
+    email: { en: "Email", fr: "Email" },
+    emailPlaceholder: { en: "contact@gmail.com", fr: "contact@gmail.com" },
+    phoneNumber: { en: "Phone number", fr: "Numéro de téléphone" },
+    phonePlaceholder: { en: "0555555555", fr: "0555555555" },
+    subject: { en: "Subject", fr: "Sujet" },
+    subjectPlaceholder: { en: "Enter the subject", fr: "Entrez le sujet" },
+    message: { en: "Your message", fr: "Votre message" },
+    messagePlaceholder: {
+      en: "Write your message",
+      fr: "Écrivez votre message",
+    },
+    connect: { en: "Let's connect", fr: "Connectons!" },
+    thankYou: { en: "THANK YOU", fr: "MERCI" },
+    submit: { en: "Submit", fr: "Envoyer" },
+    submitted: { en: "Submitted", fr: "Envoyé" },
+    errors: {
+      fullNameRequired: {
+        en: "Full name is required",
+        fr: "Le nom complet est requis",
+      },
+      emailRequired: { en: "Email is required", fr: "L'email est requis" },
+      emailInvalid: {
+        en: "Please enter a valid email address",
+        fr: "Veuillez entrer une adresse email valide",
+      },
+      phoneRequired: {
+        en: "Phone number is required",
+        fr: "Le numéro de téléphone est requis",
+      },
+      subjectRequired: { en: "Subject is required", fr: "Le sujet est requis" },
+      messageRequired: {
+        en: "Message is required",
+        fr: "Le message est requis",
+      },
+    },
+  };
+
+  const { formValues, changeFormValues, resetForm } = useForm({
     Full_name: "",
     Email: "",
     Phone_number: "",
@@ -24,44 +72,39 @@ export default function ContactForm() {
 
     let isValid = true;
 
-    // Check Full_name
     if (!data.Full_name) {
-      newErrors.Full_name = "Full name is required";
+      newErrors.Full_name = content.errors.fullNameRequired[langKey];
       isValid = false;
     } else {
       newErrors.Full_name = "";
     }
 
-    // Check Email
     if (!data.Email) {
-      newErrors.Email = "Email is required";
+      newErrors.Email = content.errors.emailRequired[langKey];
       isValid = false;
     } else if (!String(data.Email).includes("@")) {
-      newErrors.Email = "Please enter a valid email address";
+      newErrors.Email = content.errors.emailInvalid[langKey];
       isValid = false;
     } else {
       newErrors.Email = "";
     }
 
-    // Check Phone_number
     if (!data.Phone_number) {
-      newErrors.Phone_number = "Phone number is required";
+      newErrors.Phone_number = content.errors.phoneRequired[langKey];
       isValid = false;
     } else {
       newErrors.Phone_number = "";
     }
 
-    // Check Subject
     if (!data.Subject) {
-      newErrors.Subject = "Subject is required";
+      newErrors.Subject = content.errors.subjectRequired[langKey];
       isValid = false;
     } else {
       newErrors.Subject = "";
     }
 
-    // Check Your_message
     if (!data.Your_message) {
-      newErrors.Your_message = "Message is required";
+      newErrors.Your_message = content.errors.messageRequired[langKey];
       isValid = false;
     } else {
       newErrors.Your_message = "";
@@ -122,11 +165,11 @@ export default function ContactForm() {
         () => {
           console.log("SUCCESS!");
           setIsSubmitted(true);
-          setTimeout(()=>{
-          setIsSubmitted(false);
-          setIsSubmittedFirst(false);
-          resetForm()
-          },3000)
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setIsSubmittedFirst(false);
+            resetForm();
+          }, 3000);
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -152,7 +195,7 @@ export default function ContactForm() {
       className=" flex md:flex-row lg:flex-row flex-col  gap-4 items-center md:w-max lg:w-max md:max-w-max lg:max-w-max w-full max-w-110"
     >
       <h1 className="font-ncs text-[#076C69] text-[32px] md:text-[42px] lg:text-5xl md:[writing-mode:vertical-lr] lg:[writing-mode:vertical-lr] rotate-0 md:rotate-180 lg:rotate-180 ">
-        Send a message
+        {content.sendMessage[langKey]}
       </h1>
 
       <form
@@ -164,7 +207,7 @@ export default function ContactForm() {
             htmlFor="Full_name"
             className=" font-roboto text-bgDark dark:text-white text-xl "
           >
-            Full name{" "}
+            {content.fullName[langKey]}{" "}
             <span className="font-roboto text-xl text-[#5F1313] ">*</span>
           </label>
           <input
@@ -172,7 +215,7 @@ export default function ContactForm() {
             name="Full_name"
             value={String(formValues.Full_name)}
             id="Full_name"
-            placeholder="Enter your full name"
+            placeholder={content.fullNamePlaceholder[langKey]}
             className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1  border-bgDark dark:border-white "
             type="text"
           />
@@ -195,7 +238,7 @@ export default function ContactForm() {
               htmlFor="Email"
               className=" font-roboto text-bgDark dark:text-white text-xl  "
             >
-              Email{" "}
+              {content.email[langKey]}{" "}
               <span className="font-roboto text-xl text-[#5F1313] ">*</span>
             </label>
             <input
@@ -203,7 +246,7 @@ export default function ContactForm() {
               name="Email"
               value={String(formValues.Email)}
               id="Email"
-              placeholder="contact@gmail.com"
+              placeholder={content.emailPlaceholder[langKey]}
               className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl  border-b-1  border-bgDark dark:border-white "
               type="text"
             />
@@ -225,7 +268,7 @@ export default function ContactForm() {
               htmlFor="Phone_number"
               className=" font-roboto text-bgDark dark:text-white text-xl "
             >
-              Phone number{" "}
+              {content.phoneNumber[langKey]}{" "}
               <span className="font-roboto text-xl text-[#5F1313] ">*</span>
             </label>
             <input
@@ -233,7 +276,7 @@ export default function ContactForm() {
               name="Phone_number"
               value={String(formValues.Phone_number)}
               id="Phone_number"
-              placeholder="0555555555"
+              placeholder={content.phonePlaceholder[langKey]}
               className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1  border-bgDark dark:border-white"
               type="text"
             />
@@ -256,7 +299,7 @@ export default function ContactForm() {
             htmlFor="Subject"
             className=" font-roboto text-bgDark dark:text-white text-xl "
           >
-            Subject{" "}
+            {content.subject[langKey]}{" "}
             <span className="font-roboto text-xl text-[#5F1313] ">*</span>
           </label>
           <input
@@ -264,7 +307,7 @@ export default function ContactForm() {
             name="Subject"
             value={String(formValues.Subject)}
             id="Subject"
-            placeholder="Enter the subject"
+            placeholder={content.subjectPlaceholder[langKey]}
             className=" focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1  border-bgDark dark:border-white"
             type="text"
           />
@@ -286,14 +329,14 @@ export default function ContactForm() {
             htmlFor="Your_message"
             className=" font-roboto text-bgDark dark:text-white text-xl "
           >
-            Your message{" "}
+            {content.message[langKey]}{" "}
             <span className="font-roboto text-xl text-[#5F1313] ">*</span>
           </label>
           <textarea
             onChange={handleChange}
             name="Your_message"
             value={String(formValues.Your_message)}
-            placeholder="Write your message"
+            placeholder={content.messagePlaceholder[langKey]}
             className=" scrollbar-thumb-greyPt scrollbar-track-transparent  scrollbar-thin min-h-18 resize-none md:min-h-28 lg:min-h-32 focus:outline-0 font-roboto py-2 px-0 text-bgDark dark:text-white text-xl border-b-1 border-bgDark dark:border-white  "
             id="Your_message"
           ></textarea>
@@ -320,17 +363,15 @@ export default function ContactForm() {
               transition={{ duration: 0.35, ease: "easeOut" }}
               className=" transition-all duration-300 font-ncs text-[34px] md:text-[40px] lg:text-[46px] text-bgDark dark:text-white  "
             >
-              {isSubmitted ? "THANK YOU" : "Let's connect"}
+              {isSubmitted
+                ? content.thankYou[langKey]
+                : content.connect[langKey]}
             </motion.p>
           </AnimatePresence>
           <motion.button
             type="submit"
             whileTap={{ scale: 0.97 }}
-            animate={
-              isSubmitted
-                ? { scale: 1.03 }
-                : { scale: 1 }
-            }
+            animate={isSubmitted ? { scale: 1.03 } : { scale: 1 }}
             transition={{ type: "spring", stiffness: 380, damping: 22 }}
             className="items-center transition-all duration-300 flex flex-row gap-3 font-ncs text-[18px] md:text-xl lg:text-2xl dark:text-bgDark text-bgLight cursor-pointer hover:bg-[#000000be] hover:dark:bg-[#ffffffe1] md:p-3.5 lg:p-4  px-3 pt-3 pb-2  md:pb-3 lg:pb-3  border-0 focus:outline-0 bg-bgDark dark:bg-white rounded-[20px] "
           >
@@ -342,7 +383,9 @@ export default function ContactForm() {
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.25 }}
               >
-                {isSubmitted ? "Sbmitted" : "Submit"}
+                {isSubmitted
+                  ? content.submitted[langKey]
+                  : content.submit[langKey]}
               </motion.span>
             </AnimatePresence>
             <AnimatePresence>

@@ -8,12 +8,14 @@ import HighlightSection from "./HighlightsSection";
 import NavbBar from "./NavBar";
 import ProjectsSection from "./ProjectsSection";
 import SkillsSection from "./SkillsSection";
+import { LanguageProvider } from "../Contexts/LanguageContext";
 
 export default function FullApp() {
   const [isDark, setIsDark] = useToggle(true);
 
   return (
     <div className={`${isDark ? "dark" : ""} flex  flex-col relative w-full`}>
+      <LanguageProvider>
       <NavbBar setDark={setIsDark} />
       <HeroSection />
       <HighlightSection />
@@ -23,6 +25,7 @@ export default function FullApp() {
       <ProjectsSection />
       <ConatctMeSection />
       <FooterSection />
+      </LanguageProvider>
     </div>
   );
 }

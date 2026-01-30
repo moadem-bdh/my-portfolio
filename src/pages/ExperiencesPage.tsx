@@ -2,9 +2,17 @@ import useToggle from "../costumHooks/useToggle";
 import FooterSection from "./FooterSection";
 import NavbBar from "./NavBar";
 import { motion } from "framer-motion";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function ExperiencesPage() {
   const [isDark, setIsDark] = useToggle(true);
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const heading = {
+    en: "Experience",
+    fr: "Expérience",
+  };
 
   return (
     <div
@@ -32,7 +40,7 @@ export default function ExperiencesPage() {
           style={{ transformOrigin: "50% 200px" }} // center OUTSIDE left side
           className="font-ncs text-[42px] md:text-[90px] text-bgDark md:pt-6 dark:text-white"
         >
-          Experience
+          {heading[langKey]}
         </motion.h1>
       </span>
 

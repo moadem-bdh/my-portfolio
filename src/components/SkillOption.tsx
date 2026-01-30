@@ -50,8 +50,7 @@ export default function SkillOption({
           {title}
         </p>
         <p className=" font-roboto w-26 md:w-32 lg:w-[168px] text-[9px] md:text-[11px] lg:text-[12px]  transition-all ease-in-out duration-300 text-greyPtLight dark:text-greyPt lg:opacity-35 font-medium group-hover:opacity-100 ">
-          {description}Lorem ipsum dolor sit amet consectetur. Tempor tristique
-          aliquam et orci. Leo auctor dolor at leo urna vel.
+          {description}
         </p>
       </div>
     </div>

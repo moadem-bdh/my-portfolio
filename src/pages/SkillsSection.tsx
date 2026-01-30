@@ -7,25 +7,34 @@ import ScrollFloat from "../components/scrollFloat";
 import Skill from "../components/Skill";
 import SkillOption from "../components/SkillOption";
 import { MySkills } from "../data/data";
+import { useLanguage } from "../Contexts/LanguageContext";
 
 export default function SkillsSection() {
+  const { language } = useLanguage();
+  const langKey = language === "fr" ? "fr" : "en";
+
+  const heading = {
+    en: "Skills",
+    fr: "Compétences",
+  };
+
   type skillsType = {
-    title: string;
+    title: { en: string; fr: string };
     id: string;
     appear: boolean;
   };
 
   const skills: skillsType[] = [
-    { title: "Design", id: "design", appear: true },
-    { title: "Web devolopment", id: "dev", appear: true },
-    { title: "Multimedia", id: "multimedia", appear: true },
-    { title: "Soft skills", id: "softSkills", appear: true },
+    { title: { en: "Design", fr: "Design" }, id: "design", appear: true },
+    { title: { en: "Web development", fr: "Développement Web" }, id: "dev", appear: true },
+    { title: { en: "Multimedia", fr: "Multimédia" }, id: "multimedia", appear: true },
+    { title: { en: "Soft skills", fr: "Soft skills" }, id: "softSkills", appear: true },
   ];
 
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   const changeTheSlide: (index: number) => void = (index) => {
-    swiper?.slideTo(index); //THERE IS A PROBLEM HERE THAT NEED TO BE FIXED SOOOON
+    swiper?.slideTo(index);
   };
 
   const [skill, setSkill] = useState<string>(skills[0].id);
@@ -33,7 +42,7 @@ export default function SkillsSection() {
   return (
     <section
       id="Skills"
-      className="relative w-full z-10  lg:min-h-220 xl:min-h-240 px-4 md:px-10 lg:px-14 xl:px-20 lg:pt-20 lg:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-10 lg:gap-16 flex-col items-center "
+      className="relative w-full z-10  lg:min-h-220 xl:min-h-240 px-4 md:px-10 lg:px-14 xl:px-16 lg:pt-20 lg:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-10 lg:gap-16 flex-col items-center "
     >
       <ScrollFloat
         animationDuration={1}
@@ -43,7 +52,7 @@ export default function SkillsSection() {
         stagger={0.03}
         textClassName="font-ncs text-[42px] md:text-[72px] lg:text-[80px] xl:text-[90px] text-bgDark dark:text-white"
       >
-        Skills
+        {heading[langKey]}
       </ScrollFloat>
       <motion.div
         initial={{
@@ -69,7 +78,7 @@ export default function SkillsSection() {
                   setSkill(s.id);
                 }}
                 key={s.id}
-                skill={s}
+                skill={{ ...s, title: s.title[langKey] }}
                 currentSkill={skill}
               />
             ),
@@ -100,13 +109,14 @@ export default function SkillsSection() {
                           className=" w-full  h-max flex justify-center"
                         >
                           <SkillOption
-                            field={skill.skillName.en}
+                            field={skill.skillName[langKey]}
                             bgColor={sk.bgColor}
                             image={sk.image}
-                            title={sk.name.en}
+                            title={sk.name[langKey]}
                             percentage={sk.percentage}
                             outlineColor={sk.outlineColor}
                             textColor={sk.numberColor}
+                            description={sk.description[langKey]}
                           />
                         </div>
                       )
