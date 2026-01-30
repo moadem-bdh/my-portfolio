@@ -49,10 +49,10 @@ export default function ExperienceLayouts({
     string[]
   >;
 
-  // IN PHINE THE ROWS IS ONE BUT IN PHONE IT 10
+  // IN DESKTOP THE ROWS IS ONE BUT IN PHONE IT 10
 
   return (
-    <div className="grid grid-cols-10 md:max-h-48 lg:max-h-56 grid-rows-1 w-full max-h-66  h-full gap-1">
+    <div className="grid  grid-cols-10 md:max-h-48 lg:min-h-56 grid-rows-1 w-full max-h-66  h-full gap-1">
       <img
         src={photos[0]}
         alt="Project photo"

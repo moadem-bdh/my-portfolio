@@ -23,12 +23,12 @@ export default function Project({
   };
 
   return (
-    <div className=" flex-col-reverse lg:flex-row flex w-full justify-between items-center h-max gap-3 md:gap-4 lg:gap-3 xl:gap-4 ">
+    <div className={` ${number % 2 == 0 ? "lg:flex-row" :"lg:flex-row-reverse"} flex-col-reverse lg:flex-row flex w-full justify-between items-start h-max gap-3 md:gap-4 lg:gap-3 xl:gap-4 `}>
       <motion.div
         initial={{
-          x: -150,
+          x: number % 2 == 0 ? -150 : 150 ,
           opacity: 0,
-          rotate: "-3deg",
+          rotate: number % 2 == 0 ? "-3deg": "3deg" ,
         }}
         whileInView={{
           x: 0,
@@ -54,7 +54,7 @@ export default function Project({
         <p className=" font-roboto text-sm lg:text-base xl:text-lg text-bgDark dark:text-white ">
           {description}.
         </p>
-        <span className=" group flex gap-2 lg:gap-3 xl:gap-4 items-center w-max  justify-end mt-[22px] pr-2 ">
+        <span className=" group flex gap-2 lg:gap-3 xl:gap-4 items-center w-max  justify-end  pr-2 ">
           <p className=" cursor-pointer font-ncs text-sm lg:text-lg xl:text-[24px] text-bgDark dark:text-white ">
             {viewAllText[langKey]}
           </p>
@@ -73,9 +73,9 @@ export default function Project({
       <motion.div
         className="w-full lg:w-1/2 lg:h-[300px] xl:h-[420px]"
         initial={{
-          x: 150,
+          x: number % 2 == 0 ? 150 : -150 ,
           opacity: 0,
-          rotate: "3deg",
+          rotate: number % 2 == 0 ? "3deg": "-3deg",
         }}
         whileInView={{
           x: 0,

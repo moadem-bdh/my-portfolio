@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ProjectLayouts({
-  gridType = 2,
+  gridType = 1,
 }: {
   gridType?: number;
 }) {
@@ -22,6 +22,7 @@ export default function ProjectLayouts({
         "col-span-6 row-span-6 w-full h-full object-cover rounded-[20px]",
         "row-span-3 col-span-4 w-full h-full object-cover rounded-[20px]",
         "row-span-3 col-span-4 w-full h-full object-cover rounded-[20px]",
+
       ],
       2: [
         "col-span-6 row-span-6 w-full h-full object-cover rounded-[20px]",
@@ -67,7 +68,7 @@ export default function ProjectLayouts({
   return (
     // THERE WILL BE A MAP FUNCTION HERE AND NOT AND NO THESE SHITS
 
-    <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-84 lg:max-h-full  max-h-66 h-full py-2 gap-1">
+    <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-84 lg:min-h-120 xl:min-h-130  max-h-66 h-full py-2 gap-1">
       <img
         src={photos[0]}
         alt="Project photo"
@@ -82,6 +83,11 @@ export default function ProjectLayouts({
         src={photos[2]}
         alt="Project photo"
         className={chosen[gridType][2]}
+      />
+      <img
+        src={photos[3]}
+        alt="Project photo"
+        className={chosen[gridType][3]}
       />
       <img
         src={photos[3]}
