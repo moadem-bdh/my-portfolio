@@ -32,21 +32,25 @@ export default function SocialMedia() {
       title: content.mailMe[langKey],
       subTitle: "moadembdh@gmail.com",
       image: letter,
+      link: "",
     },
     {
       title: content.contactMe[langKey],
       subTitle: "0782351931",
       image: phone,
+      link: "",
     },
     {
       title: content.location[langKey],
       subTitle: content.locationSubtitle[langKey],
       image: location,
+      link: "",
     },
     {
       title: content.github[langKey],
       subTitle: "moadem-bdh",
       image: github,
+      link: "https://github.com/moadem-bdh",
     },
   ];
 
@@ -74,6 +78,7 @@ export default function SocialMedia() {
             title={s.title}
             subTitle={s.subTitle}
             image={s.image}
+            link={s.link}
           />
         ))}
       </div>

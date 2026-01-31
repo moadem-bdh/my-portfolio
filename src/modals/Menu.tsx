@@ -4,6 +4,7 @@ import close from "/assets/close.svg";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import { useLanguage } from "../Contexts/LanguageContext";
+import { useNavigate } from "react-router";
 
 export default function Menu({
   handleParentClick,
@@ -14,7 +15,7 @@ export default function Menu({
 }) {
   const { language } = useLanguage();
   const langKey = language === "fr" ? "fr" : "en";
-
+  const navigate = useNavigate();
   type menuType = {
     name: { en: string; fr: string };
     achorLink: string;
@@ -29,7 +30,7 @@ export default function Menu({
       achorLink: "About",
     },
     {
-      name: { en: "Skills", fr: "Compétences" },
+      name: { en: "Skills", fr: "Skills" },
       achorLink: "Skills",
     },
     {
@@ -105,23 +106,39 @@ export default function Menu({
         </div>
         {menu.map((option) => (
           <a
-            onClick={handleMenuAppear}
-            href={`#${option.achorLink}`}
+            onClick={() => {
+              handleMenuAppear();
+              if (option.achorLink === "Experience") {
+                navigate("/experience");
+              } else if (option.achorLink === "Projects") {
+                navigate("/projetcs");
+              } else {
+                navigate("/");
+              }
+            }}
+            href={
+              option.achorLink === "Experience" ||
+              option.achorLink === "Projects"
+                ? undefined
+                : `#${option.achorLink}`
+            }
             key={option.name.en}
           >
             <div className=" transition-all ease-in-out duration-300 cursor-pointer group hover:pl-6 flex w-full justify-between items-center px-4 md:px-8 lg:px-10 ">
               <h1 className="md:group-hover:[-webkit-text-stroke-width:0px] lg:group-hover:[-webkit-text-stroke-width:0px] text-bgDark dark:text-bgLight md:text-bgLight lg:text-bgLight md:dark:text-bgDark lg:dark:text-bgDark  md:group-hover:text-bgDark lg:group-hover:text-bgDark   md:group-hover:dark:text-white lg:group-hover:dark:text-white font-ncs text-[36px] md:text-[54px] lg:text-[64px] md:[-webkit-text-stroke-width:2px] lg:[-webkit-text-stroke-width:2.5px] [-webkit-text-stroke-color:black] dark:[-webkit-text-stroke-color:white]  ">
                 {option.name[langKey]}
               </h1>
-              <div
-                className={` cursor-pointer md:border-2 lg:border-2 rounded-[100px] h-max w-max p-2 md:p-2.5 lg:p-2.5 border-bgDark  dark:border-white border-1 group-hover:rotate-45 transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}
-              >
-                <img
-                  src={buttonArrow}
-                  className={` h-[10px] md:h-4 lg:h-5 group-hover:invert-0 invert group-hover:dark:invert dark:invert-0   transition-all ease-in-out duration-300`}
-                  alt="Arrow Icon"
-                />
-              </div>
+              {desktop && (
+                <div
+                  className={` cursor-pointer md:border-2 lg:border-2 rounded-[100px] h-max w-max p-2 md:p-2.5 lg:p-2.5 border-bgDark  dark:border-white border-1 group-hover:rotate-45 transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}
+                >
+                  <img
+                    src={buttonArrow}
+                    className={` h-[10px] md:h-4 lg:h-5 group-hover:invert-0 invert group-hover:dark:invert dark:invert-0   transition-all ease-in-out duration-300`}
+                    alt="Arrow Icon"
+                  />
+                </div>
+              )}
             </div>
           </a>
         ))}

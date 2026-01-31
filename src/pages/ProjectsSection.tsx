@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import ScrollFloat from "../components/scrollFloat";
 import { projects } from "../data/data";
 import { useLanguage } from "../Contexts/LanguageContext";
+import { useNavigate } from "react-router";
 
 export default function ProjectsSection() {
   const { language } = useLanguage();
   const langKey = language === "fr" ? "fr" : "en";
-
+  const navigate = useNavigate();
   const heading = {
     en: "Projects",
     fr: "Projets",
@@ -22,7 +23,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="Projects"
-      className=" overflow-hidden  w-full px-4 lg:px-14 xl:px-20 bg-bg dark:bg-bgDark flex flex-col items:center lg:items-end pb-8 pt-16 lg:pt-20 xl:pt-22 lg:pb-16 xl:pb-22 gap-14 lg:gap-18 xl:gap-20 "
+      className=" overflow-hidden  w-full px-4 lg:px-14 xl:px-20 bg-bg dark:bg-bgDark flex flex-col items:center lg:items-end pb-8 pt-16 lg:pt-20 xl:pt-22 lg:pb-16 xl:pb-22 gap-14 lg:gap-10 "
     >
       <span className="w-full flex justify-center items-center ">
         <ScrollFloat
@@ -36,10 +37,12 @@ export default function ProjectsSection() {
           {heading[langKey]}
         </ScrollFloat>
       </span>
-      {projects.map((pr, index) => (
+
+      {projects.slice(0, 2).map((pr, index) => (
         <Project
           number={index}
           key={pr.id}
+          page="section"
           title={pr.projectName[langKey]}
           subTitle={pr.projectType[langKey]}
           description={pr.projectDescription[langKey]}
@@ -47,6 +50,7 @@ export default function ProjectsSection() {
       ))}
 
       <motion.span
+        onClick={() => navigate("/projetcs")}
         initial={{
           x: 150,
           opacity: 0,
@@ -62,7 +66,7 @@ export default function ProjectsSection() {
         }}
         viewport={{ once: false, margin: "400px 0px -70px 0px" }}
         style={{ transformOrigin: "50% 100px" }}
-        className=" group flex gap-3 md:gap-3.5 lg:gap-3 xl:gap-4 items-center justify-center mt-0 md:mt-[-30px] lg:mt-[-20px] xl:mt-[-40px]  "
+        className=" group flex gap-3 md:gap-3.5 lg:gap-3 xl:gap-4 items-center justify-center mt-0 md:mt-[25px] lg:mt-[15px] xl:mt-[30px]  "
       >
         <p className="  cursor-pointer font-ncs text-[18px] md:text-[26px] lg:text-[28px] xl:text-[30px] text-bgDark dark:text-white ">
           {visitAllText[langKey]}

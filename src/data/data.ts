@@ -81,6 +81,47 @@ type aboutMeType = {
   iamge: string;
 };
 
+//HIFHLIGHT SECTION
+export const highlights: {
+    number: string;
+    title: { en: string; fr: string };
+    description: { en: string; fr: string };
+  }[] = [
+  {
+    number: "3+",
+    title: {
+      "en": "Web Projects Completed",
+      "fr": "Web Projets Complétés"
+    },
+    description: {
+      en: "Built and delivered multiple frontend projects from scratch, showcasing strong skills in UI/UX design and modern web development.",
+      fr: "Créé et livré plusieurs projets frontend depuis zéro, montrant de solides compétences en UI/UX et développement web."
+    }
+  },
+  {
+    number: "10+",
+    title: {
+      en: "Tech Skills Mastered",
+      fr: "Tech skills Maîtrisées"
+    },
+    description: {
+      en: "Proficient in ReactJS, TypeScript, Tailwind CSS, Figma, and animation libraries, applying modern tools to build clean, interactive interfaces.",
+      fr: "Maîtrise de ReactJS, TypeScript, Tailwind CSS, et Figma, utilisant outils modernes pour créer interfaces claires."
+    }
+  },
+  {
+    number: "100%",
+    title: {
+      en: "Fully Responsive Web Sites",
+      fr: "Sites Web Entièrement Adaptés"
+    },
+    "description": {
+      en: "Designed every project to adapt seamlessly across desktop, tablet, and mobile devices, ensuring an optimal experience for all users.",
+      fr: "Conçu chaque projet pour s'adapter sur ordinateur, tablette et mobile, garantissant une expérience optimale pour tous les utilisateurs."
+    }
+  }
+]
+
 //About Me SECTION
 export const AboutMe: aboutMeType = {
   FirstName: {
@@ -92,39 +133,32 @@ export const AboutMe: aboutMeType = {
     fr: "BOUDEHANE",
   },
   About: {
-    en: `My name is Mohamed Adem Boudehane, and I am a second-year student at the École Nationale
-    Supérieure d'Informatique (ESI), passionate about web development and UI/UX design. I 
-    specialize in creating web applications that are both functional and visually appealing, 
-    combining my programming skills with a user-centered approach. My academic and personal 
-    projects have allowed me to gain hands-on experience in front-end development, interactive 
-    design, and algorithmic problem solving. During my studies and freelance work, I have completed
-    several projects that showcase my technical versatility. I have designed and developed a 
-    responsive online store, created a library management system in C, and built a personal 
-    portfolio website using React and Tailwind CSS to showcase my skills. I have also explored 
-    computer architecture simulation, algorithms, and data structures, further strengthening my 
-    analytical abilities and programming expertise. My technical skill set includes HTML, CSS, 
-    JavaScript, TypeScript, React.js, Next.js, C, as well as design and prototyping tools like 
-    Figma. I am also proficient in version control with Git and GitHub, and I am continually 
-    seeking to learn new technologies and improve my development methods. I am motivated by the 
-    challenge of turning ideas into practical and elegant solutions, bridging the gap between code 
-    and design. My goal is to contribute to impactful projects by delivering efficient, intuitive, 
-    and aesthetically pleasing applications while continuing to grow as a developer and designer.`,
+   en: `My name is Mohamed Adem Boudehane, and I am a second-year student at the École Nationale
+Supérieure d'Informatique (ESI), passionate about web development and UI/UX design. I specialize
+in creating web applications that are both functional and visually appealing, combining my
+programming skills with a user-centered approach. My academic and personal projects have allowed
+me to gain hands-on experience in front-end development, interactive design, and algorithmic
+problem solving through both coursework and freelance work. I have created a library management
+system in C and built a personal portfolio website using React and Tailwind CSS to showcase my
+skills. I have also explored algorithms, data structures, and computer architecture simulation,
+strengthening my analytical and programming abilities. My technical skill set includes HTML,
+CSS, JavaScript, TypeScript, React.js, Next.js, C, Figma, as well as version control with Git and
+GitHub. I am motivated by turning ideas into practical and elegant solutions, bridging the gap
+between code and design, and contributing to impactful and well-crafted digital products.`,
 
-fr: `Je suis Mohamed Adem Boudehane, étudiant en 2eme année à l'École Nationale Supérieure 
-d'Informatique (ESI), passionné par le développement web et le design UI/UX. Je me spécialise 
-dans la création d'applications web à la fois fonctionnelles et esthétiques, alliant mes 
-compétences en programmation à une approche centrée sur l'utilisateur. Mes projets académiques 
-et personnels m'ont permis d'acquérir une expérience pratique en développement front-end, design 
-interactif et résolution algorithmique de problèmes, notamment à travers des projets réalisés 
-dans le cadre de mes études et de mon travail en freelance. J'ai conçu et développé une boutique 
-en ligne responsive, créé un système de gestion de bibliothèque en C, et développé un site 
-portfolio personnel avec React et Tailwind CSS pour présenter mes compétences. Mon ensemble de 
-compétences techniques inclut HTML, CSS, JavaScript, TypeScript, React.js, Next.js, C, ainsi que 
-les outils de design et prototypage comme Figma. Je maîtrise également le contrôle de version avec 
-Git et GitHub, et je cherche continuellement à apprendre de nouvelles technologies et à améliorer 
-mes méthodes de développement. Mon objectif est de contribuer à des projets impactants en livrant 
-des applications efficaces, intuitives et esthétiques, tout en continuant à évoluer en tant que 
-développeur et designer.`,
+fr: `Je suis Mohamed Adem Boudehane, étudiant en 2eme année à l'École Nationale Supérieure
+d'Informatique (ESI), passionné par le développement web et le design UI/UX. Je me spécialise
+dans la création d'applications web à la fois fonctionnelles et esthétiques, alliant mes
+compétences en programmation à une approche centrée sur l'utilisateur. Mes projets académiques
+et personnels m'ont permis d'acquérir une expérience pratique en développement front-end,
+design interactif et résolution algorithmique de problèmes, à travers mes études et mon travail
+en freelance. J'ai développé un système de gestion de bibliothèque en C et conçu un site
+portfolio personnel avec React et Tailwind CSS pour présenter mes compétences. J'ai également
+exploré les algorithmes, les structures de données et la simulation d'architecture des
+ordinateurs, renforçant mes capacités analytiques et techniques. Mon ensemble de compétences
+inclut HTML, CSS, JavaScript, TypeScript, React.js, Next.js, C, Figma, ainsi que Git et GitHub.
+Je suis motivé par la transformation d'idées en solutions pratiques et élégantes, en reliant
+le code au design et en contribuant à des projets numériques impactants.`
   },
   ocupation: [
     {
@@ -758,7 +792,7 @@ export const projects: projectType[] = [
   et personal branding dans un seul projet, démontrant ma capacité à gérer la création de A à Z et offrant une 
   plateforme professionnelle qui me représente efficacement.`,
     },
-    projectLink: "https://",
+    projectLink: "https://portfolio-moadem.vercel.app/",
     images: [],
   },
   {
@@ -800,7 +834,7 @@ en: `I developed the Boutique Vamos Website as a freelance project, creating a p
   ma capacité à gérer des projets freelance, de la conception UI/UX au développement frontend, 
   en livrant une plateforme en ligne fonctionnelle et attrayante.`,
     },
-    projectLink: "https://",
+    projectLink: "",
     images: [],
   },
   {
@@ -844,7 +878,7 @@ en: `I developed the Boutique Vamos Website as a freelance project, creating a p
   problèmes pratiques dans un seul projet, démontrant ma capacité à créer une application web complète, 
   fonctionnelle et conviviale de A à Z.`,
     },
-    projectLink: "https://",
+    projectLink: "https://moadem-todo-list.netlify.app/events",
     images: [],
   },
 ];

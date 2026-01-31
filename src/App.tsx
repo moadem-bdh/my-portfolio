@@ -1,17 +1,22 @@
 import "./App.css";
 import { Routes, Route } from "react-router";
-
-import FullApp from "./pages/FullApp";
+import { LanguageProvider } from "./Contexts/LanguageContext";
+import AllSections from "./pages/AllSections";
 import ProjectsPage from "./pages/ProjectsPage";
 import ExperiencesPage from "./pages/ExperiencesPage";
+import NavFooter from "./pages/NavFooter";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<FullApp />} />
-      <Route path="/projetcs" element={<ProjectsPage />} />
-      <Route path="/experience" element={<ExperiencesPage />} />
-    </Routes>
+    <LanguageProvider>
+      <Routes>
+        <Route element ={<NavFooter />} >
+        <Route path="/" element={<AllSections />} />
+        <Route path="/projetcs" element={<ProjectsPage />} />
+        <Route path="/experience" element={<ExperiencesPage />} />
+        </Route>
+      </Routes>
+    </LanguageProvider>
   );
 }
 export default App;

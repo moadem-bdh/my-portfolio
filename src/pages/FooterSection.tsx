@@ -3,43 +3,68 @@ import LinkedInColored from "/assets/linkedinColored.svg";
 import TwittwrColored from "/assets/twitterColored.svg";
 import ButtonArrow from "../components/ButtonArrow";
 import { useLanguage } from "../Contexts/LanguageContext";
+import { useNavigate } from "react-router";
 
 export default function FooterSection() {
   const { language } = useLanguage();
   const langKey = language === "fr" ? "fr" : "en";
+  const navigate = useNavigate();
 
   const content = {
     beginning: {
       en: "This is just \nthe beginning",
       fr: "Ce n'est que \nle début",
     },
-    contact: {
-      en: "Contact",
-      fr: "Contact",
+  };
+
+  type menuType = {
+    name: { en: string; fr: string };
+    achorLink: string;
+  };
+
+  const menu: menuType[] = [
+    {
+      name: { en: "Home", fr: "Accueil" },
+      achorLink: "Home",
     },
-    menu: {
-      en: "Menu",
-      fr: "Menu",
+    {
+      name: { en: "About Me", fr: "À propos" },
+      achorLink: "About",
     },
-    menuItems: {
-      home: { en: "Home", fr: "Accueil" },
-      about: { en: "About", fr: "À propos" },
-      skills: { en: "skills", fr: "compétences" },
-      experience: { en: "Experience", fr: "Expérience" },
-      project: { en: "Project", fr: "Projet" },
-      contactMe: { en: "Contact me", fr: "Me contacter" },
+    {
+      name: { en: "Skills", fr: "Skills" },
+      achorLink: "Skills",
     },
+    {
+      name: { en: "Experience", fr: "Expérience" },
+      achorLink: "Experience",
+    },
+    {
+      name: { en: "Projects", fr: "Projets" },
+      achorLink: "Projects",
+    },
+    {
+      name: { en: "Contact me", fr: "Me contacter" },
+      achorLink: "ContactMe",
+    },
+  ];
+
+  const scrollToTop = () => {
+window.scrollTo(0,0);
   };
 
   return (
     <footer className="  w-full bg-bgLight dark:bg-bgDark gap-8 md:gap-10 lg:gap-16 pb-2 pt-42 flex flex-col items-center  ">
       <span className="px-4 md:px-10 lg:px-14 xl:px-20 w-full flex justify-end ">
-        <a href="#Home">
+        <button
+          onClick={scrollToTop}
+          className="cursor-pointer hover:scale-110 transition-transform duration-300"
+        >
           <ButtonArrow
             divStyle=" border border-3 p-4 md:p-4 lg:p-5 hover:bg-bgDark hover:dark:bg-white "
             Arrowtyle=" hover:dark:invert dark:invert-0 invert hover:invert-0 w-6 lg:w-8 -rotate-45  "
           />
-        </a>
+        </button>
       </span>
 
       <hr className=" w-96/100 rounded border-bgDark dark:border-white  " />
@@ -52,7 +77,7 @@ export default function FooterSection() {
 
         <div className=" flex flex-col items-start gap-2 ">
           <h1 className=" text-xl lg:text-[42px] font-ncs text-bgDark dark:text-white  ">
-            {content.contact[langKey]}
+            Contact
           </h1>
           <ul className=" pl-1 flex flex-col ">
             <li className=" text-sx lg:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
@@ -66,39 +91,33 @@ export default function FooterSection() {
 
         <div className=" hidden xl:block ">
           <h1 className=" text-bgDark dark:text-white font-ncs md:text-[42px]  ">
-            {content.menu[langKey]}
+            Menu
           </h1>
           <ul className=" flex-wrap gap-x-3  gap-1 w-[340px] flex  ">
-            <a href="#Home">
-              <li className=" cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                {content.menuItems.home[langKey]}
-              </li>
-            </a>
-            <a href="#About">
-              <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                {content.menuItems.about[langKey]}
-              </li>
-            </a>
-            <a href="#Skills">
-              <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                {content.menuItems.skills[langKey]}
-              </li>
-            </a>
-            <a href="#Experience">
-              <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                {content.menuItems.experience[langKey]}
-              </li>
-            </a>
-            <a href="#Projects">
-              <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                {content.menuItems.project[langKey]}
-              </li>
-            </a>
-            <a href="#ContactMe">
-              <li className="cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-                {content.menuItems.contactMe[langKey]}
-              </li>
-            </a>
+            {menu.map((option) => (
+              <a
+                onClick={() => {
+                  if (option.achorLink === "Experience") {
+                    navigate("/experience");
+                  } else if (option.achorLink === "Projects") {
+                    navigate("/projetcs");
+                  } else {
+                    navigate("/");
+                  }
+                }}
+                href={
+                  option.achorLink === "Experience" ||
+                  option.achorLink === "Projects"
+                    ? undefined
+                    : `#${option.achorLink}`
+                }
+                key={option.name.en}
+              >
+                <li className=" cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto hover:text-bgDark hover:dark:text-white transition-colors duration-300 ">
+                  {option.name[langKey]}
+                </li>
+              </a>
+            ))}
           </ul>
         </div>
       </div>

@@ -2,8 +2,10 @@ import { useState } from "react";
 
 export default function ExperienceLayouts({
   gridType = 1,
+  deviceType = "phone",
 }: {
   gridType?: number;
+  deviceType?: "phone" | "desktop";
 }) {
   // Photo paths served from public/assets. Adjust names if you want different images.
   const [photos] = useState<string[]>([
@@ -44,7 +46,8 @@ export default function ExperienceLayouts({
     },
   };
 
-  const chosen: Record<number, string[]> = layouts.desktop as Record<
+  // pick layouts based on device type
+  const chosen: Record<number, string[]> = layouts[deviceType] as Record<
     number,
     string[]
   >;
@@ -52,7 +55,7 @@ export default function ExperienceLayouts({
   // IN DESKTOP THE ROWS IS ONE BUT IN PHONE IT 10
 
   return (
-    <div className="grid  grid-cols-10 md:max-h-48 lg:min-h-56 grid-rows-1 w-full max-h-66  h-full gap-1">
+    <div className="grid grid-cols-10 grid-rows-10 lg:grid-rows-1 md:max-h-100 lg:max-h-50 xl:max-h-55 w-full max-h-76 h-full gap-1">
       <img
         src={photos[0]}
         alt="Project photo"

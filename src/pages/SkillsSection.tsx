@@ -15,7 +15,7 @@ export default function SkillsSection() {
 
   const heading = {
     en: "Skills",
-    fr: "Compétences",
+    fr: "Skills",
   };
 
   type skillsType = {
@@ -26,15 +26,27 @@ export default function SkillsSection() {
 
   const skills: skillsType[] = [
     { title: { en: "Design", fr: "Design" }, id: "design", appear: true },
-    { title: { en: "Web development", fr: "Développement Web" }, id: "dev", appear: true },
-    { title: { en: "Multimedia", fr: "Multimédia" }, id: "multimedia", appear: true },
-    { title: { en: "Soft skills", fr: "Soft skills" }, id: "softSkills", appear: true },
+    {
+      title: { en: "Web development", fr: "Développement Web" },
+      id: "dev",
+      appear: true,
+    },
+    {
+      title: { en: "Multimedia", fr: "Multimédia" },
+      id: "multimedia",
+      appear: true,
+    },
+    {
+      title: { en: "Soft skills", fr: "Soft skills" },
+      id: "softSkills",
+      appear: true,
+    },
   ];
 
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   const changeTheSlide: (index: number) => void = (index) => {
-    swiper?.slideTo(index);
+    swiper?.slideToLoop(index);
   };
 
   const [skill, setSkill] = useState<string>(skills[0].id);

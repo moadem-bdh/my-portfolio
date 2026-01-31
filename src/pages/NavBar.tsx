@@ -1,11 +1,11 @@
-import logo from "/assets/logoDesktop.svg";
+import logo from "/assets/moademLogo.svg";
 import menuIcon from "/assets/menu_icon_desktop.svg";
 import LanguageToggle from "../components/LanguageToggle";
 import Modetoggle from "../components/ModeToggle";
 import useToggle from "../costumHooks/useToggle";
 import Menu from "../modals/Menu";
 import { AnimatePresence } from "framer-motion";
-
+import {useNavigate} from "react-router"
 
 export default function NavbBar({
   setDark,
@@ -23,7 +23,7 @@ export default function NavbBar({
     }
   }
 
-
+ const navigate = useNavigate() ;
 
   return (
     <>
@@ -31,8 +31,9 @@ export default function NavbBar({
         <div className=" z-30 w-full flex fixed top-0 py-4 md:py-5 lg:py-6 px-4 md:px-8 lg:px-10  items-center bg-bgLight  dark:bg-bgDark justify-between ">
           <img
             src={logo}
-            className=" md:h-9 lg:h-max h-8 dark:invert-0 invert dark:none-0"
+            className=" cursor-pointer md:h-9 lg:h-11 h-8 dark:invert-0 invert dark:none-0"
             alt="Logo"
+            onClick={()=>navigate("/")}
           />
           <div className=" flex gap-4 md:gap-4 lg:gap-4 items-center ">
             <Modetoggle setDark={setDark} />

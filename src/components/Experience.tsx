@@ -1,8 +1,25 @@
 import { useEffect, useState, useRef } from "react";
 import { useSwiper, useSwiperSlide } from "swiper/react";
 import ExperienceLayouts from "./photos_layouts/experienceLayouts";
+import { useMediaQuery } from "react-responsive";
 
-export default function Experience({ changeEffect , title , decreption }: { changeEffect: number , title?:string , decreption?:string }) {
+export default function Experience({
+  changeEffect,
+  title,
+  decreption,
+}: {
+  changeEffect: number;
+  title?: string;
+  decreption?: string;
+}) {
+  // Screen size detection
+  const isLg = useMediaQuery({
+    query: "(min-width: 1024px) and (max-width: 1279px)",
+  });
+  const isXl = useMediaQuery({ query: "(min-width: 1280px)" });
+
+  // Determine device type for layouts (phone for mobile/tablet, desktop for lg/xl)
+  const deviceType = isLg || isXl ? "desktop" : "phone";
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null); //===============> copilot does that
   const duration: number = 1000; //the duration ofthe progress 1s => 100
@@ -54,7 +71,7 @@ export default function Experience({ changeEffect , title , decreption }: { chan
       className="select-none w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
     >
       <div className=" w-full">
-        <ExperienceLayouts />
+        <ExperienceLayouts deviceType={deviceType} />
       </div>
 
       <div className=" w-full md:w-70/100 lg:w-70/100 bg-[#076C6980] rounded-full h-1.5 mb-4 dark:bg-[#076C6980] mt-4">
@@ -70,7 +87,7 @@ export default function Experience({ changeEffect , title , decreption }: { chan
           {title}
         </h1>
         <p className=" select-none text-bgDark dark:text-white font-roboto text-sm md:text-lg lg:text-xl   ">
-{decreption}
+          {decreption}
         </p>
       </div>
     </div>

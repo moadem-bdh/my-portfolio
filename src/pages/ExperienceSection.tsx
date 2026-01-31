@@ -6,12 +6,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { experiences } from "../data/data";
 import { useLanguage } from "../Contexts/LanguageContext";
+import { useNavigate } from "react-router";
 
 export default function ExperienceSection() {
   const [swiperChanged, setSwiperChanged] = useState<number>(0);
   const { language } = useLanguage();
   const langKey = language === "fr" ? "fr" : "en";
-
+  const navigate = useNavigate();
   const heading = {
     en: "Experience",
     fr: "Expérience",
@@ -19,7 +20,7 @@ export default function ExperienceSection() {
 
   const visitAllText = {
     en: "Visit all experiences",
-    fr: "Voir toutes les expériences",
+    fr: "Voir tout",
   };
 
   return (
@@ -51,7 +52,7 @@ export default function ExperienceSection() {
       </span>
 
       <ExperienceSwiper setSwiperChanged={setSwiperChanged}>
-        {experiences.map((exp) => (
+        {experiences.slice(0, 3).map((exp) => (
           <SwiperSlide key={exp.id}>
             <Experience
               changeEffect={swiperChanged}
@@ -62,6 +63,7 @@ export default function ExperienceSection() {
         ))}
       </ExperienceSwiper>
       <motion.span
+        onClick={() => navigate("/experience")}
         initial={{
           x: 150,
           opacity: 0,

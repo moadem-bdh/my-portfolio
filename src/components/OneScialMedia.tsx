@@ -2,13 +2,24 @@ export default function OneSocialMedia({
   title,
   subTitle,
   image,
+  link = "",
 }: {
   title: string;
   subTitle: string;
   image: string;
+  link?: string;
 }) {
+  const handleClick = () => {
+    if (link) {
+      window.open(link, "_blank");
+    }
+  };
+
   return (
-    <div className="flex gap-4 w-max">
+    <div
+      onClick={handleClick}
+      className={`flex gap-4 w-max ${link ? "cursor-pointer" : ""}`}
+    >
       <img
         src={image}
         className=" md:w-9 lg:w-max w-9 dark:invert-0 invert"

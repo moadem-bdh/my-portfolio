@@ -2,8 +2,10 @@ import { useState } from "react";
 
 export default function ProjectLayouts({
   gridType = 1,
+  deviceType = "phone",
 }: {
   gridType?: number;
+  deviceType?: "phone" | "desktop";
 }) {
   // Photo paths served from public/assets. Adjust names if you want different images.
   const [photos] = useState<string[]>([
@@ -47,9 +49,8 @@ export default function ProjectLayouts({
     },
   };
 
-  // pick desktop layouts by default       add here | the condition
-  const chosen: Record<number, string[]> = layouts.desktop as Record<
-    //treat choden as that
+  // pick layouts based on device type
+  const chosen: Record<number, string[]> = layouts[deviceType] as Record<
     number,
     string[]
   >;
@@ -68,7 +69,7 @@ export default function ProjectLayouts({
   return (
     // THERE WILL BE A MAP FUNCTION HERE AND NOT AND NO THESE SHITS
 
-    <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-84 lg:min-h-120 xl:min-h-130  max-h-66 h-full py-2 gap-1">
+    <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-100 lg:min-h-136 xl:min-h-144  max-h-82 py-2 gap-1">
       <img
         src={photos[0]}
         alt="Project photo"
@@ -83,11 +84,6 @@ export default function ProjectLayouts({
         src={photos[2]}
         alt="Project photo"
         className={chosen[gridType][2]}
-      />
-      <img
-        src={photos[3]}
-        alt="Project photo"
-        className={chosen[gridType][3]}
       />
       <img
         src={photos[3]}
