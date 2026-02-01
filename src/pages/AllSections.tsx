@@ -11,25 +11,26 @@ import { useEffect } from "react";
 export default function AllSections() {
   const location = useLocation();
 
-  // Scroll to top only when navigating to home page without hash
+  // Handle scrolling based on pathname and hash
   useEffect(() => {
-    if (location.pathname === "/" && !location.hash) {
-      window.scrollTo(0, 0);
-    }
-  }, [location.pathname,location.hash]);
-
-  // Scroll to section by ID when on home page with hash
-  useEffect(() => {
-    if (location.pathname === "/" && location.hash) {
-      const elementId = location.hash.replace("#", "");
-      const element = document.getElementById(elementId);
-      if (element) {
+    if (location.pathname === "/") {
+      if (location.hash) {
+        // Scroll to section by ID when there's a hash
+        const elementId = location.hash.replace("#", "");
+        const element = document.getElementById(elementId);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
+      } else {
+        // Scroll to top when no hash
         setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 100);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 0);
       }
     }
-  }, [location.hash, location.pathname]);
+  }, [location.pathname, location.hash]);
   return (
     <div className={` flex  flex-col relative w-full`}>
       <HeroSection />
