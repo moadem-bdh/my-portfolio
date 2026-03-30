@@ -10,10 +10,10 @@ function App() {
   return (
     <LanguageProvider>
       <Routes>
-        <Route element ={<NavFooter />} >
-        <Route path="/" element={<AllSections />} />
-        <Route path="/projetcs" element={<ProjectsPage />} />
-        <Route path="/experience" element={<ExperiencesPage />} />
+        <Route element={<NavFooter />}>
+          <Route path="/" element={<AllSections />} />
+          <Route path="/projetcs" element={<ProjectsPage />} />
+          <Route path="/experience" element={<ExperiencesPage />} />
         </Route>
       </Routes>
     </LanguageProvider>

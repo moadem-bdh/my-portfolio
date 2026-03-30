@@ -834,7 +834,7 @@ en: `I developed the Boutique Vamos Website as a freelance project, creating a p
   ma capacité à gérer des projets freelance, de la conception UI/UX au développement frontend, 
   en livrant une plateforme en ligne fonctionnelle et attrayante.`,
     },
-    projectLink: "",
+    projectLink: "https://boutique-vamos.vercel.app/",
     images: [],
   },
   {
@@ -878,7 +878,7 @@ en: `I developed the Boutique Vamos Website as a freelance project, creating a p
   problèmes pratiques dans un seul projet, démontrant ma capacité à créer une application web complète, 
   fonctionnelle et conviviale de A à Z.`,
     },
-    projectLink: "https://moadem-todo-list.netlify.app/events",
+    projectLink: "https://orgalist.vercel.app/",
     images: [],
   },
 ];
