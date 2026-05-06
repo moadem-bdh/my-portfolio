@@ -17,12 +17,6 @@ export default function NavbBar({
     setMenuAppear();
   }
 
-  function handleParentClick(e: React.MouseEvent): void {
-    if (e.target === e.currentTarget) {
-      handleMenuAppear();
-    }
-  }
-
  const navigate = useNavigate() ;
 
   return (
@@ -59,7 +53,6 @@ export default function NavbBar({
       <AnimatePresence>
         {menuAppear && (
           <Menu
-            handleParentClick={handleParentClick}
             handleMenuAppear={handleMenuAppear}
           />
         )}
