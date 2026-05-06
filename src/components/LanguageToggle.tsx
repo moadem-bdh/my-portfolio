@@ -1,8 +1,8 @@
 import lang from "/assets/language.svg";
 import arrow from "/assets/arrow.svg";
 import LanguageOption from "./LanguagrOption";
-import useToggle from "../costumHooks/useToggle";
 import { useLanguage } from "../Contexts/LanguageContext";
+import { useRef, useEffect, useState } from "react";
 
 type Language = {
   id: "fr" | "en";
@@ -17,15 +17,29 @@ export default function LanguageToggle() {
     { id: "fr", name: { en: "French", fr: "Francais" } },
     { id: "en", name: { en: "English", fr: "Anglais" } },
   ];
-  const [isOpen, setIsOpen] = useToggle(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const currentLangKey = language === "fr" ? "fr" : "en";
 
+  // Close dropdown when clicking anywhere outside this component
+  useEffect(() => {
+    if (!isOpen) return;
+    function handleOutsideClick(e: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [isOpen]);
+
   return (
     <div
+      ref={wrapperRef}
       className=" flex items-center relative cursor-pointer"
-      onClick={setIsOpen}
+      onClick={() => setIsOpen((prev) => !prev)}
     >
       <img
         src={lang}
