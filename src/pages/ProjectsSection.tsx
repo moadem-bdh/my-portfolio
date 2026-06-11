@@ -38,16 +38,21 @@ export default function ProjectsSection() {
         </ScrollFloat>
       </span>
 
-      {projects.slice(0, 2).map((pr, index) => (
-        <Project
-          number={index}
-          key={pr.id}
-          page="section"
-          title={pr.projectName[langKey]}
-          subTitle={pr.projectType[langKey]}
-          description={pr.projectDescription[langKey]}
-        />
-      ))}
+      {projects.slice(0, 2).map((pr, index) => {
+        const gridType = pr.images.length === 4 ? 2 : 1;
+        return (
+          <Project
+            number={index}
+            key={pr.id}
+            page="section"
+            title={pr.projectName[langKey]}
+            subTitle={pr.projectType[langKey]}
+            description={pr.projectDescription[langKey]}
+            gridType={gridType}
+            images={pr.images}
+          />
+        );
+      })}
 
       <motion.span
         onClick={() => navigate("/projetcs")}

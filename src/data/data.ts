@@ -78,7 +78,7 @@ type aboutMeType = {
   FamilyName: LanguageContent;
   About: LanguageContent;
   ocupation: LanguageContent[];
-  iamge: string;
+  image: string;
 };
 
 //HIFHLIGHT SECTION
@@ -170,7 +170,7 @@ le code au design et en contribuant à des projets numériques impactants.`
       fr: "Designer UI/UX",
     },
   ],
-  iamge: "...",
+  image: "...",
 };
 
 //Skills SECTION
@@ -793,7 +793,13 @@ export const projects: projectType[] = [
   plateforme professionnelle qui me représente efficacement.`,
     },
     projectLink: "https://portfolio-moadem.vercel.app/",
-    images: [],
+    images: [
+    "/mockUps/IpadsMockUpPortfolio.png",
+    "/mockUps/phoneMockUpPortfolio.png",
+    "/mockUps/PhonesMockUpPortfolio.png",
+    "/mockUps/DesktopMockUpPortfolio.png",
+    
+  ],
   },
   {
     id: 2,
@@ -835,7 +841,12 @@ en: `I developed the Boutique Vamos Website as a freelance project, creating a p
   en livrant une plateforme en ligne fonctionnelle et attrayante.`,
     },
     projectLink: "https://boutique-vamos.vercel.app/",
-    images: [],
+    images: [
+    "/mockUps/PhonesMockUpVamos.png",
+    "/mockUps/PhoneMockUpVamos.png",
+    "/mockUps/IpadsMockUpVamos.png",
+    "/mockUps/DesktopMockUpVamos.png",
+  ],
   },
   {
     id: 3,
@@ -879,6 +890,11 @@ en: `I developed the Boutique Vamos Website as a freelance project, creating a p
   fonctionnelle et conviviale de A à Z.`,
     },
     projectLink: "https://orgalist.vercel.app/",
-    images: [],
+    images: [
+    "/mockUps/IpadsMockUpOrgalist.png",
+    "/mockUps/PhoneMockUpOrgalist.png",
+    "/mockUps/PhonesMockUpOrgalist.png",
+    "/mockUps/DesktopMockUpOrgalist.png",
+  ],
   },
 ];

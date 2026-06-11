@@ -14,6 +14,8 @@ export default function Project({
   description,
   page = "section",
   projectLink = "",
+  gridType = 1,
+  images,
 }: {
   number: number;
   title: string;
@@ -21,6 +23,8 @@ export default function Project({
   description: string;
   page?: "section" | "page";
   projectLink?: string;
+  gridType:number,
+  images:string[],
 }) {
   const { language } = useLanguage();
   const langKey = language === "fr" ? "fr" : "en";
@@ -200,7 +204,7 @@ export default function Project({
         viewport={{ once: false, margin: "400px 0px -150px 0px" }}
         style={{ transformOrigin: "50% 100px" }}
       >
-        <ProjectLayouts deviceType={deviceType} />
+        <ProjectLayouts deviceType={deviceType} gridType={gridType} images={images} />
       </motion.div>
     </div>
   );

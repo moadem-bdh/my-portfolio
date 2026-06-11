@@ -52,17 +52,23 @@ export default function ProjectsPage() {
         </motion.h1>
       </span>
 
-      {projects.map((pr, index) => (
-        <Project
-          number={index}
-          key={pr.id}
-          page="page"
-          projectLink={pr.projectLink}
-          title={pr.projectName[langKey]}
-          subTitle={pr.projectType[langKey]}
-          description={pr.projectDescription[langKey]}
-        />
-      ))}
+      {projects.map((pr, index) => {
+        const gridType = pr.images.length == 4 ? 2 : 1;
+
+        return (
+          <Project
+            number={index}
+            key={pr.id}
+            page="page"
+            projectLink={pr.projectLink}
+            title={pr.projectName[langKey]}
+            subTitle={pr.projectType[langKey]}
+            gridType={gridType}
+            images={pr.images}
+            description={pr.projectDescription[langKey]}
+          />
+        );
+      })}
 
       <motion.span
         onClick={() => navigate("/")}

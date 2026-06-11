@@ -1,20 +1,22 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function ProjectLayouts({
   gridType = 1,
   deviceType = "phone",
+  images = [],
 }: {
   gridType?: number;
   deviceType?: "phone" | "desktop";
+  images?: string[];
 }) {
   // Photo paths served from public/assets. Adjust names if you want different images.
-  const [photos] = useState<string[]>([
-    "/assets/image.png",
-    "/assets/image.png",
-    "/assets/image.png",
-    "/assets/image.png",
-    "/assets/image.png",
-  ]);
+  // const [photos] = useState<string[]>([
+  //   "/assets/image.png",
+  //   "/assets/image.png",
+  //   "/assets/image.png",
+  //   "/assets/image.png",
+  //   "/assets/image.png",
+  // ]);
 
   const layouts = {
     desktop: {
@@ -70,7 +72,21 @@ export default function ProjectLayouts({
     // THERE WILL BE A MAP FUNCTION HERE AND NOT AND NO THESE SHITS
 
     <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-100 lg:min-h-136 xl:min-h-144  max-h-82 py-2 gap-1">
-      <img
+      
+      {
+        images
+          .slice(0, chosen[gridType]?.length ?? 0)
+          .map((im, index) => (
+            <img
+              key={index}
+              src={im}
+              alt="Project photo"
+              className={chosen[gridType][index]}
+            />
+          ))
+      }
+
+      {/* <img
         src={photos[0]}
         alt="Project photo"
         className={chosen[gridType][0]}
@@ -89,7 +105,7 @@ export default function ProjectLayouts({
         src={photos[3]}
         alt="Project photo"
         className={chosen[gridType][3]}
-      />
+      /> */}
     </div>
   );
 }
