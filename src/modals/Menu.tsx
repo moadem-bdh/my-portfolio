@@ -1,11 +1,9 @@
 import buttonArrow from "/assets/ButtunArrow.svg";
 import MenuArrow from "/assets/MenuArrow.svg";
 import { useMediaQuery } from "react-responsive";
-import { motion, Variants } from "framer-motion";
 import { useLanguage } from "../Contexts/LanguageContext";
 import { useNavigate } from "react-router";
-
-const MotionAnchor = motion.a as any;
+import { motion, type Variants } from "framer-motion";
 
 export default function Menu({
   handleMenuAppear,
@@ -48,7 +46,7 @@ export default function Menu({
 
   const desktop = useMediaQuery({ query: "(min-width: 768px)" });
 
-  const listContainerVariants: Variants = {
+  const listContainerVariants = {
     hidden: {},
     visible: {
       transition: {
@@ -89,7 +87,7 @@ export default function Menu({
         backgroundColor: "transparent",
       }}
       transition={{
-        duration: 0.5,
+        duration: desktop ? 0.6 : 0.5,
         ease: "easeInOut",
       }}
     >
@@ -107,7 +105,7 @@ export default function Menu({
           y: desktop ? 0 : -600,
         }}
         transition={{
-          duration: desktop ? 0.6 : 0.45,
+          duration: desktop ? 0.5 : 0.45,
           ease: "easeInOut",
         }}
         onClick={(e) => e.stopPropagation()}
@@ -133,7 +131,7 @@ export default function Menu({
           className="flex flex-col gap-1 md:gap-0"
         >
           {menu.map((option) => (
-            <MotionAnchor
+            <motion.a
               variants={listItemVariants}
               onClick={() => {
                 handleMenuAppear();
@@ -147,7 +145,7 @@ export default function Menu({
               }}
               href={
                 option.achorLink === "Experience" ||
-                option.achorLink === "Projects"
+                  option.achorLink === "Projects"
                   ? undefined
                   : `#${option.achorLink}`
               }
@@ -169,7 +167,7 @@ export default function Menu({
                   </div>
                 )}
               </div>
-            </MotionAnchor>
+            </motion.a>
           ))}
         </motion.div>
       </motion.div>
