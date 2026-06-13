@@ -42,6 +42,9 @@ export default function Project({
   // Determine device type for layouts (phone for mobile, desktop/tablet for lg/xl)
   const deviceType = isLg || isXl || isTablet ? "desktop" : "phone";
 
+  // Check if layout is stacked vertically (below lg screen width)
+  const isStacked = !isLg && !isXl;
+
   // Dynamic collapsed heights based on screen size
   const getCollapsedHeight = () => {
     if (isMobile) return 186;
@@ -84,9 +87,9 @@ export default function Project({
     >
       <motion.div
         initial={{
-          x: number % 2 == 0 ? -150 : 150,
+          x: isStacked ? 150 : (number % 2 == 0 ? -150 : 150),
           opacity: 0,
-          rotate: number % 2 == 0 ? "-3deg" : "3deg",
+          rotate: isStacked ? "3deg" : (number % 2 == 0 ? "-3deg" : "3deg"),
         }}
         whileInView={{
           x: 0,
@@ -188,9 +191,9 @@ export default function Project({
       <motion.div
         className="w-full lg:w-1/2 "
         initial={{
-          x: number % 2 == 0 ? 150 : -150,
+          x: isStacked ? -150 : (number % 2 == 0 ? 150 : -150),
           opacity: 0,
-          rotate: number % 2 == 0 ? "3deg" : "-3deg",
+          rotate: isStacked ? "-3deg" : (number % 2 == 0 ? "3deg" : "-3deg"),
         }}
         whileInView={{
           x: 0,
