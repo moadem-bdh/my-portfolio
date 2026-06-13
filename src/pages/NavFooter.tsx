@@ -12,7 +12,7 @@ export default function NavFooter() {
   return (
     <div className={`${isDark ? "dark" : ""} flex  flex-col relative w-full`}>
       <NavbBar setDark={setIsDark} />
-      <Outlet/>
+      <Outlet />
       <FooterSection />
     </div>
   );
