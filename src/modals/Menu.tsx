@@ -1,10 +1,11 @@
 import buttonArrow from "/assets/ButtunArrow.svg";
 import MenuArrow from "/assets/MenuArrow.svg";
-import close from "/assets/close.svg";
 import { useMediaQuery } from "react-responsive";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useLanguage } from "../Contexts/LanguageContext";
 import { useNavigate } from "react-router";
+
+const MotionAnchor = motion.a as any;
 
 export default function Menu({
   handleMenuAppear,
@@ -46,13 +47,40 @@ export default function Menu({
   ];
 
   const desktop = useMediaQuery({ query: "(min-width: 768px)" });
+
+  const listContainerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: desktop ? 0 : 0.08,
+        delayChildren: desktop ? 0 : 0.1,
+      },
+    },
+  };
+
+  const listItemVariants: Variants = {
+    hidden: {
+      opacity: desktop ? 1 : 0,
+      x: desktop ? 0 : -35,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <motion.menu
       onClick={handleMenuAppear}
-      className={`fixed h-full inset-0 z-40 
+      className={`fixed h-full inset-0 z-10 md:z-40 
        transition-colors duration-1000 ease-in-out flex justify-end`}
       initial={{
-        backgroundColor: "transpaernt",
+        backgroundColor: "transparent",
       }}
       animate={{
         backgroundColor: "rgba(0,0,0,0.8)",
@@ -83,9 +111,9 @@ export default function Menu({
           ease: "easeInOut",
         }}
         onClick={(e) => e.stopPropagation()}
-        className="md:w-[700px] lg:w-[920px] w-full gap-1 md:gap-0 lg:gap-0 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 lg:border-b-0 md:border-l-4 lg:border-l-4 py-6  flex flex-col h-[470px] max-h-full md:h-full lg:h-full overflow-y-auto border-[#076C69]"
+        className="md:w-[700px] lg:w-[920px] md:z-40 -z-10 w-full gap-1 md:gap-0 lg:gap-0 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 lg:border-b-0 md:border-l-4 lg:border-l-4 py-6  flex flex-col h-[470px] max-h-full md:h-full lg:h-full overflow-y-auto border-[#076C69]"
       >
-        <div className=" w-full flex  mb-2  md:mb-6 lg:mb-8 px-4 md:px-8 lg:px-10  md:justify-start lg:justify-start justify-end">
+        <div className=" w-full flex  mb-10  lg:mb-8 px-4 md:px-8 lg:px-10  md:justify-start lg:justify-start justify-end">
           <button
             type="button"
             onClick={handleMenuAppear}
@@ -96,51 +124,54 @@ export default function Menu({
               src={MenuArrow}
               alt="Arrow"
             />
-            <img
-              className="group-hover:dark:invert group-hover:invert-0 dark:invert-0 invert md:hidden lg:hidden block "
-              src={close}
-              alt="close icon"
-            />
           </button>
         </div>
-        {menu.map((option) => (
-          <a
-            onClick={() => {
-              handleMenuAppear();
-              if (option.achorLink === "Experience") {
-                navigate("/experience");
-              } else if (option.achorLink === "Projects") {
-                navigate("/projetcs");
-              } else {
-                navigate("/");
+        <motion.div
+          variants={listContainerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col gap-1 md:gap-0"
+        >
+          {menu.map((option) => (
+            <MotionAnchor
+              variants={listItemVariants}
+              onClick={() => {
+                handleMenuAppear();
+                if (option.achorLink === "Experience") {
+                  navigate("/experience");
+                } else if (option.achorLink === "Projects") {
+                  navigate("/projetcs");
+                } else {
+                  navigate("/");
+                }
+              }}
+              href={
+                option.achorLink === "Experience" ||
+                option.achorLink === "Projects"
+                  ? undefined
+                  : `#${option.achorLink}`
               }
-            }}
-            href={
-              option.achorLink === "Experience" ||
-              option.achorLink === "Projects"
-                ? undefined
-                : `#${option.achorLink}`
-            }
-            key={option.name.en}
-          >
-            <div className=" transition-all ease-in-out duration-300 cursor-pointer group hover:pl-6 flex w-full justify-between items-center px-4 md:px-8 lg:px-10 ">
-              <h1 className="md:group-hover:[-webkit-text-stroke-width:0px] lg:group-hover:[-webkit-text-stroke-width:0px] text-bgDark dark:text-bgLight md:text-bgLight lg:text-bgLight md:dark:text-bgDark lg:dark:text-bgDark  md:group-hover:text-bgDark lg:group-hover:text-bgDark   md:group-hover:dark:text-white lg:group-hover:dark:text-white font-ncs text-[36px] md:text-[54px] lg:text-[64px] md:[-webkit-text-stroke-width:2px] lg:[-webkit-text-stroke-width:2.5px] [-webkit-text-stroke-color:black] dark:[-webkit-text-stroke-color:white]  ">
-                {option.name[langKey]}
-              </h1>
-              {desktop && (
-                <div
-                  className={` cursor-pointer md:border-2 lg:border-2 rounded-[100px] h-max w-max p-2 md:p-2.5 lg:p-2.5 border-bgDark  dark:border-white border-1 group-hover:rotate-45 transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}
-                >
-                  <img
-                    src={buttonArrow}
-                    className={` h-[10px] md:h-4 lg:h-5 group-hover:invert-0 invert group-hover:dark:invert dark:invert-0   transition-all ease-in-out duration-300`}
-                    alt="Arrow Icon"
-                  />
-                </div>
-              )}
-            </div>
-          </a>
-        ))}
+              key={option.name.en}
+            >
+              <div className=" transition-all ease-in-out duration-300 cursor-pointer group hover:pl-6 flex w-full justify-between items-center px-4 md:px-8 lg:px-10 ">
+                <h1 className="md:group-hover:[-webkit-text-stroke-width:0px] lg:group-hover:[-webkit-text-stroke-width:0px] text-bgDark dark:text-bgLight md:text-bgLight lg:text-bgLight md:dark:text-bgDark lg:dark:text-bgDark  md:group-hover:text-bgDark lg:group-hover:text-bgDark   md:group-hover:dark:text-white lg:group-hover:dark:text-white font-ncs text-[36px] md:text-[54px] lg:text-[64px] md:[-webkit-text-stroke-width:2px] lg:[-webkit-text-stroke-width:2.5px] [-webkit-text-stroke-color:black] dark:[-webkit-text-stroke-color:white]  ">
+                  {option.name[langKey]}
+                </h1>
+                {desktop && (
+                  <div
+                    className={` cursor-pointer md:border-2 lg:border-2 rounded-[100px] h-max w-max p-2 md:p-2.5 lg:p-2.5 border-bgDark  dark:border-white border-1 group-hover:rotate-45 transition-all ease-in-out duration-300 group-hover:bg-bgDark group-hover:dark:bg-white hover:boeder-0`}
+                  >
+                    <img
+                      src={buttonArrow}
+                      className={` h-[10px] md:h-4 lg:h-5 group-hover:invert-0 invert group-hover:dark:invert dark:invert-0   transition-all ease-in-out duration-300`}
+                      alt="Arrow Icon"
+                    />
+                  </div>
+                )}
+              </div>
+            </MotionAnchor>
+          ))}
+        </motion.div>
       </motion.div>
     </motion.menu>
   );
