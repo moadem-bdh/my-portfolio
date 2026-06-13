@@ -9,14 +9,6 @@ export default function ProjectLayouts({
   deviceType?: "phone" | "desktop";
   images?: string[];
 }) {
-  // Photo paths served from public/assets. Adjust names if you want different images.
-  // const [photos] = useState<string[]>([
-  //   "/assets/image.png",
-  //   "/assets/image.png",
-  //   "/assets/image.png",
-  //   "/assets/image.png",
-  //   "/assets/image.png",
-  // ]);
 
   const layouts = {
     desktop: {
@@ -38,15 +30,17 @@ export default function ProjectLayouts({
 
     phone: {
       1: [
-        "col-span-6 row-span-5 w-full h-full object-cover rounded-[20px]",
-        "col-span-4 row-span-5 w-full h-full object-cover rounded-[20px]",
-        "col-span-4 row-span-5 w-full h-full object-cover rounded-[20px]",
-        "row-span-5 col-span-6 w-full h-full object-cover rounded-[20px]",
+        "col-span-4 row-span-4 w-full h-full object-cover rounded-[20px]",
+        "col-span-6 row-span-4 w-full h-full object-cover rounded-[20px]",
+        "col-span-6 row-span-6 w-full h-full object-cover rounded-[20px]",
+        "row-span-3 col-span-4 w-full h-full object-cover rounded-[20px]",
+        "row-span-3 col-span-4 w-full h-full object-cover rounded-[20px]",
       ],
       2: [
-        "col-span-5 row-span-5 w-full h-full object-cover rounded-[20px]",
-        "col-span-5 row-span-5 w-full h-full object-cover rounded-[20px]",
-        "col-span-10 row-span-5 w-full h-full object-cover rounded-[20px]",
+        "col-span-6 row-span-6 w-full h-full object-cover rounded-[20px]",
+        "col-span-4 row-span-6 w-full h-full object-cover rounded-[20px]",
+        "col-span-4 row-span-4 w-full h-full object-cover rounded-[20px]",
+        "row-span-4 col-span-6 w-full h-full object-cover rounded-[20px]",
       ],
     },
   };
@@ -71,8 +65,8 @@ export default function ProjectLayouts({
   return (
     // THERE WILL BE A MAP FUNCTION HERE AND NOT AND NO THESE SHITS
 
-    <div className="grid grid-cols-10  grid-rows-10 w-full md:max-h-100 lg:min-h-136 xl:min-h-144  max-h-82 py-2 gap-1">
-      
+    <div className="grid grid-cols-10  grid-rows-10 w-full md:min-h-120 lg:min-h-136 xl:min-h-144  max-h-82 py-2 gap-1">
+
       {
         images
           .slice(0, chosen[gridType]?.length ?? 0)
@@ -86,26 +80,7 @@ export default function ProjectLayouts({
           ))
       }
 
-      {/* <img
-        src={photos[0]}
-        alt="Project photo"
-        className={chosen[gridType][0]}
-      />
-      <img
-        src={photos[1]}
-        alt="Project photo"
-        className={chosen[gridType][1]}
-      />
-      <img
-        src={photos[2]}
-        alt="Project photo"
-        className={chosen[gridType][2]}
-      />
-      <img
-        src={photos[3]}
-        alt="Project photo"
-        className={chosen[gridType][3]}
-      /> */}
+ 
     </div>
   );
 }

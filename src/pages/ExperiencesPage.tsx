@@ -57,6 +57,7 @@ export default function ExperiencesPage() {
           index={index}
           title={exp.experiencetName[langKey]}
           decreption={exp.experienceDescription[langKey]}
+          images={exp.images}
         />
       ))}
 

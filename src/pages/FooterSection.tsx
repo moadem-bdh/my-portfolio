@@ -50,7 +50,7 @@ export default function FooterSection() {
   ];
 
   const scrollToTop = () => {
-window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -80,11 +80,15 @@ window.scrollTo(0,0);
             Contact
           </h1>
           <ul className=" pl-1 flex flex-col ">
-            <li className=" text-sx lg:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-              0782351931
+            <li className=" cursor-pointer text-sx lg:text-xl text-greyPtLight dark:text-greyPt font-roboto hover:text-bgDark hover:dark:text-white transition-colors duration-300 ">
+              <a href="tel:+213782351931" className="hover:underline">
+                0782351931
+              </a>
             </li>
-            <li className=" text-sx lg:text-xl text-greyPtLight dark:text-greyPt font-roboto ">
-              moadem@gmail.com
+            <li className="cursor-pointer text-sx lg:text-xl text-greyPtLight dark:text-greyPt hover:text-bgDark hover:dark:text-white transition-colors duration-300 font-roboto ">
+              <a href="mailto:moadembdh@gmail.com" className="hover:underline">
+                moadembdh@gmail.com
+              </a>
             </li>
           </ul>
         </div>
@@ -113,7 +117,7 @@ window.scrollTo(0,0);
                 }
                 key={option.name.en}
               >
-                <li className=" cursor-pointer text-xl text-greyPtLight dark:text-greyPt font-roboto hover:text-bgDark hover:dark:text-white transition-colors duration-300 ">
+                <li className=" cursor-pointer hover:underline text-xl text-greyPtLight dark:text-greyPt font-roboto hover:text-bgDark hover:dark:text-white transition-colors duration-300 ">
                   {option.name[langKey]}
                 </li>
               </a>

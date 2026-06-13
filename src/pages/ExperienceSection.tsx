@@ -58,6 +58,8 @@ export default function ExperienceSection() {
               changeEffect={swiperChanged}
               title={exp.experiencetName[langKey]}
               decreption={exp.experienceDescription[langKey]}
+              images={exp.images}
+              
             />
           </SwiperSlide>
         ))}

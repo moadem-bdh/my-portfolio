@@ -25,21 +25,31 @@ export default function SkillsSection() {
   };
 
   const skills: skillsType[] = [
-    { title: { en: "Design", fr: "Design" }, id: "design", appear: true },
     {
       title: { en: "Web development", fr: "Développement Web" },
       id: "dev",
       appear: true,
     },
     {
-      title: { en: "Multimedia", fr: "Multimédia" },
-      id: "multimedia",
+      title: { en: "Digital Media", fr: "Média Numérique" },
+      id: "digitalMedia",
       appear: true,
     },
+
     {
       title: { en: "Soft skills", fr: "Soft skills" },
       id: "softSkills",
       appear: true,
+    },
+
+    { title: { en: "Design", fr: "Design" }, 
+    id: "design", 
+    appear: false 
+    },
+    {
+      title: { en: "Multimedia", fr: "Multimédia" },
+      id: "multimedia",
+      appear: false,
     },
   ];
 
@@ -87,8 +97,8 @@ export default function SkillsSection() {
               <Skill
                 onClick={() => {
                   changeTheSlide(index);
-                  setSkill(s.id);
-                }}
+                }
+              }
                 key={s.id}
                 skill={{ ...s, title: s.title[langKey] }}
                 currentSkill={skill}
@@ -105,13 +115,13 @@ export default function SkillsSection() {
         slidesPerView={1}
         onSlideChange={(swiper) => {
           const activeSlideIndex = swiper.realIndex;
-          setSkill(MySkills[activeSlideIndex].skillName.en);
+          setSkill(MySkills[activeSlideIndex].skillName);
         }}
       >
         {MySkills.map(
           (skill) =>
             skill.appear && (
-              <SwiperSlide className="  w-full" key={skill.skillName.en}>
+              <SwiperSlide className="  w-full" key={skill.skillName}>
                 <div className=" overflow-hidden py-10 w-full min-h-max pt-10 grid gap-2 md:gap-3 lg:gap-x-6 gap-y-8 md:gap-y-9 lg:gap-y-12  [grid-template-columns:repeat(auto-fit,minmax(118px,1fr))] md:[grid-template-columns:repeat(auto-fit,minmax(140px,1fr))] lg:[grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
                   {skill.skillsDetails.map((sk) => {
                     return (
@@ -121,7 +131,7 @@ export default function SkillsSection() {
                           className=" w-full  h-max flex justify-center"
                         >
                           <SkillOption
-                            field={skill.skillName[langKey]}
+                            field={skill.skillName}
                             bgColor={sk.bgColor}
                             image={sk.image}
                             title={sk.name[langKey]}

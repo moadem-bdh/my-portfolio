@@ -24,7 +24,7 @@ export default function SocialMedia() {
       en: "Also on social media",
       fr: "Aussi sur les réseaux sociaux",
     },
-    downloadCV: { en: "Download my CV", fr: "Télécharger mon CV" },
+    downloadCV: { en: "Download my CV", fr: "Importer mon CV" },
   };
 
   const socialMedia = [

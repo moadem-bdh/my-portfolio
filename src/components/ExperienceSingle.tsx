@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 export default function ExperienceSingle({
   title,
   decreption,
+  images=[] ,
 }: {
   title?: string;
   decreption?: string;
   index?: number;
+  images?: string[]
 }) {
   // Screen size detection
   const isLg = useMediaQuery({
@@ -45,7 +47,7 @@ export default function ExperienceSingle({
         viewport={{ once: false, margin: "0px 0px -20px 0px" }}
         className=" w-full"
       >
-        <ExperienceLayouts deviceType={deviceType} />
+        <ExperienceLayouts deviceType={deviceType} images={images} />
       </motion.div>
 
       <motion.div

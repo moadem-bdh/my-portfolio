@@ -7,10 +7,12 @@ export default function Experience({
   changeEffect,
   title,
   decreption,
+  images,
 }: {
   changeEffect: number;
   title?: string;
   decreption?: string;
+  images: string[],
 }) {
   // Screen size detection
   const isLg = useMediaQuery({
@@ -71,7 +73,7 @@ export default function Experience({
       className="select-none w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
     >
       <div className=" w-full">
-        <ExperienceLayouts deviceType={deviceType} />
+        <ExperienceLayouts deviceType={deviceType} images={images} />
       </div>
 
       <div className=" w-full md:w-70/100 lg:w-70/100 bg-[#076C6980] rounded-full h-1.5 mb-4 dark:bg-[#076C6980] mt-4">

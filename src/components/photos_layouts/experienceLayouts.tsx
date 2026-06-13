@@ -1,20 +1,15 @@
-import { useState } from "react";
+
 
 export default function ExperienceLayouts({
   gridType = 1,
   deviceType = "phone",
+  images = [],
 }: {
   gridType?: number;
   deviceType?: "phone" | "desktop";
+  images?: string[];
 }) {
-  // Photo paths served from public/assets. Adjust names if you want different images.
-  const [photos] = useState<string[]>([
-    "/assets/image.png",
-    "/assets/image.png",
-    "/assets/image.png",
-    "/assets/image.png",
-    "/assets/image.png",
-  ]);
+
 
   const layouts = {
     desktop: {
@@ -46,8 +41,8 @@ export default function ExperienceLayouts({
     },
   };
 
-  // pick layouts based on device type
-  const chosen: Record<number, string[]> = layouts[deviceType] as Record<
+  // pick layouts - always use desktop layouts so it displays side-by-side in a single row
+    const chosen: Record<number, string[]> = layouts[deviceType] as Record<
     number,
     string[]
   >;
@@ -55,28 +50,25 @@ export default function ExperienceLayouts({
   // IN DESKTOP THE ROWS IS ONE BUT IN PHONE IT 10
 
   return (
-    <div className="grid grid-cols-10 grid-rows-10 lg:grid-rows-1 md:max-h-100 lg:max-h-50 xl:max-h-55 w-full max-h-76 h-full gap-1">
-      <img
-        src={photos[0]}
-        alt="Project photo"
-        className={chosen[gridType][0]}
-      />
-      <img
-        src={photos[1]}
-        alt="Project photo"
-        className={chosen[gridType][1]}
-      />
+    <div className="grid grid-cols-10 grid-rows-1 w-full min-h-[140px] sm:min-h-[180px] md:min-h-[220px] lg:h-[260px] xl:h-[300px] gap-1.5 md:gap-2">
 
-      <img
-        src={photos[2]}
-        alt="Project photo"
-        className={chosen[gridType][2]}
-      />
-      <img
-        src={photos[3]}
-        alt="Project photo"
-        className={chosen[gridType][3]}
-      />
+
+
+
+      {
+        images
+          .slice(0, chosen[gridType]?.length ?? 0)
+          .map((im, index) => (
+            <img
+              key={index}
+              src={im}
+              alt="Project photo"
+              className={chosen[gridType][index]}
+            />
+          ))
+      }
+
+
     </div>
   );
 }

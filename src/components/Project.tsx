@@ -39,8 +39,8 @@ export default function Project({
   });
   const isXl = useMediaQuery({ query: "(min-width: 1280px)" });
 
-  // Determine device type for layouts (phone for mobile/tablet, desktop for lg/xl)
-  const deviceType = isLg || isXl ? "desktop" : "phone";
+  // Determine device type for layouts (phone for mobile, desktop/tablet for lg/xl)
+  const deviceType = isLg || isXl || isTablet ? "desktop" : "phone";
 
   // Dynamic collapsed heights based on screen size
   const getCollapsedHeight = () => {
