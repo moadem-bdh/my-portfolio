@@ -1,9 +1,12 @@
 type MenuIconProps = {
   open: boolean;
   onClick: () => void;
+  isDark: boolean;
 };
 
-export default function MenuIcon({ open, onClick }: MenuIconProps) {
+export default function MenuIcon({ open, onClick, isDark }: MenuIconProps) {
+  const fill = isDark ? "white" : "black";
+
   return (
     <button onClick={onClick} className="z-50 -mt-2.5 block lg:hidden cursor-pointer">
       <svg viewBox="0 0 45 30" className="h-7 w-auto" xmlns="http://www.w3.org/2000/svg">
@@ -13,19 +16,19 @@ export default function MenuIcon({ open, onClick }: MenuIconProps) {
         <rect
           className="bar"
           x="2.5" y="13" width="40" height="4" rx="2"
-          fill="white"
+          fill={fill}
           style={{ transform: open ? "rotate(45deg)" : "translateY(-10px)" }}
         />
         <rect
           className="bar"
           x="2.5" y="13" width="40" height="4" rx="2"
-          fill="white"
+          fill={fill}
           style={{ opacity: open ? 0 : 1, transform: open ? "scaleX(0)" : "none" }}
         />
         <rect
           className="bar"
           x="2.5" y="13" width="40" height="4" rx="2"
-          fill="white"
+          fill={fill}
           style={{ transform: open ? "rotate(-45deg)" : "translateY(10px)" }}
         />
       </svg>

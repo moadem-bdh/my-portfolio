@@ -11,14 +11,16 @@ import MenuIcon from "../components/MenuIcon";
 
 export default function NavbBar({
   setDark,
+  isDark
 }: {
   setDark: (a: boolean) => void;
+  isDark : boolean
 }) {
   const [menuAppear, setMenuAppear] = useToggle(false);
   function handleMenuAppear() {
     setMenuAppear();
   }
-
+  
   const navigate = useNavigate();
   const desktop = useMediaQuery({ query: "(min-width: 768px)" });
   return (
@@ -52,7 +54,7 @@ export default function NavbBar({
               </span>
             </div>
           ) : (
-            <MenuIcon open={menuAppear} onClick={handleMenuAppear} />
+            <MenuIcon open={menuAppear} onClick={handleMenuAppear} isDark={isDark} />
           )}
         </div>
       </nav>
