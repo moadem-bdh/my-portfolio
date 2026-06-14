@@ -64,7 +64,7 @@ export default function SkillsSection() {
   return (
     <section
       id="Skills"
-      className="relative w-full z-10  lg:min-h-220 xl:min-h-240 px-4 md:px-10 lg:px-14 xl:px-16 lg:pt-20 lg:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-10 lg:gap-16 flex-col items-center "
+      className="relative w-full   lg:min-h-220 xl:min-h-240 px-4 md:px-10 lg:px-14 xl:px-16 lg:pt-20 lg:pb-0 pb-0  pt-16 bg-bgLight dark:bg-bgDark flex gap-8 md:gap-10 lg:gap-16 flex-col items-center "
     >
       <ScrollFloat
         animationDuration={1}
