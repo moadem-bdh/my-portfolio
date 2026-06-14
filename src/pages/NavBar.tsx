@@ -25,7 +25,7 @@ export default function NavbBar({
   const desktop = useMediaQuery({ query: "(min-width: 768px)" });
   return (
     <>
-      <nav id="Home" className="w-full h-[68px] z-20 md:h-[76px] lg:h-[89px]  ">
+      <nav id="Home" className="w-full h-[68px] z-30 md:h-[76px] lg:h-[89px]  ">
         <div className=" z-30 w-full flex fixed top-0 py-4 md:py-5 lg:py-6 px-4 md:px-8 lg:px-10  items-center bg-bgLight  dark:bg-bgDark justify-between ">
           <img
             src={logo}

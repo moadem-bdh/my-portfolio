@@ -109,7 +109,7 @@ export default function Menu({
           ease: "easeInOut",
         }}
         onClick={(e) => e.stopPropagation()}
-        className="md:w-[700px] lg:w-[920px] md:z-40 z-0 w-full gap-1 md:gap-0 lg:gap-0 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 lg:border-b-0 md:border-l-4 lg:border-l-4 py-6  flex flex-col h-[470px] max-h-full md:h-full lg:h-full overflow-y-auto border-[#076C69]"
+        className="md:w-[700px] lg:w-[920px] md:z-40 z-20 w-full gap-1 md:gap-0 lg:gap-0 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent bg-bgLight dark:bg-bgDark min-h-40 border-b-4 md:border-b-0 lg:border-b-0 md:border-l-4 lg:border-l-4 py-6  flex flex-col h-[470px] max-h-full md:h-full lg:h-full overflow-y-auto border-[#076C69]"
       >
         <div className=" w-full flex  mb-10  lg:mb-8 px-4 md:px-8 lg:px-10  md:justify-start lg:justify-start justify-end">
           <button
