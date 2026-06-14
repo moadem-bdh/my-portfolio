@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface ColorRGB {
   r: number;
@@ -22,8 +22,6 @@ interface SplashCursorProps {
   COLOR_UPDATE_SPEED?: number;
   BACK_COLOR?: ColorRGB;
   TRANSPARENT?: boolean;
-  RAINBOW_MODE?: boolean;
-  COLOR?: string;
 }
 
 interface Pointer {
@@ -68,9 +66,7 @@ export default function SplashCursor({
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true,
-  RAINBOW_MODE = true,
-  COLOR = '#ff0000'
+  TRANSPARENT = true
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -78,9 +74,9 @@ export default function SplashCursor({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let pointers: Pointer[] = [pointerPrototype()];
+    const pointers: Pointer[] = [pointerPrototype()];
 
-    let config = {
+    const config = {
       SIM_RESOLUTION: SIM_RESOLUTION!,
       DYE_RESOLUTION: DYE_RESOLUTION!,
       CAPTURE_RESOLUTION: CAPTURE_RESOLUTION!,
@@ -95,9 +91,7 @@ export default function SplashCursor({
       COLOR_UPDATE_SPEED: COLOR_UPDATE_SPEED!,
       PAUSED: false,
       BACK_COLOR,
-      TRANSPARENT,
-      RAINBOW_MODE,
-      COLOR
+      TRANSPARENT
     };
 
     const { gl, ext } = getWebGLContext(canvas);
@@ -145,11 +139,18 @@ export default function SplashCursor({
 
       const halfFloatTexType = isWebGL2
         ? (gl as WebGL2RenderingContext).HALF_FLOAT
-        : (halfFloat && (halfFloat as any).HALF_FLOAT_OES) || 0;
+        : (halfFloat && (halfFloat as OES_texture_half_float).HALF_FLOAT_OES) || 0;
 
-      let formatRGBA: any;
-      let formatRG: any;
-      let formatR: any;
+
+
+ interface TextureFormat {
+  internalFormat: number;
+  format: number;
+}
+
+let formatRGBA: TextureFormat | null = null;
+let formatRG: TextureFormat | null = null;
+let formatR: TextureFormat | null = null;
 
       if (isWebGL2) {
         formatRGBA = getSupportedFormat(gl, (gl as WebGL2RenderingContext).RGBA16F, gl.RGBA, halfFloatTexType);
@@ -171,16 +172,16 @@ export default function SplashCursor({
         formatR = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
       }
 
-      return {
-        gl,
-        ext: {
-          formatRGBA,
-          formatRG,
-          formatR,
-          halfFloatTexType,
-          supportLinearFiltering
-        }
-      };
+return {
+  gl,
+  ext: {
+    formatRGBA: formatRGBA!,
+    formatRG: formatRG!,
+    formatR: formatR!,
+    halfFloatTexType,
+    supportLinearFiltering
+  }
+};
     }
 
     function getSupportedFormat(
@@ -276,7 +277,7 @@ export default function SplashCursor({
     }
 
     function getUniforms(program: WebGLProgram) {
-      let uniforms: Record<string, WebGLUniformLocation | null> = {};
+      const uniforms: Record<string, WebGLUniformLocation | null> = {};
       const uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
       for (let i = 0; i < uniformCount; i++) {
         const uniformInfo = gl.getActiveUniform(program, i);
@@ -839,7 +840,7 @@ export default function SplashCursor({
       const w = gl.drawingBufferWidth;
       const h = gl.drawingBufferHeight;
       const aspectRatio = w / h;
-      let aspect = aspectRatio < 1 ? 1 / aspectRatio : aspectRatio;
+      const aspect = aspectRatio < 1 ? 1 / aspectRatio : aspectRatio;
       const min = Math.round(resolution);
       const max = Math.round(resolution * aspect);
       if (w > h) {
@@ -1135,70 +1136,16 @@ export default function SplashCursor({
       return delta;
     }
 
-    function hexToRGB(hex: string): ColorRGB {
-      let val = hex.replace('#', '');
-      if (val.length === 3) val = val[0] + val[0] + val[1] + val[1] + val[2] + val[2];
-      const r = parseInt(val.slice(0, 2), 16) / 255;
-      const g = parseInt(val.slice(2, 4), 16) / 255;
-      const b = parseInt(val.slice(4, 6), 16) / 255;
-      return { r: r * 0.15, g: g * 0.15, b: b * 0.15 };
-    }
+function generateColor(): ColorRGB {
+  // Base color: #0AA19C (teal-green)
+  const intensity = 0.062; // adjust 0–1 → lower = more transparent / dimmer
 
-    function generateColor(): ColorRGB {
-      if (!config.RAINBOW_MODE) {
-        return hexToRGB(config.COLOR!);
-      }
-      const c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.15;
-      c.g *= 0.15;
-      c.b *= 0.15;
-      return c;
-    }
-
-    function HSVtoRGB(h: number, s: number, v: number): ColorRGB {
-      let r = 0,
-        g = 0,
-        b = 0;
-      const i = Math.floor(h * 6);
-      const f = h * 6 - i;
-      const p = v * (1 - s);
-      const q = v * (1 - f * s);
-      const t = v * (1 - (1 - f) * s);
-
-      switch (i % 6) {
-        case 0:
-          r = v;
-          g = t;
-          b = p;
-          break;
-        case 1:
-          r = q;
-          g = v;
-          b = p;
-          break;
-        case 2:
-          r = p;
-          g = v;
-          b = t;
-          break;
-        case 3:
-          r = p;
-          g = q;
-          b = v;
-          break;
-        case 4:
-          r = t;
-          g = p;
-          b = v;
-          break;
-        case 5:
-          r = v;
-          g = p;
-          b = q;
-          break;
-      }
-      return { r, g, b };
-    }
+  return {
+    r: (0x0A / 255) * intensity, // red
+    g: (0xA1 / 255) * intensity, // green
+    b: (0x9C / 255) * intensity, // blue
+  };
+}
 
     function wrap(value: number, min: number, max: number) {
       const range = max - min;
@@ -1295,9 +1242,7 @@ export default function SplashCursor({
     SHADING,
     COLOR_UPDATE_SPEED,
     BACK_COLOR,
-    TRANSPARENT,
-    RAINBOW_MODE,
-    COLOR
+    TRANSPARENT
   ]);
 
   return (
