@@ -7,11 +7,10 @@ import ExperiencesPage from "./pages/ExperiencesPage";
 import NavFooter from "./pages/NavFooter";
 import SplashCursor from "./components/SplashCursor";
 
-
 function App() {
   return (
     <LanguageProvider>
-<SplashCursor/>
+      <SplashCursor />
       <Routes>
         <Route element={<NavFooter />}>
           <Route path="/" element={<AllSections />} />
