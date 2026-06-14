@@ -38,7 +38,7 @@ export default function ExperienceSingle({
         ease: "easeOut",
       }}
       viewport={{ once: false, margin: "0px 0px -100px 0px" }}
-      className="select-none w-full gap-6 flex z-10 flex-col pb-16 cursor-pointer "
+      className="select-none w-full gap-6 flex  flex-col pb-16 cursor-pointer "
     >
       <motion.div
         initial={{ opacity: 0, x: -50 }}
