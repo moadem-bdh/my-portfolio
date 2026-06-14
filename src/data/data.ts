@@ -1061,7 +1061,7 @@ export const projects: projectType[] = [
   et personal branding dans un seul projet, démontrant ma capacité à gérer la création de A à Z et offrant une 
   plateforme professionnelle qui me représente efficacement.`,
     },
-    projectLink: "https://portfolio-moadem.vercel.app/",
+    projectLink: "https://www.moadem-portfolio.online/",
     images: [
       "/mockUps/IpadsMockUpPortfolio.png",
       "/mockUps/phoneMockUpPortfolio.png",
