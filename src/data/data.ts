@@ -1118,5 +1118,4 @@ export const projects: projectType[] = [
       "/mockUps/DesktopMockUpOrgalist.png",
     ],
   },
-  
 ];
