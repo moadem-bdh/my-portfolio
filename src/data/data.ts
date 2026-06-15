@@ -994,7 +994,7 @@ export const projects: projectType[] = [
   common customer questions. The project solves the problem of repetitive client inquiries by 
   providing all relevant information in a single, accessible platform. I designed the user interface 
   from scratch in Figma, defining the visual identity, selecting colors, fonts, and layout, and then 
-  implemented the website using ReactJS, TypeScript, Tailwind CSS, and animation libraries to ensure 
+  implemented the website using NextJS, TypeScript, Tailwind CSS, and animation libraries to ensure 
   a polished, interactive experience. A key highlight of this project is its professional presentation, 
   combining a clean design with practical functionality to provide customers with clear and immediate 
   information. Overall, Boutique Vamos Website demonstrates my ability to handle freelance projects, 
@@ -1008,7 +1008,7 @@ export const projects: projectType[] = [
   demandes répétitives des clients en fournissant toutes les informations pertinentes sur une 
   plateforme unique et accessible. J'ai conçu l'interface utilisateur entièrement sur Figma, en 
   définissant l'identité visuelle, en choisissant les couleurs, polices et la mise en page, puis 
-  j'ai implémenté le site avec ReactJS, TypeScript, Tailwind CSS et des bibliothèques d'animation 
+  j'ai implémenté le site avec NextJS, TypeScript, Tailwind CSS et des bibliothèques d'animation 
   pour garantir une expérience interactive et soignée. Un point fort du projet est sa présentation 
   professionnelle, combinant un design épuré avec des fonctionnalités pratiques pour offrir aux 
   clients des informations claires et immédiates. Dans l'ensemble, Boutique Vamos Website démontre 
