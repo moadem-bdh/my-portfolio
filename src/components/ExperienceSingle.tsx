@@ -68,10 +68,10 @@ export default function ExperienceSingle({
         viewport={{ once: false, margin: "0px 0px 0px 0px" }}
         className=" flex flex-col w-full gap-3"
       >
-        <h1 className=" font-ncs text-[34px] md:text-5xl lg:text-6xl text-bgDark dark:text-white ">
+        <h1 className=" font-ncs text-[34px] md:text-5xl lg:text-6xl cursor-text text-bgDark dark:text-white ">
           {title}
         </h1>
-        <p className=" select-none text-bgDark dark:text-white font-roboto text-sm md:text-lg lg:text-xl   ">
+        <p className=" select-none text-bgDark dark:text-white cursor-text font-roboto text-sm md:text-lg lg:text-xl   ">
           {decreption}
         </p>
       </motion.div>
